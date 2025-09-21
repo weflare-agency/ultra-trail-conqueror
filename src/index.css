@@ -105,7 +105,6 @@ Ultra Premium Typography & Brand-Compliant Design
     --shadow-medium: 0 8px 30px -8px hsl(0 0% 0% / 0.4);
     --shadow-strong: 0 16px 60px -12px hsl(0 0% 0% / 0.5);
   }
-}
 
 @layer base {
   * {
