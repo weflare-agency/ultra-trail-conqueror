@@ -1,0 +1,122 @@
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Users, Clock, Shield } from "lucide-react";
+
+interface FinalCTAProps {
+  onEmailSubmit: (email: string, firstName: string) => void;
+}
+
+export function FinalCTA({ onEmailSubmit }: FinalCTAProps) {
+  const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email || !firstName) return;
+    
+    setIsLoading(true);
+    await onEmailSubmit(email, firstName);
+    setIsLoading(false);
+  };
+
+  return (
+    <section className="py-20 bg-hero-gradient text-white relative overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 hero-pattern" />
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Urgency Message */}
+          <div className="mb-8 animate-fade-in">
+            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6">
+              <Users className="w-5 h-5 mr-2" />
+              <span className="font-medium">
+                Join 15,000+ runners who've downloaded this week
+              </span>
+            </div>
+            
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Ready to Start Your<br />
+              <span className="text-harrier-yellow">Ultra Journey?</span>
+            </h2>
+            
+            <p className="text-xl text-white/90 mb-8">
+              Get your free guide and take the first step towards completing your first ultra marathon
+            </p>
+          </div>
+          
+          {/* Form */}
+          <div className="max-w-md mx-auto bg-white/95 backdrop-blur-sm rounded-2xl p-6 mb-8 animate-scale-in">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="text-left">
+                <Label htmlFor="finalFirstName" className="text-harrier-dark-teal font-medium">
+                  First Name
+                </Label>
+                <Input
+                  id="finalFirstName"
+                  type="text"
+                  placeholder="Enter your first name"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  className="mt-1 text-base h-12"
+                  required
+                />
+              </div>
+              
+              <div className="text-left">
+                <Label htmlFor="finalEmail" className="text-harrier-dark-teal font-medium">
+                  Email Address
+                </Label>
+                <Input
+                  id="finalEmail"
+                  type="email"
+                  placeholder="Enter your email address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="mt-1 text-base h-12"
+                  required
+                />
+              </div>
+              
+              <Button 
+                type="submit" 
+                size="lg" 
+                variant="cta"
+                className="w-full text-lg font-bold h-14"
+                disabled={isLoading}
+              >
+                {isLoading ? "Sending..." : "Send My Free Guide Now"}
+              </Button>
+            </form>
+          </div>
+          
+          {/* Trust Indicators */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div className="flex items-center justify-center">
+              <Clock className="w-5 h-5 mr-2 text-harrier-yellow" />
+              <span className="text-white/90">Instant Access</span>
+            </div>
+            <div className="flex items-center justify-center">
+              <Shield className="w-5 h-5 mr-2 text-harrier-yellow" />
+              <span className="text-white/90">100% Secure</span>
+            </div>
+            <div className="flex items-center justify-center">
+              <Users className="w-5 h-5 mr-2 text-harrier-yellow" />
+              <span className="text-white/90">No Spam Promise</span>
+            </div>
+          </div>
+          
+          {/* Privacy Note */}
+          <p className="text-sm text-white/70 mt-8 max-w-2xl mx-auto">
+            We respect your privacy. Your email will only be used to send you the guide and occasional ultra running tips. 
+            You can unsubscribe at any time. See our{" "}
+            <a href="#" className="text-harrier-yellow hover:underline">privacy policy</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
