@@ -1,11 +1,9 @@
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
 import { CleanHero } from "@/components/CleanHero";
-import { IntroSection } from "@/components/IntroSection";
 import { BenefitsBoxes } from "@/components/BenefitsBoxes";
 import { TealFormSection } from "@/components/TealFormSection";
 import { TestimonialSection } from "@/components/TestimonialSection";
-import { AboutAuthors } from "@/components/AboutAuthors";
 import { IndustryAwards } from "@/components/IndustryAwards";
 import { SimpleFooter } from "@/components/SimpleFooter";
 
@@ -72,11 +70,9 @@ const Index = () => {
       </script>
 
       <CleanHero onEmailSubmit={handleEmailSubmit} />
-      <IntroSection />
       <BenefitsBoxes />
       <TealFormSection onEmailSubmit={handleEmailSubmit} />
       <TestimonialSection />
-      <AboutAuthors />
       <IndustryAwards />
       <SimpleFooter />
     </main>
