@@ -121,31 +121,21 @@ All colors MUST be HSL.
     @apply font-bold tracking-wide;
   }
 
-  /* Brand Typography Classes per Brand Guidelines - EXACT COMPLIANCE */
+  /* Typography Classes */
   .brand-title {
-    font-family: "Saira", sans-serif;
-    font-weight: 800; /* Extra bold for headers */
-    text-transform: uppercase;
-    letter-spacing: 0.15em; /* 150 spacing */
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    line-height: 1.1;
+    @apply font-saira font-black text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-wider leading-tight;
   }
 
   .brand-subtitle {
-    font-family: "Comfortaa", sans-serif;
-    font-weight: 700; /* Bold for subtitles */
-    text-transform: uppercase;
-    letter-spacing: 0.15em; /* 150 spacing */
-    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
-    line-height: 1.2;
+    @apply font-saira font-bold text-2xl md:text-3xl lg:text-4xl tracking-wide leading-snug;
   }
 
   .brand-body {
-    font-family: "Comfortaa", sans-serif;
-    font-weight: 500; /* Medium weight for better readability */
-    letter-spacing: 0.05em; /* 50 spacing */
-    font-size: clamp(1rem, 1.5vw, 1.125rem);
-    line-height: 1.6;
+    @apply font-comfortaa font-medium text-lg md:text-xl lg:text-2xl leading-relaxed;
+  }
+
+  .brand-condensed {
+    @apply font-saira-condensed font-bold text-base md:text-lg lg:text-xl tracking-wide uppercase;
   }
 
   /* Yellow highlight boxes - brand compliance */
@@ -181,11 +171,6 @@ All colors MUST be HSL.
   .pattern-bg > * {
     position: relative;
     z-index: 1;
-  }
-
-  .brand-condensed {
-    font-family: "Saira Extra Condensed", sans-serif;
-    letter-spacing: 0.2em;
   }
 }
 

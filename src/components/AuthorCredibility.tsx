@@ -20,45 +20,48 @@ const authors = [
 
 export function AuthorCredibility() {
   return (
-    <section className="py-20 bg-harrier-dark-green pattern-bg">
+    <section className="py-24 bg-harrier-dark-green pattern-bg">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="brand-title text-white mb-6">
-            WRITTEN BY ULTRA RUNNING EXPERTS
+        <div className="text-center mb-20 animate-fade-in">
+          <h2 className="font-saira font-black text-5xl md:text-6xl lg:text-7xl text-white mb-8 tracking-wider leading-tight">
+            WRITTEN BY ULTRA<br />RUNNING EXPERTS
           </h2>
-          <p className="brand-body text-white/95 max-w-2xl mx-auto">
-            LEARN FROM PROFESSIONALS WHO'VE WALKED (AND RUN) THE PATH YOU'RE ABOUT TO TAKE
+          <p className="font-comfortaa font-semibold text-xl md:text-2xl lg:text-3xl text-white/95 max-w-4xl mx-auto leading-relaxed">
+            LEARN FROM PROFESSIONALS WHO'VE WALKED (AND RUN)<br />
+            THE PATH YOU'RE ABOUT TO TAKE
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-16 max-w-6xl mx-auto">
           {authors.map((author, index) => (
             <div 
               key={index}
-              className="bg-white rounded-xl p-8 shadow-lg text-center animate-slide-up"
+              className="bg-white rounded-2xl p-10 shadow-2xl text-center animate-slide-up border-2 border-harrier-yellow/20"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <div className="mb-6">
+              <div className="mb-8">
                 <img
                   src={author.image}
                   alt={author.name}
-                  className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-harrier-yellow shadow-lg"
+                  className="w-40 h-40 rounded-full mx-auto object-cover border-6 border-harrier-yellow shadow-2xl"
                 />
               </div>
               
-              <h3 className="brand-subtitle text-harrier-dark-green mb-2">
+              <h3 className="font-saira font-black text-2xl md:text-3xl text-harrier-dark-green mb-4 tracking-wide">
                 {author.name.toUpperCase()}
               </h3>
               
-              <div className="yellow-highlight mb-4 text-sm">
-                {author.credentials.toUpperCase()}
+              <div className="inline-block bg-harrier-yellow px-6 py-2 rounded-xl mb-6 shadow-lg">
+                <span className="font-saira font-bold text-lg text-harrier-dark-green tracking-wide">
+                  {author.credentials.toUpperCase()}
+                </span>
               </div>
               
-              <p className="brand-body text-harrier-medium-green font-bold mb-4">
+              <p className="font-comfortaa font-bold text-xl md:text-2xl text-harrier-medium-green mb-6 leading-tight">
                 {author.achievement}
               </p>
               
-              <p className="brand-body text-harrier-dark-green/80 leading-relaxed">
+              <p className="font-comfortaa font-medium text-lg md:text-xl text-harrier-dark-green/85 leading-relaxed">
                 {author.description}
               </p>
             </div>
