@@ -31,127 +31,116 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
     <section 
       className="min-h-screen bg-cover bg-center bg-no-repeat relative overflow-hidden"
       style={{
-        backgroundImage: `linear-gradient(135deg, rgba(14, 70, 73, 0.85), rgba(19, 142, 128, 0.75)), url(${heroTrailRunners})`,
+        backgroundImage: `var(--gradient-hero), url(${heroTrailRunners})`,
       }}
     >
-      {/* Topographic Pattern Overlay */}
+      {/* Subtle Pattern Overlay */}
       <div 
-        className="absolute inset-0 opacity-10"
+        className="absolute inset-0 opacity-5"
         style={{
           backgroundImage: `url(${topoPattern})`,
-          backgroundSize: '400px 400px',
+          backgroundSize: '600px 600px',
           backgroundRepeat: 'repeat'
         }}
       />
       
-      {/* Brand Logo */}
-      <div className="absolute top-8 left-8 z-20">
-        <img 
-          src={harrierLogo} 
-          alt="Harrier Trail Running" 
-          className="h-16 md:h-20 w-auto filter brightness-110"
-        />
-      </div>
+      {/* Header with Logo */}
+      <header className="absolute top-0 left-0 right-0 z-20 py-6">
+        <div className="container mx-auto px-4 flex justify-between items-center">
+          <img 
+            src={harrierLogo} 
+            alt="Harrier Trail Running" 
+            className="h-12 md:h-16 w-auto"
+          />
+          <div className="hidden md:flex items-center gap-6 text-white font-saira font-semibold">
+            <span className="text-harrier-orange">★★★★★</span>
+            <span>15,000+ Happy Runners</span>
+          </div>
+        </div>
+      </header>
 
-      <div className="container mx-auto px-4 py-12 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen">
+      <div className="container mx-auto px-4 pt-24 pb-16 relative z-10">
+        <div className="max-w-6xl mx-auto">
           
-          {/* Left Column - Hero Content */}
-          <div className="text-center lg:text-left space-y-8">
+          {/* Center-Aligned Hero Content */}
+          <div className="text-center mb-16 space-y-8">
             
-            {/* Main Headline */}
+            {/* Main Headline - Conversion Optimized */}
             <div className="space-y-6">
-              <h1 className="hero-headline text-white leading-none">
-                FROM COUCH TO
-                <span className="block text-harrier-yellow">ULTRA FINISHER</span>
-                IN 16 WEEKS
+              <h1 className="font-saira font-black text-5xl md:text-7xl lg:text-8xl text-white leading-tight">
+                HOW TO RUN
+                <span className="block text-harrier-orange">AN ULTRA</span>
               </h1>
               
-              <p className="brand-body text-white/90 max-w-2xl mx-auto lg:mx-0">
-                THE COMPLETE ULTRA MARATHON TRAINING SYSTEM USED BY 15,000+ SUCCESSFUL FINISHERS
+              <p className="font-saira font-bold text-2xl md:text-3xl lg:text-4xl text-white/95 max-w-4xl mx-auto leading-tight">
+                POWERFUL LESSONS IN LONG DISTANCE TRAIL RUNNING
+              </p>
+              
+              <p className="font-comfortaa font-semibold text-xl md:text-2xl text-white/80 max-w-3xl mx-auto">
+                The complete training system that's helped 15,000+ runners successfully finish their first ultra marathon
               </p>
             </div>
 
-            {/* Problem/Solution */}
-            <div className="bg-harrier-dark-green/80 rounded-3xl p-8 backdrop-blur-sm border-2 border-harrier-yellow/30">
-              <h2 className="brand-subtitle text-harrier-yellow mb-4">
-                STOP WASTING TIME ON BAD ADVICE
-              </h2>
-              <p className="brand-text text-white/90 mb-6">
-                Generic marathon training doesn't work for ultras. You need specific strategies for:
-              </p>
-              <ul className="space-y-3 text-white/90 font-comfortaa font-medium text-lg">
-                <li className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-harrier-yellow rounded-full flex-shrink-0"></div>
-                  Mental strategies for 6+ hour races
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-harrier-yellow rounded-full flex-shrink-0"></div>
-                  Nutrition and hydration protocols
-                </li>
-                <li className="flex items-center gap-3">
-                  <div className="w-3 h-3 bg-harrier-yellow rounded-full flex-shrink-0"></div>
-                  Gear selection and race tactics
-                </li>
-              </ul>
-            </div>
-
-            {/* Social Proof Stats */}
-            <div className="grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0">
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-black text-harrier-yellow font-saira">15K+</div>
-                <div className="text-sm text-white/80 font-comfortaa">Downloads</div>
+            {/* Social Proof Stats - Above the Fold */}
+            <div className="flex justify-center items-center gap-8 md:gap-12 text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4">
+                <div className="text-3xl md:text-4xl font-black text-harrier-orange font-saira">15,000+</div>
+                <div className="text-sm font-bold text-white/90 font-saira">SUCCESSFUL FINISHERS</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-black text-harrier-yellow font-saira">96</div>
-                <div className="text-sm text-white/80 font-comfortaa">Pages</div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4">
+                <div className="text-3xl md:text-4xl font-black text-harrier-orange font-saira">96</div>
+                <div className="text-sm font-bold text-white/90 font-saira">PAGES OF EXPERTISE</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-black text-harrier-yellow font-saira">5★</div>
-                <div className="text-sm text-white/80 font-comfortaa">Rating</div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-6 py-4">
+                <div className="flex items-center justify-center gap-1 mb-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-harrier-orange text-harrier-orange" />
+                  ))}
+                </div>
+                <div className="text-sm font-bold text-white/90 font-saira">5-STAR RATED</div>
               </div>
-            </div>
-
-            {/* Action Runner Images */}
-            <div className="hidden lg:flex gap-4 justify-center lg:justify-start">
-              <img src={runnerAction1} alt="Trail Runner" className="w-20 h-20 rounded-2xl object-cover shadow-lg border-2 border-harrier-yellow" />
-              <img src={runnerAction2} alt="Ultra Marathoner" className="w-20 h-20 rounded-2xl object-cover shadow-lg border-2 border-harrier-yellow" />
-              <img src={runnerAction3} alt="Mountain Runner" className="w-20 h-20 rounded-2xl object-cover shadow-lg border-2 border-harrier-yellow" />
             </div>
           </div>
 
-          {/* Right Column - Premium Form */}
-          <div className="flex justify-center lg:justify-end">
-            <div className="premium-form w-full max-w-lg relative">
+          {/* Premium Form - Center Stage */}
+          <div className="max-w-lg mx-auto">
+            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-2xl relative">
               
               {/* Free Badge */}
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-harrier-yellow text-harrier-dark-green px-8 py-3 rounded-2xl font-black text-xl border-4 border-harrier-dark-green shadow-xl">
+              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-harrier-orange text-white px-8 py-3 rounded-2xl font-black text-lg shadow-xl font-saira">
                 FREE INSTANT DOWNLOAD
               </div>
 
               {/* Guide Preview */}
-              <div className="text-center mb-8 mt-8">
+              <div className="text-center mb-8 mt-4">
                 <div className="relative inline-block">
                   <img 
                     src={ultraGuidePreview} 
                     alt="How to Run an Ultra - Complete Guide Preview" 
-                    className="w-48 md:w-56 h-auto mx-auto shadow-2xl rounded-2xl border-4 border-harrier-yellow transform rotate-2 hover:rotate-0 transition-all duration-500"
+                    className="w-40 md:w-48 h-auto mx-auto shadow-xl rounded-2xl transform hover:scale-105 transition-all duration-300"
                   />
-                  <div className="absolute -bottom-4 -right-4 bg-harrier-medium-green text-white px-4 py-2 rounded-xl font-bold text-sm shadow-lg">
+                  <div className="absolute -bottom-3 -right-3 bg-harrier-medium-green text-white px-4 py-2 rounded-xl font-bold text-sm shadow-lg font-saira">
                     96 PAGES
                   </div>
                 </div>
+                
+                <h2 className="font-saira font-black text-2xl md:text-3xl text-harrier-dark-green mt-6 mb-2">
+                  GET YOUR FREE COPY
+                </h2>
+                <p className="font-comfortaa font-medium text-harrier-dark-green/70 text-lg">
+                  Join 15,000+ runners who've transformed their ultra dreams into reality
+                </p>
               </div>
 
               {/* Form */}
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <input
                     type="text"
-                    placeholder="YOUR FIRST NAME"
+                    placeholder="Your First Name"
                     value={firstName}
                     onChange={(e) => setFirstName(e.target.value)}
-                    className="premium-input text-center"
+                    className="w-full px-6 py-4 text-lg font-semibold border-2 border-harrier-mint rounded-xl focus:border-harrier-medium-green focus:outline-none focus:ring-0 transition-all duration-300 font-comfortaa"
                     required
                   />
                 </div>
@@ -159,10 +148,10 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
                 <div>
                   <input
                     type="email"
-                    placeholder="YOUR EMAIL ADDRESS"
+                    placeholder="Your Email Address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="premium-input text-center"
+                    className="w-full px-6 py-4 text-lg font-semibold border-2 border-harrier-mint rounded-xl focus:border-harrier-medium-green focus:outline-none focus:ring-0 transition-all duration-300 font-comfortaa"
                     required
                   />
                 </div>
@@ -174,13 +163,13 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
                 >
                   {isLoading ? (
                     <div className="flex items-center justify-center gap-3">
-                      <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-harrier-dark-green"></div>
-                      SENDING...
+                      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+                      SENDING TO YOU...
                     </div>
                   ) : (
                     <div className="flex items-center justify-center gap-3">
-                      <Download className="w-6 h-6" />
-                      GET FREE GUIDE NOW
+                      <Download className="w-5 h-5" />
+                      DOWNLOAD FREE GUIDE
                     </div>
                   )}
                 </button>
@@ -189,46 +178,56 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
               {/* Trust Indicators */}
               <div className="grid grid-cols-3 gap-4 mt-8 text-center">
                 <div className="flex flex-col items-center gap-2">
-                  <Clock className="w-8 h-8 text-harrier-medium-green" />
-                  <span className="text-sm font-semibold text-harrier-dark-green">Instant Access</span>
+                  <Clock className="w-6 h-6 text-harrier-medium-green" />
+                  <span className="text-xs font-bold text-harrier-dark-green/80 font-saira">INSTANT ACCESS</span>
                 </div>
                 <div className="flex flex-col items-center gap-2">
-                  <Shield className="w-8 h-8 text-harrier-medium-green" />
-                  <span className="text-sm font-semibold text-harrier-dark-green">No Spam</span>
+                  <Shield className="w-6 h-6 text-harrier-medium-green" />
+                  <span className="text-xs font-bold text-harrier-dark-green/80 font-saira">100% SECURE</span>
                 </div>
                 <div className="flex flex-col items-center gap-2">
-                  <Users className="w-8 h-8 text-harrier-medium-green" />
-                  <span className="text-sm font-semibold text-harrier-dark-green">15K+ Members</span>
+                  <Users className="w-6 h-6 text-harrier-medium-green" />
+                  <span className="text-xs font-bold text-harrier-dark-green/80 font-saira">NO SPAM EVER</span>
                 </div>
               </div>
 
               {/* Privacy Note */}
-              <p className="text-center text-sm text-harrier-dark-green/70 mt-6 font-comfortaa">
+              <p className="text-center text-sm text-harrier-dark-green/60 mt-6 font-comfortaa">
                 We respect your privacy. Unsubscribe at any time.
               </p>
             </div>
           </div>
-        </div>
-      </div>
 
-      {/* Bottom Banner */}
-      <div className="absolute bottom-0 left-0 right-0 bg-harrier-dark-green/95 backdrop-blur-sm py-6 border-t-4 border-harrier-yellow">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
-            <div className="text-center lg:text-left">
-              <p className="text-white font-comfortaa font-semibold text-lg">
-                "This guide turned my ultra dreams into reality. Finally finished my first 50K!"
+          {/* Problem/Solution - Below Form */}
+          <div className="max-w-4xl mx-auto mt-16 text-center">
+            <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 md:p-12">
+              <h3 className="font-saira font-black text-2xl md:text-3xl text-harrier-orange mb-6">
+                STOP FOLLOWING GENERIC MARATHON ADVICE
+              </h3>
+              <p className="font-comfortaa font-semibold text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+                Ultra marathons require completely different strategies. This guide gives you the proven system for nutrition, pacing, mental preparation, and race-day tactics that actually work for 30+ mile distances.
               </p>
-              <p className="text-harrier-yellow font-saira font-bold">- Sarah M., Peak District</p>
-            </div>
-            <div className="flex items-center gap-4">
-              <div className="text-center">
-                <p className="text-harrier-yellow font-saira font-bold text-sm">WANT THE PHYSICAL BOOK?</p>
-                <p className="text-white/80 font-comfortaa text-sm">Order on Amazon</p>
+              
+              <div className="grid md:grid-cols-3 gap-6 max-w-2xl mx-auto">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-harrier-orange rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-white font-black text-xl">1</span>
+                  </div>
+                  <p className="text-white font-semibold font-comfortaa">Mental Strategies</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-harrier-orange rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-white font-black text-xl">2</span>
+                  </div>
+                  <p className="text-white font-semibold font-comfortaa">Nutrition Protocols</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-harrier-orange rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-white font-black text-xl">3</span>
+                  </div>
+                  <p className="text-white font-semibold font-comfortaa">Race Tactics</p>
+                </div>
               </div>
-              <Button variant="outline" className="border-harrier-yellow text-harrier-yellow hover:bg-harrier-yellow hover:text-harrier-dark-green">
-                VIEW ON AMAZON
-              </Button>
             </div>
           </div>
         </div>

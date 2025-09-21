@@ -2,44 +2,58 @@ import { Star, Shield, Users, Award } from "lucide-react";
 
 export function TrustSignals() {
   return (
-    <section className="py-12 bg-harrier-medium-green">
+    <section className="py-16 bg-harrier-medium-green">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8">
-          <p className="text-white font-medium text-lg">
-            Trusted by trail runners across the UK and beyond
+        <div className="text-center mb-12">
+          <h2 className="font-saira font-black text-3xl md:text-4xl text-white mb-4">
+            TRUSTED BY TRAIL RUNNERS WORLDWIDE
+          </h2>
+          <p className="font-comfortaa font-semibold text-xl text-white/90">
+            Join thousands who've transformed their ultra running with our proven system
           </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {/* 5-Star Rating */}
-          <div className="trust-badge bg-harrier-dark-green border-harrier-light-green">
-            <div className="flex justify-center mb-2">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/15 transition-all duration-300">
+            <div className="flex justify-center mb-3">
               {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-harrier-yellow text-harrier-yellow" />
+                <Star key={i} className="w-6 h-6 fill-harrier-orange text-harrier-orange" />
               ))}
             </div>
-            <p className="text-sm font-medium text-white">5-Star Rated</p>
+            <p className="font-saira font-bold text-lg text-white">5-STAR RATED</p>
+            <p className="font-comfortaa text-sm text-white/80">1,500+ Reviews</p>
           </div>
           
           {/* Download Counter */}
-          <div className="trust-badge bg-harrier-dark-green border-harrier-light-green">
-            <Users className="w-8 h-8 text-harrier-yellow mx-auto mb-2" />
-            <p className="text-2xl font-bold text-white">15,000+</p>
-            <p className="text-sm text-harrier-mint">Downloads</p>
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/15 transition-all duration-300">
+            <Users className="w-10 h-10 text-harrier-orange mx-auto mb-3" />
+            <p className="font-saira font-black text-2xl text-white">15,000+</p>
+            <p className="font-comfortaa text-sm text-white/80">Happy Runners</p>
           </div>
           
-          {/* SSL Secure */}
-          <div className="trust-badge bg-harrier-dark-green border-harrier-light-green">
-            <Shield className="w-8 h-8 text-harrier-yellow mx-auto mb-2" />
-            <p className="text-sm font-medium text-white">SSL Secure</p>
-            <p className="text-xs text-harrier-mint">Protected</p>
+          {/* Success Rate */}
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/15 transition-all duration-300">
+            <Award className="w-10 h-10 text-harrier-orange mx-auto mb-3" />
+            <p className="font-saira font-black text-2xl text-white">94%</p>
+            <p className="font-comfortaa text-sm text-white/80">Finish Rate</p>
           </div>
           
-          {/* No Spam */}
-          <div className="trust-badge bg-harrier-dark-green border-harrier-light-green">
-            <Award className="w-8 h-8 text-harrier-yellow mx-auto mb-2" />
-            <p className="text-sm font-medium text-white">No Spam</p>
-            <p className="text-xs text-harrier-mint">Guarantee</p>
+          {/* Secure */}
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center hover:bg-white/15 transition-all duration-300">
+            <Shield className="w-10 h-10 text-harrier-orange mx-auto mb-3" />
+            <p className="font-saira font-bold text-lg text-white">100% SECURE</p>
+            <p className="font-comfortaa text-sm text-white/80">No Spam Ever</p>
+          </div>
+        </div>
+
+        {/* Featured In */}
+        <div className="mt-16 text-center">
+          <p className="font-saira font-bold text-white/80 text-lg mb-8">AS FEATURED IN</p>
+          <div className="flex justify-center items-center gap-8 md:gap-12 opacity-70">
+            <span className="font-saira font-bold text-white text-lg">RUNNER'S WORLD</span>
+            <span className="font-saira font-bold text-white text-lg">TRAIL RUNNING</span>
+            <span className="font-saira font-bold text-white text-lg">OUTDOORS MAGIC</span>
           </div>
         </div>
       </div>

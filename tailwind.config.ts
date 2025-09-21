@@ -55,11 +55,10 @@ export default {
         },
         harrier: {
           "dark-green": "hsl(var(--harrier-dark-green))",
-          "darker-green": "hsl(var(--harrier-darker-green))",
           "medium-green": "hsl(var(--harrier-medium-green))",
           "light-green": "hsl(var(--harrier-light-green))",
           "mint": "hsl(var(--harrier-mint))",
-          "yellow": "hsl(var(--harrier-yellow))",
+          "orange": "hsl(var(--harrier-orange))",
           "white": "hsl(var(--harrier-white))",
           "dark-gray": "hsl(var(--harrier-dark-gray))",
           "light-gray": "hsl(var(--harrier-light-gray))",

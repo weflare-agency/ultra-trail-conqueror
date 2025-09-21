@@ -8,49 +8,50 @@
 
 @layer base {
   :root {
-    /* Harrier Brand Colors - Exact Brand Palette */
-    --harrier-dark-green: 193 88% 18%;      /* #0e4649 - Primary brand color */
-    --harrier-darker-green: 193 88% 12%;    /* Darker variation for depth */
-    --harrier-medium-green: 171 88% 41%;    /* #138e80 - Secondary brand color */
-    --harrier-light-green: 171 50% 65%;     /* Lighter variation */
-    --harrier-mint: 171 35% 85%;            /* Very light mint for subtle backgrounds */
-    --harrier-yellow: 38 100% 50%;          /* #fd9d00 - Accent color */
+    /* Harrier Brand Colors - EXACT Professional Palette */
+    --harrier-dark-green: 193 88% 18%;      /* #0e4649 - Deep Teal Primary */
+    --harrier-medium-green: 171 75% 29%;    /* #138e80 - Teal Secondary */  
+    --harrier-light-green: 171 50% 65%;     /* Lighter teal variation */
+    --harrier-mint: 171 35% 90%;            /* Very light mint backgrounds */
+    --harrier-orange: 38 100% 49%;          /* #fd9d00 - Orange Accent */
     --harrier-white: 0 0% 100%;             /* Pure white */
-    --harrier-dark-gray: 0 0% 20%;          /* Dark gray for text */
-    --harrier-light-gray: 0 0% 95%;         /* Light gray for subtle backgrounds */
-
-    /* Standard UI Colors */
+    --harrier-dark-gray: 0 0% 15%;          /* Dark text */
+    --harrier-light-gray: 0 0% 96%;         /* Light backgrounds */
+    
+    /* Conversion-Optimized UI System */
     --background: 0 0% 100%;
     --foreground: 193 88% 18%;
     --card: 0 0% 100%;
     --card-foreground: 193 88% 18%;
     --popover: 0 0% 100%;
     --popover-foreground: 193 88% 18%;
-    --primary: 193 88% 18%;
+    --primary: 193 88% 18%;                 /* Deep Teal */
     --primary-foreground: 0 0% 98%;
-    --secondary: 171 88% 41%;
+    --secondary: 171 75% 29%;               /* Teal */
     --secondary-foreground: 0 0% 98%;
-    --muted: 171 35% 85%;
+    --muted: 171 35% 90%;                   /* Light mint */
     --muted-foreground: 193 88% 18%;
-    --accent: 38 100% 50%;
+    --accent: 38 100% 49%;                  /* Orange */
     --accent-foreground: 0 0% 98%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     --border: 171 35% 85%;
-    --input: 171 35% 85%;
-    --ring: 193 88% 18%;
-    --radius: 0.5rem;
+    --input: 0 0% 96%;
+    --ring: 171 75% 29%;
+    --radius: 0.75rem;
 
-    /* Professional Shadows */
-    --shadow-light: 0 4px 20px -4px hsl(193 88% 18% / 0.15);
-    --shadow-medium: 0 8px 30px -8px hsl(193 88% 18% / 0.25);
-    --shadow-strong: 0 16px 60px -12px hsl(193 88% 18% / 0.35);
-    --shadow-glow: 0 0 40px hsl(38 100% 50% / 0.4);
+    /* Professional Shadows - Conversion Optimized */
+    --shadow-light: 0 4px 25px -4px hsl(193 88% 18% / 0.12);
+    --shadow-medium: 0 10px 40px -8px hsl(193 88% 18% / 0.18);
+    --shadow-strong: 0 20px 80px -12px hsl(193 88% 18% / 0.25);
+    --shadow-orange: 0 8px 32px -4px hsl(38 100% 49% / 0.3);
+    --shadow-teal: 0 8px 32px -4px hsl(171 75% 29% / 0.3);
 
-    /* Professional Gradients */
-    --gradient-brand: linear-gradient(135deg, hsl(193 88% 18%), hsl(171 88% 41%));
-    --gradient-accent: linear-gradient(135deg, hsl(38 100% 50%), hsl(38 100% 60%));
-    --gradient-overlay: linear-gradient(135deg, hsl(193 88% 18% / 0.8), hsl(171 88% 41% / 0.6));
+    /* High-Converting Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(193 88% 18% / 0.95), hsl(171 75% 29% / 0.85));
+    --gradient-section: linear-gradient(135deg, hsl(171 75% 29%), hsl(171 75% 35%));
+    --gradient-cta: linear-gradient(135deg, hsl(38 100% 49%), hsl(38 100% 54%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(171 35% 96%));
   }
 
   * {
@@ -69,27 +70,34 @@
 }
 
 @layer components {
-  /* Ultra-Professional CTA Button */
+  /* High-Converting CTA Button */
   .cta-button {
-    @apply inline-flex items-center justify-center px-12 py-6 text-xl md:text-2xl font-black text-harrier-dark-green rounded-2xl shadow-2xl transition-all duration-500 relative overflow-hidden border-4 border-harrier-yellow;
-    background: linear-gradient(135deg, hsl(38 100% 50%), hsl(38 100% 55%));
+    @apply inline-flex items-center justify-center px-8 py-5 text-lg md:text-xl font-black text-white rounded-xl shadow-lg transition-all duration-300 relative overflow-hidden;
+    background: var(--gradient-cta);
     font-family: 'Saira', sans-serif;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
-    min-width: 300px;
-    min-height: 80px;
+    min-height: 64px;
   }
   
   .cta-button:hover {
-    @apply shadow-2xl scale-110;
-    box-shadow: 0 20px 60px -10px hsl(38 100% 50% / 0.6), 0 0 0 8px hsl(38 100% 50% / 0.2);
-    transform: translateY(-8px) scale(1.05);
-    background: linear-gradient(135deg, hsl(38 100% 55%), hsl(38 100% 60%));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-orange);
+    background: linear-gradient(135deg, hsl(38 100% 54%), hsl(38 100% 58%));
   }
   
   .cta-button:active {
-    @apply scale-95;
-    transform: translateY(-4px) scale(1.02);
+    transform: translateY(0px);
+    box-shadow: var(--shadow-light);
+  }
+
+  /* Trust Bar */
+  .trust-bar {
+    @apply bg-harrier-dark-green text-white py-3 text-center;
+    font-family: 'Saira', sans-serif;
+    font-weight: 600;
+    font-size: 0.875rem;
+    letter-spacing: 0.025em;
   }
 
   /* Massive Typography System - Ultra Impact */
@@ -132,13 +140,13 @@
 
   /* Premium Card Styles - Ultra Professional */
   .premium-card {
-    @apply bg-white rounded-3xl p-10 md:p-12 shadow-2xl border-4 border-harrier-yellow/30 relative overflow-hidden;
+    @apply bg-white rounded-3xl p-10 md:p-12 shadow-2xl border-4 border-harrier-orange/30 relative overflow-hidden;
     background: linear-gradient(135deg, hsl(0 0% 100%), hsl(171 35% 98%));
   }
   
   .premium-card::before {
     content: '';
-    @apply absolute top-0 left-0 w-full h-4 bg-gradient-to-r from-harrier-medium-green via-harrier-yellow to-harrier-medium-green;
+    @apply absolute top-0 left-0 w-full h-4 bg-gradient-to-r from-harrier-medium-green via-harrier-orange to-harrier-medium-green;
   }
   
   .premium-card:hover {
@@ -149,7 +157,7 @@
 
   /* Yellow Highlight Box - Brand Compliant */
   .yellow-highlight {
-    @apply bg-harrier-yellow text-harrier-dark-green px-6 py-3 rounded-2xl font-black text-lg md:text-xl shadow-lg border-4 border-harrier-dark-green;
+    @apply bg-harrier-orange text-harrier-dark-green px-6 py-3 rounded-2xl font-black text-lg md:text-xl shadow-lg border-4 border-harrier-dark-green;
     font-family: 'Saira', sans-serif;
     letter-spacing: 0.05em;
     text-transform: uppercase;
@@ -158,7 +166,7 @@
   
   .yellow-highlight:hover {
     @apply shadow-xl scale-110;
-    box-shadow: 0 10px 30px -5px hsl(38 100% 50% / 0.5);
+    box-shadow: 0 10px 30px -5px hsl(38 100% 49% / 0.5);
   }
 
   /* Ultra-Premium Form Styles */

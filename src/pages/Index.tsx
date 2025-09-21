@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
+import { TrustBar } from "@/components/TrustBar";
 import { HeroSection } from "@/components/HeroSection";
 import { TrustSignals } from "@/components/TrustSignals";
+import { FeaturesGrid } from "@/components/FeaturesGrid";
 import { WhatsInside } from "@/components/WhatsInside";
 import { RiskReversal } from "@/components/RiskReversal";
 import { AuthorCredibility } from "@/components/AuthorCredibility";
@@ -75,11 +77,10 @@ const Index = () => {
         })}
       </script>
 
-      <div id="hero-form">
-        <HeroSection onEmailSubmit={handleEmailSubmit} />
-      </div>
-      
+      <TrustBar />
+      <HeroSection onEmailSubmit={handleEmailSubmit} />
       <TrustSignals />
+      <FeaturesGrid />
       <WhatsInside />
       <RiskReversal />
       <AuthorCredibility />
@@ -89,8 +90,8 @@ const Index = () => {
       <FinalCTA onEmailSubmit={handleEmailSubmit} />
       <Footer />
       
-      <StickyMobileCTA onEmailSubmit={handleEmailSubmit} hasSubmitted={hasSubmitted} />
       {!hasSubmitted && <ExitIntentPopup onEmailSubmit={handleEmailSubmit} />}
+      <StickyMobileCTA onEmailSubmit={handleEmailSubmit} hasSubmitted={hasSubmitted} />
     </main>
   );
 };
