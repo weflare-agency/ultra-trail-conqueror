@@ -35,14 +35,14 @@ const features = [
 
 export function WhatsInside() {
   return (
-    <section className="py-20 bg-harrier-light-green">
+    <section className="py-20 bg-harrier-medium-green pattern-bg">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            What's Inside Your Free Guide
+          <h2 className="brand-title text-white mb-6">
+            WHAT'S INSIDE YOUR FREE GUIDE
           </h2>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            96 pages of comprehensive ultra running knowledge, from beginner basics to advanced strategies
+          <p className="brand-body text-white/95 max-w-2xl mx-auto">
+            96 PAGES OF COMPREHENSIVE ULTRA RUNNING KNOWLEDGE, FROM BEGINNER BASICS TO ADVANCED STRATEGIES
           </p>
         </div>
         
@@ -50,35 +50,32 @@ export function WhatsInside() {
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="feature-card bg-harrier-dark-green border-harrier-medium-green animate-slide-up"
+              className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-harrier-yellow/20 rounded-xl flex items-center justify-center mr-4">
-                  <feature.icon className="w-6 h-6 text-harrier-yellow" />
-                </div>
-                <h3 className="text-xl font-bold text-white">
-                  {feature.title}
-                </h3>
+              <div className="bg-harrier-yellow w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg">
+                <feature.icon className="w-8 h-8 text-harrier-dark-green" />
               </div>
-              <p className="text-harrier-mint leading-relaxed">
+              
+              <h3 className="brand-subtitle text-harrier-dark-green mb-4 text-center text-lg">
+                {feature.title.toUpperCase()}
+              </h3>
+              
+              <p className="brand-body text-harrier-dark-green/80 text-center leading-relaxed">
                 {feature.description}
               </p>
             </div>
           ))}
         </div>
         
-        {/* Bottom CTA */}
+        {/* Call to Action */}
         <div className="text-center mt-16">
-          <p className="text-lg text-white/90 mb-6">
-            Ready to start your ultra running journey?
+          <div className="yellow-highlight inline-block text-lg md:text-xl mb-4">
+            DOWNLOAD YOUR FREE GUIDE NOW
+          </div>
+          <p className="brand-body text-white/90 max-w-lg mx-auto">
+            JOIN 15,000+ SUCCESSFUL ULTRA FINISHERS TODAY
           </p>
-          <a 
-            href="#hero-form" 
-            className="inline-block px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 cta-button"
-          >
-            Download Your Free Guide Now
-          </a>
         </div>
       </div>
     </section>

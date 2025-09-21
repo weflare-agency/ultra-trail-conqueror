@@ -20,14 +20,14 @@ const authors = [
 
 export function AuthorCredibility() {
   return (
-    <section className="py-20 bg-harrier-dark-green">
+    <section className="py-20 bg-harrier-dark-green pattern-bg">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Written by Ultra Running Experts
+          <h2 className="brand-title text-white mb-6">
+            WRITTEN BY ULTRA RUNNING EXPERTS
           </h2>
-          <p className="text-xl text-harrier-mint max-w-2xl mx-auto">
-            Learn from professionals who've walked (and run) the path you're about to take
+          <p className="brand-body text-white/95 max-w-2xl mx-auto">
+            LEARN FROM PROFESSIONALS WHO'VE WALKED (AND RUN) THE PATH YOU'RE ABOUT TO TAKE
           </p>
         </div>
         
@@ -35,7 +35,7 @@ export function AuthorCredibility() {
           {authors.map((author, index) => (
             <div 
               key={index}
-              className="feature-card bg-harrier-medium-green border-harrier-light-green text-center animate-slide-up"
+              className="bg-white rounded-xl p-8 shadow-lg text-center animate-slide-up"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="mb-6">
@@ -46,19 +46,19 @@ export function AuthorCredibility() {
                 />
               </div>
               
-              <h3 className="text-2xl font-bold text-white mb-2">
-                {author.name}
+              <h3 className="brand-subtitle text-harrier-dark-green mb-2">
+                {author.name.toUpperCase()}
               </h3>
               
-              <p className="text-harrier-yellow font-semibold mb-2">
-                {author.credentials}
-              </p>
+              <div className="yellow-highlight mb-4 text-sm">
+                {author.credentials.toUpperCase()}
+              </div>
               
-              <p className="text-harrier-yellow font-bold mb-4">
+              <p className="brand-body text-harrier-medium-green font-bold mb-4">
                 {author.achievement}
               </p>
               
-              <p className="text-harrier-mint leading-relaxed">
+              <p className="brand-body text-harrier-dark-green/80 leading-relaxed">
                 {author.description}
               </p>
             </div>

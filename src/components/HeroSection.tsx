@@ -52,38 +52,35 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
           {/* Left Column - Content */}
           <div className="text-center lg:text-left">
             {/* Main Headline */}
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 brand-title animate-fade-in">
+            <h1 className="brand-title text-white mb-6 animate-fade-in">
               DOWNLOAD YOUR FREE<br />
               <span className="text-harrier-yellow">HOW TO RUN AN ULTRA</span><br />
               GUIDE
             </h1>
             
             {/* Subheading */}
-            <h2 className="text-xl md:text-2xl text-white/90 mb-8 brand-subtitle animate-fade-in">
-              Everything You Need to Train, Gear Up & Finish Strong
+            <h2 className="brand-subtitle text-white/95 mb-8 animate-fade-in">
+              EVERYTHING YOU NEED TO TRAIN, GEAR UP & FINISH STRONG
             </h2>
             
             {/* Description */}
-            <div className="text-lg text-white/80 mb-8 max-w-xl mx-auto lg:mx-0 brand-body animate-fade-in space-y-4">
-              <p>Ready to run your first ultra or take your next one up a notch?</p>
-              <p>This free 96-page guide gives you everything you need to succeed. Packed with practical advice, proven strategies, and hard-earned wisdom, this is your go-to ultra companion.</p>
+            <div className="brand-body text-white/90 mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-in space-y-4">
+              <p>READY TO RUN YOUR FIRST ULTRA OR TAKE YOUR NEXT ONE UP A NOTCH?</p>
+              <p>THIS FREE 96-PAGE GUIDE GIVES YOU EVERYTHING YOU NEED TO SUCCEED. PACKED WITH PRACTICAL ADVICE, PROVEN STRATEGIES, AND HARD-EARNED WISDOM, THIS IS YOUR GO-TO ULTRA COMPANION.</p>
             </div>
             
             {/* What's Inside */}
             <div className="mb-8">
-              <h3 className="text-2xl font-bold text-white mb-6 brand-subtitle">WHAT'S INSIDE</h3>
+              <h3 className="brand-subtitle text-white mb-6">WHAT'S INSIDE</h3>
               <div className="space-y-3 animate-slide-up">
                 {[
-                  "Choosing your ultra, goal setting and motivation",
-                  "Essential checklists for kit, fuelling, and race day prep", 
-                  "Expert gear guidance to help you choose what to carry (and what not to)",
-                  "Mental strategies for decision making and pushing through the tough miles",
-                  "Pro insights from ultra runners who've been there, done it, and gone back for more"
+                  "CHOOSING YOUR ULTRA, GOAL SETTING AND MOTIVATION",
+                  "ESSENTIAL CHECKLISTS FOR KIT, FUELLING, AND RACE DAY PREP", 
+                  "EXPERT GEAR GUIDANCE TO HELP YOU CHOOSE WHAT TO CARRY (AND WHAT NOT TO)",
+                  "MENTAL STRATEGIES FOR DECISION MAKING AND PUSHING THROUGH THE TOUGH MILES",
+                  "PRO INSIGHTS FROM ULTRA RUNNERS WHO'VE BEEN THERE, DONE IT, AND GONE BACK FOR MORE"
                 ].map((item, index) => (
-                  <div key={index} className="flex items-start text-white/90 text-left">
-                    <div className="w-6 h-6 bg-harrier-yellow rounded-full flex items-center justify-center mr-4 flex-shrink-0 mt-1">
-                      <Check className="w-4 h-4 text-harrier-dark-green" />
-                    </div>
+                  <div key={index} className="yellow-highlight text-left">
                     <span className="brand-body">{item}</span>
                   </div>
                 ))}
@@ -95,11 +92,11 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
           <div className="max-w-md mx-auto lg:mx-0 lg:ml-auto">
             <div className="conversion-form p-8 animate-scale-in">
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-harrier-dark-green mb-2 brand-title">
+                <h3 className="brand-subtitle text-harrier-dark-green mb-2">
                   FREE INSTANT ACCESS
                 </h3>
-                <p className="text-harrier-dark-green/80 brand-body">
-                  Drop your name and email below and we'll send the guide straight to your inbox.
+                <p className="brand-body text-harrier-dark-green/80">
+                  DROP YOUR NAME AND EMAIL BELOW AND WE'LL SEND THE GUIDE STRAIGHT TO YOUR INBOX.
                 </p>
               </div>
               
@@ -129,9 +126,9 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
                 <Button
                   type="submit"
                   disabled={!email || !firstName || isLoading}
-                  className="w-full h-14 text-lg cta-button brand-title"
+                  className="w-full h-14 text-lg cta-button brand-body"
                 >
-                  {isLoading ? "SENDING..." : "GET YOUR FREE GUIDE NOW"}
+                  {isLoading ? "sending..." : "get your free guide now"}
                 </Button>
               </form>
               
@@ -154,15 +151,19 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
 
             {/* Physical Book Option */}
             <div className="mt-6 text-center">
-              <p className="text-white/90 mb-3 brand-subtitle text-lg">PREFER A PHYSICAL COPY?</p>
-              <p className="text-white/70 text-sm mb-4 brand-body">Grab the printed book for just £9.99.</p>
+              <h3 className="brand-subtitle text-white mb-4">
+                PREFER A PHYSICAL COPY?
+              </h3>
+              <p className="brand-body text-white/90 text-sm mb-4">
+                GRAB THE PRINTED BOOK FOR JUST £9.99.
+              </p>
               <a 
                 href="https://harrierrunfree.co.uk/collections/ultra-collection/products/how-to-run-an-ultra-book"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-6 py-3 border-2 border-white text-white hover:bg-white hover:text-harrier-dark-green transition-all duration-300 rounded-lg brand-subtitle text-sm"
+                className="inline-block px-6 py-3 border-2 border-white text-white hover:bg-white hover:text-harrier-dark-green transition-all duration-300 rounded-lg brand-body text-sm"
               >
-                GRAB THE PRINTED VERSION
+                grab the printed version
               </a>
             </div>
           </div>

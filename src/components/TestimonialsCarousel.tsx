@@ -60,19 +60,19 @@ export function TestimonialsCarousel() {
   };
 
   return (
-    <section className="py-20 bg-harrier-medium-green">
+    <section className="py-20 bg-harrier-light-green pattern-bg">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            What Trail Runners Are Saying
+          <h2 className="brand-title text-white mb-6">
+            WHAT OUR RUNNERS SAY
           </h2>
-          <p className="text-xl text-white/90">
-            Real feedback from runners who've used our guide
+          <p className="brand-body text-white/95 max-w-2xl mx-auto">
+            REAL FEEDBACK FROM RUNNERS WHO'VE USED OUR GUIDE
           </p>
         </div>
         
         <div className="max-w-4xl mx-auto relative">
-          <div className="testimonial-card bg-harrier-dark-green border-harrier-light-green text-center animate-scale-in">
+          <div className="bg-white rounded-xl p-8 shadow-xl text-center animate-scale-in">
             {/* Stars */}
             <div className="flex justify-center mb-6">
               {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
@@ -81,16 +81,16 @@ export function TestimonialsCarousel() {
             </div>
             
             {/* Quote */}
-            <blockquote className="text-2xl md:text-3xl text-white font-medium mb-8 leading-relaxed">
+            <blockquote className="brand-body text-harrier-dark-green text-xl md:text-2xl mb-8 leading-relaxed">
               "{testimonials[currentIndex].text}"
             </blockquote>
             
             {/* Author */}
-            <div className="text-harrier-mint">
-              <p className="font-semibold text-lg mb-1">
-                {testimonials[currentIndex].author}
+            <div className="text-harrier-dark-green">
+              <p className="brand-subtitle text-lg mb-1">
+                {testimonials[currentIndex].author.toUpperCase()}
               </p>
-              <p className="text-harrier-yellow">
+              <p className="brand-body text-harrier-medium-green">
                 {testimonials[currentIndex].location}
               </p>
             </div>

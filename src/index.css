@@ -121,25 +121,66 @@ All colors MUST be HSL.
     @apply font-bold tracking-wide;
   }
 
-  /* Brand Typography Classes per Brand Guidelines */
+  /* Brand Typography Classes per Brand Guidelines - EXACT COMPLIANCE */
   .brand-title {
     font-family: "Saira", sans-serif;
-    font-weight: 700;
+    font-weight: 800; /* Extra bold for headers */
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.15em; /* 150 spacing */
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.1;
   }
 
   .brand-subtitle {
     font-family: "Comfortaa", sans-serif;
-    font-weight: 700;
+    font-weight: 700; /* Bold for subtitles */
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.15em; /* 150 spacing */
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    line-height: 1.2;
   }
 
   .brand-body {
     font-family: "Comfortaa", sans-serif;
-    font-weight: 400;
-    letter-spacing: 0.05em;
+    font-weight: 500; /* Medium weight for better readability */
+    letter-spacing: 0.05em; /* 50 spacing */
+    font-size: clamp(1rem, 1.5vw, 1.125rem);
+    line-height: 1.6;
+  }
+
+  /* Yellow highlight boxes - brand compliance */
+  .yellow-highlight {
+    background: hsl(var(--harrier-yellow));
+    color: hsl(var(--harrier-dark-green));
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    border: 2px solid hsl(var(--harrier-yellow));
+    box-shadow: 0 4px 12px hsl(var(--harrier-yellow) / 0.3);
+  }
+
+  /* Pattern backgrounds - mandatory for green sections */
+  .pattern-bg {
+    position: relative;
+  }
+
+  .pattern-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/src/assets/topographic-pattern.png');
+    background-size: 600px;
+    background-repeat: repeat;
+    opacity: 0.15;
+    z-index: 0;
+  }
+
+  .pattern-bg > * {
+    position: relative;
+    z-index: 1;
   }
 
   .brand-condensed {

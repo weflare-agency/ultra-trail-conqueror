@@ -23,28 +23,25 @@ export function FinalCTA({ onEmailSubmit }: FinalCTAProps) {
   };
 
   return (
-    <section className="py-20 bg-hero-gradient text-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 hero-pattern" />
-      
+    <section className="py-20 bg-harrier-medium-green pattern-bg text-white relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Urgency Message */}
           <div className="mb-8 animate-fade-in">
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6">
               <Users className="w-5 h-5 mr-2" />
-              <span className="font-medium">
-                Join 15,000+ runners who've downloaded this week
+              <span className="brand-body">
+                JOIN 15,000+ RUNNERS WHO'VE DOWNLOADED THIS WEEK
               </span>
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Ready to Start Your<br />
-              <span className="text-harrier-yellow">Ultra Journey?</span>
+            <h2 className="brand-title mb-6">
+              READY TO START YOUR<br />
+              <span className="text-harrier-yellow">ULTRA JOURNEY?</span>
             </h2>
             
-            <p className="text-xl text-white/90 mb-8">
-              Get your free guide and take the first step towards completing your first ultra marathon
+            <p className="brand-body text-white/95 mb-8">
+              GET YOUR FREE GUIDE AND TAKE THE FIRST STEP TOWARDS COMPLETING YOUR FIRST ULTRA MARATHON
             </p>
           </div>
           
@@ -84,11 +81,10 @@ export function FinalCTA({ onEmailSubmit }: FinalCTAProps) {
               <Button 
                 type="submit" 
                 size="lg" 
-                variant="cta"
-                className="w-full text-lg font-bold h-14"
+                className="w-full text-lg cta-button brand-body h-14"
                 disabled={isLoading}
               >
-                {isLoading ? "Sending..." : "Send My Free Guide Now"}
+                {isLoading ? "sending..." : "send my free guide now"}
               </Button>
             </form>
           </div>
