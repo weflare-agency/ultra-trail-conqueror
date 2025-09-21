@@ -1,127 +1,299 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import heroImage from "@/assets/hero-trail-runners.jpg";
+import { ChevronDown, Users, Shield, Clock, CheckCircle, Star, Play, TrendingUp } from "lucide-react";
+import heroRunner1 from "@/assets/runner-action-1.jpg";
+import heroRunner2 from "@/assets/runner-action-2.jpg";
+import heroRunner3 from "@/assets/runner-action-3.jpg";
+import diverseRunner from "@/assets/harrier-diverse-runner.jpg";
 
 interface HeroSectionProps {
   onEmailSubmit: (email: string, firstName: string) => void;
 }
 
+const heroImages = [heroRunner1, heroRunner2, heroRunner3, diverseRunner];
+
+const socialProofMessages = [
+  { name: "Sarah from Manchester", action: "just downloaded the guide", time: "2 min ago" },
+  { name: "Mike from Edinburgh", action: "completed his first ultra", time: "5 min ago" },
+  { name: "Emma from Bristol", action: "started the 12-week plan", time: "8 min ago" },
+  { name: "James from Cardiff", action: "joined the community", time: "12 min ago" },
+  { name: "Lisa from Newcastle", action: "downloaded bonus materials", time: "15 min ago" }
+];
+
+const compellingHeadlines = [
+  { main: "Transform Your", sub: "Ultra Running Journey" },
+  { main: "Master Every", sub: "Mile of Your Ultra" },
+  { main: "Conquer Your", sub: "First Ultra Marathon" },
+  { main: "Dominate The", sub: "Trail Like a Pro" }
+];
+
 export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
-  const [currentHeadline, setCurrentHeadline] = useState("Master");
+  const [currentHeadlineIndex, setCurrentHeadlineIndex] = useState(0);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
+  const [showSocialProof, setShowSocialProof] = useState(false);
+  const [currentProofIndex, setCurrentProofIndex] = useState(0);
+  const [formStep, setFormStep] = useState(1);
+  const [downloadCount, setDownloadCount] = useState(15247);
 
+  // Cycle between compelling headlines
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentHeadline(prev => prev === "Master" ? "Conquer" : "Master");
-    }, 3000);
+      setCurrentHeadlineIndex(prev => (prev + 1) % compellingHeadlines.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
+  // Cycle through hero images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex(prev => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Show social proof notifications
+  useEffect(() => {
+    const showProof = () => {
+      setCurrentProofIndex(prev => (prev + 1) % socialProofMessages.length);
+      setShowSocialProof(true);
+      setTimeout(() => setShowSocialProof(false), 5000);
+      // Increment download counter occasionally
+      if (Math.random() > 0.7) {
+        setDownloadCount(prev => prev + 1);
+      }
+    };
+
+    const interval = setInterval(showProof, 12000);
+    setTimeout(showProof, 4000); // First notification after 4 seconds
     return () => clearInterval(interval);
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !firstName) return;
     
+    if (formStep === 1) {
+      if (!email.trim()) return;
+      setFormStep(2);
+      return;
+    }
+    
+    if (!firstName.trim()) return;
+
     setIsLoading(true);
     await onEmailSubmit(email, firstName);
     setIsLoading(false);
   };
 
+  const currentImage = heroImages[currentImageIndex];
+  const currentHeadline = compellingHeadlines[currentHeadlineIndex];
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ 
-          backgroundImage: `linear-gradient(135deg, rgba(23, 98, 80, 0.85) 0%, rgba(30, 140, 115, 0.75) 100%), url(${heroImage})` 
-        }}
-      />
-      
-      {/* Topographic Pattern Overlay */}
-      <div className="absolute inset-0 hero-pattern" />
-      
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center">
-        <div className="max-w-4xl mx-auto animate-fade-in">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            <span className="transition-all duration-500 ease-in-out">
-              {currentHeadline}
-            </span>{" "}
-            Ultra Running:<br />
-            <span className="text-harrier-yellow">From First Steps to Finish Line</span>
-          </h1>
-          
-          {/* Subheadline */}
-          <p className="text-xl md:text-2xl text-white/90 mb-4 font-medium">
-            Everything You Need to Train, Gear Up & Finish Strong
-          </p>
-          
-          {/* Value Proposition */}
-          <p className="text-lg md:text-xl text-white/80 mb-8">
-            Free 96-page guide trusted by <span className="text-harrier-yellow font-bold">15,000+ UK trail runners</span>
-          </p>
-          
-          {/* Email Capture Form */}
-          <div className="max-w-md mx-auto bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl animate-scale-in">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="text-left">
-                <Label htmlFor="firstName" className="text-harrier-dark-green font-medium">
-                  First Name
-                </Label>
-                <Input
-                  id="firstName"
-                  type="text"
-                  placeholder="Enter your first name"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  className="mt-1 text-base h-12 border-harrier-light-green focus:ring-harrier-medium-green"
-                  required
-                />
+    <>
+      {/* Live Social Proof Notifications */}
+      {showSocialProof && (
+        <div className="social-proof-notification">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center">
+              <CheckCircle className="w-4 h-4 text-white" />
+            </div>
+            <div>
+              <div className="font-semibold text-sm text-gray-800">
+                {socialProofMessages[currentProofIndex].name}
               </div>
-              
-              <div className="text-left">
-                <Label htmlFor="email" className="text-harrier-dark-green font-medium">
-                  Email Address
-                </Label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="Enter your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="mt-1 text-base h-12 border-harrier-light-green focus:ring-harrier-medium-green"
-                  required
-                />
+              <div className="text-xs text-gray-600">
+                {socialProofMessages[currentProofIndex].action} • {socialProofMessages[currentProofIndex].time}
               </div>
-              
-              <Button 
-                type="submit" 
-                size="lg" 
-                variant="cta"
-                className="w-full text-lg font-bold h-14"
-                disabled={isLoading}
-              >
-                {isLoading ? "Sending..." : "Get My Free Ultra Guide"}
-              </Button>
-              
-              <p className="text-xs text-harrier-dark-gray text-center">
-                🔒 SSL Secure • No spam guarantee • Instant access
-              </p>
-            </form>
+            </div>
           </div>
         </div>
-      </div>
-      
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border border-white/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/70 rounded-full mt-2 animate-pulse"></div>
+      )}
+
+      <section 
+        className="hero-cycling-bg min-h-screen flex items-center justify-center relative overflow-hidden"
+        style={{ backgroundImage: `url(${currentImage})` }}
+      >
+        <div className="hero-content container mx-auto px-4 py-12">
+          {/* Urgency Banner */}
+          <div className="text-center mb-6">
+            <div className="urgency-banner inline-flex items-center gap-2 text-white text-sm font-bold px-4 py-2">
+              <TrendingUp className="w-4 h-4" />
+              LIMITED: Complete Ultra System + Bonus Materials FREE
+            </div>
+          </div>
+
+          <div className="max-w-5xl mx-auto text-center">
+            {/* Dynamic Main Headline */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
+              <span className="transition-all duration-700 ease-in-out block">
+                {currentHeadline.main}
+              </span>
+              <span className="block mt-2 text-yellow-400 text-3xl md:text-5xl lg:text-6xl">
+                {currentHeadline.sub}
+              </span>
+            </h1>
+
+            {/* Problem-Solution Subheadline */}
+            <p className="text-xl md:text-2xl text-white/95 mb-3 max-w-4xl mx-auto font-medium">
+              Stop guessing, start succeeding. The complete system that's helped 15,000+ runners 
+              cross the ultra finish line strong.
+            </p>
+
+            {/* Social Proof Counter */}
+            <div className="mb-8">
+              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-white">
+                <Users className="w-4 h-4 text-yellow-400" />
+                <span className="font-semibold">{downloadCount.toLocaleString()}+ runners</span>
+                <span>have downloaded this guide</span>
+              </div>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
+              {/* Left Column - Value Props */}
+              <div className="text-left space-y-6">
+                <div className="space-y-4">
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-yellow-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">No More Training Guesswork</h3>
+                      <p className="text-white/80">Proven 12-week progressive plans for every fitness level</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-yellow-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">Avoid Costly Mistakes</h3>
+                      <p className="text-white/80">Learn from 100+ ultra finishers' hard-earned wisdom</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-yellow-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">Finish Strong, Not Broken</h3>
+                      <p className="text-white/80">Injury prevention strategies that actually work</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Video Testimonial */}
+                <div className="max-w-sm">
+                  <div className="video-overlay aspect-video flex items-center justify-center cursor-pointer">
+                    <div className="play-button">
+                      <Play className="w-8 h-8 text-green-700 ml-1" />
+                    </div>
+                  </div>
+                  <p className="text-white/90 text-sm mt-2 font-medium">
+                    "This guide literally changed my ultra game" - Sarah M., Ultra Finisher
+                  </p>
+                </div>
+              </div>
+
+              {/* Right Column - Conversion Form */}
+              <div className="lg:max-w-md mx-auto w-full">
+                <div className="conversion-form p-8">
+                  <div className="text-center mb-6">
+                    <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                      Get Your Complete Ultra System
+                    </h3>
+                    <p className="text-gray-600 font-medium">
+                      96 pages + bonus materials • 100% FREE
+                    </p>
+                    
+                    {/* Progress Steps */}
+                    <div className="flex justify-center gap-2 mt-4 mb-6">
+                      <div className={`progress-step ${formStep >= 1 ? 'active' : ''}`}>1</div>
+                      <div className="w-8 h-0.5 bg-gray-300 self-center"></div>
+                      <div className={`progress-step ${formStep >= 2 ? 'active' : ''}`}>2</div>
+                      <div className="w-8 h-0.5 bg-gray-300 self-center"></div>
+                      <div className={`progress-step ${formStep >= 3 ? 'completed' : ''}`}>✓</div>
+                    </div>
+                  </div>
+
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    {formStep === 1 && (
+                      <div>
+                        <Input
+                          type="email"
+                          placeholder="Enter your email address"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          className="conversion-input h-14 text-base"
+                          required
+                        />
+                        <p className="text-xs text-gray-500 mt-2">
+                          Step 1 of 2 • We'll never spam you
+                        </p>
+                      </div>
+                    )}
+
+                    {formStep === 2 && (
+                      <div>
+                        <Input
+                          type="text"
+                          placeholder="What's your first name?"
+                          value={firstName}
+                          onChange={(e) => setFirstName(e.target.value)}
+                          className="conversion-input h-14 text-base"
+                          required
+                        />
+                        <p className="text-xs text-gray-500 mt-2">
+                          Just so we can personalize your guide
+                        </p>
+                      </div>
+                    )}
+
+                    <Button 
+                      type="submit" 
+                      className="cta-button w-full h-14 text-lg font-bold"
+                      disabled={isLoading}
+                    >
+                      {isLoading ? (
+                        <div className="flex items-center gap-2">
+                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                          Preparing Your Guide...
+                        </div>
+                      ) : formStep === 1 ? (
+                        "Continue to Step 2 →"
+                      ) : (
+                        "Send My Free Ultra System →"
+                      )}
+                    </Button>
+                  </form>
+
+                  {/* Enhanced Trust Indicators */}
+                  <div className="grid grid-cols-3 gap-4 mt-6 text-center">
+                    <div className="flex flex-col items-center gap-1">
+                      <Shield className="w-5 h-5 text-green-600" />
+                      <span className="text-xs text-gray-600 font-medium">SSL Secure</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-1">
+                      <Clock className="w-5 h-5 text-green-600" />
+                      <span className="text-xs text-gray-600 font-medium">Instant Access</span>
+                    </div>
+                    <div className="flex flex-col items-center gap-1">
+                      <Star className="w-5 h-5 text-green-600" />
+                      <span className="text-xs text-gray-600 font-medium">5-Star Rated</span>
+                    </div>
+                  </div>
+
+                  <p className="text-center text-xs text-gray-500 mt-4">
+                    By downloading, you agree to receive helpful ultra running tips. 
+                    Unsubscribe anytime.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <ChevronDown className="w-8 h-8 text-white/70" />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

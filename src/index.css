@@ -128,43 +128,226 @@ All colors MUST be HSL.
     opacity: 0.1;
   }
 
+  /* Advanced CRO-focused button styles */
   .cta-button {
     @apply bg-accent text-accent-foreground hover:shadow-lg;
     background: var(--gradient-cta);
     box-shadow: var(--shadow-yellow);
     transition: var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s;
+  }
+
+  .cta-button:hover::before {
+    left: 100%;
   }
 
   .cta-button:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 12px 40px hsl(var(--harrier-yellow) / 0.4);
+  }
+
+  .cta-button:active {
+    transform: translateY(-1px) scale(1);
+  }
+
+  /* Hero cycling backgrounds */
+  .hero-cycling-bg {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    transition: background-image 2s ease-in-out;
+    position: relative;
+  }
+
+  .hero-cycling-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+      rgba(175, 85%, 18%, 0.7) 0%, 
+      rgba(175, 75%, 28%, 0.5) 50%, 
+      rgba(175, 65%, 38%, 0.3) 100%);
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Live social proof notifications */
+  .social-proof-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: hsl(var(--harrier-white));
+    border: 1px solid hsl(var(--harrier-light-green));
+    border-radius: 8px;
+    padding: 12px 16px;
+    box-shadow: var(--shadow-medium);
+    animation: slideInNotification 0.5s ease-out, fadeOutNotification 0.5s ease-out 4.5s;
+  }
+
+  /* Conversion-optimized form styles */
+  .conversion-form {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: var(--shadow-medium);
+  }
+
+  .conversion-input {
+    border: 2px solid hsl(var(--harrier-light-green) / 0.3);
+    transition: var(--transition-smooth);
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  .conversion-input:focus {
+    border-color: hsl(var(--harrier-medium-green));
+    box-shadow: 0 0 0 4px hsl(var(--harrier-medium-green) / 0.1);
+    background: rgba(255, 255, 255, 1);
+  }
+
+  /* Video overlay styles */
+  .video-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    transition: var(--transition-smooth);
+    border-radius: 12px;
+  }
+
+  .video-overlay:hover {
+    background: rgba(0, 0, 0, 0.4);
+  }
+
+  .play-button {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-medium);
+  }
+
+  .play-button:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
     box-shadow: var(--shadow-strong);
   }
 
+  /* Enhanced trust badges */
   .trust-badge {
     @apply bg-card border border-border rounded-lg p-4 text-center;
     box-shadow: var(--shadow-soft);
     transition: var(--transition-fast);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
   }
 
   .trust-badge:hover {
     box-shadow: var(--shadow-medium);
-    transform: translateY(-1px);
+    transform: translateY(-2px) scale(1.02);
   }
 
+  /* Enhanced feature cards */
   .feature-card {
     @apply border border-border rounded-xl p-6;
     box-shadow: var(--shadow-soft);
     transition: var(--transition-smooth);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
   }
 
   .feature-card:hover {
     box-shadow: var(--shadow-medium);
-    transform: translateY(-4px);
+    transform: translateY(-6px);
+    border-color: hsl(var(--harrier-medium-green));
   }
 
+  /* Enhanced testimonials */
   .testimonial-card {
     @apply border border-border rounded-lg p-6;
     box-shadow: var(--shadow-soft);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    transition: var(--transition-smooth);
+  }
+
+  .testimonial-card:hover {
+    box-shadow: var(--shadow-medium);
+    transform: translateY(-4px);
+    border-color: hsl(var(--harrier-medium-green));
+  }
+
+  /* Progress indicators */
+  .progress-step {
+    transition: var(--transition-fast);
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: hsl(var(--harrier-light-gray));
+    color: hsl(var(--harrier-dark-gray));
+    font-weight: 600;
+  }
+
+  .progress-step.active {
+    background: hsl(var(--harrier-medium-green));
+    color: hsl(var(--harrier-white));
+    transform: scale(1.1);
+  }
+
+  .progress-step.completed {
+    background: hsl(var(--harrier-yellow));
+    color: hsl(var(--harrier-dark-green));
+    transform: scale(1.05);
+  }
+
+  /* Urgency elements */
+  .urgency-banner {
+    background: var(--gradient-hero);
+    animation: pulseGlow 3s infinite;
+    border-radius: 8px;
+    padding: 8px 16px;
+  }
+
+  /* Sticky mobile CTA */
+  .sticky-mobile-cta {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border-top: 1px solid hsl(var(--harrier-light-green) / 0.3);
+    padding: 12px 16px;
+    box-shadow: 0 -4px 20px hsl(var(--harrier-dark-green) / 0.1);
   }
 
   .animate-fade-in {
@@ -177,6 +360,10 @@ All colors MUST be HSL.
 
   .animate-scale-in {
     animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  .animate-bounce-in {
+    animation: bounceIn 0.8s ease-out forwards;
   }
 }
 
@@ -227,5 +414,52 @@ All colors MUST be HSL.
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInNotification {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutNotification {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px hsl(var(--harrier-medium-green) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px hsl(var(--harrier-medium-green) / 0.6);
   }
 }
