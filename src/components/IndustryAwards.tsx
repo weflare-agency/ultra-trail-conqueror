@@ -1,32 +1,37 @@
 import { Star } from "lucide-react";
+import guardianAward from "@/assets/award-guardian.png";
+import runnersWorldAward from "@/assets/award-runners-world.png";
+import outdoorsMagicAward from "@/assets/award-outdoors-magic.png";
+import womensRunningAward from "@/assets/award-womens-running-2024.png";
+import nationalRunningAward from "@/assets/award-national-running.png";
 
 const awards = [
   {
-    image: "/src/assets/award-guardian.png",
+    image: guardianAward,
     title: "GEAR OF THE YEAR",
     year: "2024",
     organization: "The Guardian"
   },
   {
-    image: "/src/assets/award-runners-world.png",
+    image: runnersWorldAward,
     title: "EDITOR'S CHOICE",
     year: "2024", 
     organization: "Runner's World"
   },
   {
-    image: "/src/assets/award-outdoors-magic.png",
+    image: outdoorsMagicAward,
     title: "GEAR AWARD",
     year: "2024",
     organization: "Outdoors Magic"
   },
   {
-    image: "/src/assets/award-womens-running-2024.png",
+    image: womensRunningAward,
     title: "PRODUCT OF THE YEAR",
     year: "2024",
     organization: "Women's Running"
   },
   {
-    image: "/src/assets/award-national-running.png",
+    image: nationalRunningAward,
     title: "RECOMMENDED",
     year: "2024",
     organization: "National Running Show"

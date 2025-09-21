@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const testimonials = [
   {
-    text: "Full of great advice for those looking to take on the ultra",
+    text: "Full of great advice and information for those, like myself, looking to take on the ultra",
     author: "Arlene M",
     rating: 5,
     location: "Yorkshire"

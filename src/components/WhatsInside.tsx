@@ -1,35 +1,37 @@
 import { MapPin, Calendar, Backpack, Apple, Brain, Users } from "lucide-react";
+import hydrationIcon1 from "@/assets/hydration-icon-1.svg";
+import hydrationIcon2 from "@/assets/hydration-icon-2.svg";
 
 const features = [
   {
     icon: MapPin,
-    title: "Choosing Your First Ultra",
-    description: "Expert guidance on selecting the perfect ultra marathon for your experience level and goals."
+    title: "Choosing Your Ultra",
+    description: "Goal setting and motivation - find the perfect ultra for your experience level."
   },
   {
     icon: Calendar,
-    title: "Training Plans & Schedules",
-    description: "Comprehensive training programs designed by experienced ultra runners and coaches."
+    title: "Essential Checklists",
+    description: "Kit, fuelling, and race day prep - everything you need to succeed."
   },
   {
     icon: Backpack,
-    title: "Essential Gear Checklists",
-    description: "Complete equipment lists for different ultra distances and terrain types."
+    title: "Expert Gear Guidance", 
+    description: "What to carry (and what not to) - pro tips for ultra running equipment."
   },
   {
-    icon: Apple,
-    title: "Nutrition & Fueling Strategies",
-    description: "Proven nutrition protocols to keep you energized throughout your ultra journey."
+    customIcon: hydrationIcon1,
+    title: "Mental Strategies",
+    description: "Decision making and pushing through the tough miles - psychological techniques that work."
   },
   {
     icon: Brain,
-    title: "Mental Strategies",
-    description: "Psychological techniques to overcome the toughest miles and push through barriers."
+    title: "Proven Training Methods",
+    description: "Build endurance and prevent injury with tried-and-tested training approaches."
   },
   {
-    icon: Users,
-    title: "Pro Insights & Tips",
-    description: "Exclusive advice from experienced ultra runners who've completed 100+ mile events."
+    customIcon: hydrationIcon2,
+    title: "Pro Insights",
+    description: "From ultra runners who've been there, done it, and gone back for more."
   }
 ];
 
@@ -54,7 +56,11 @@ export function WhatsInside() {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="bg-harrier-yellow w-16 h-16 rounded-full flex items-center justify-center mb-6 mx-auto shadow-lg">
-                <feature.icon className="w-8 h-8 text-harrier-dark-green" />
+                {feature.customIcon ? (
+                  <img src={feature.customIcon} alt="" className="w-8 h-8" />
+                ) : (
+                  <feature.icon className="w-8 h-8 text-harrier-dark-green" />
+                )}
               </div>
               
               <h3 className="brand-subtitle text-harrier-dark-green mb-4 text-center text-lg">

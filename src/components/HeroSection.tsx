@@ -41,10 +41,15 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
   return (
     <section 
       id="hero-form"
-      className="relative min-h-screen flex items-center justify-center py-20 hero-cycling-bg"
-      style={{ backgroundImage: `url(${heroImages[currentImageIndex]})` }}
+      className="relative min-h-screen flex items-center justify-center py-20"
+      style={{ 
+        backgroundImage: `url(${heroImage1})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
     >
-      <div className="absolute inset-0 bg-harrier-dark-green/40"></div>
+      <div className="absolute inset-0 bg-harrier-dark-green/15"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -52,14 +57,14 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
           {/* Left Column - Content */}
           <div className="text-center lg:text-left">
             {/* Main Headline */}
-            <h1 className="brand-title text-white mb-6 animate-fade-in">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 animate-fade-in leading-tight tracking-wider drop-shadow-lg">
               DOWNLOAD YOUR FREE<br />
               <span className="text-harrier-yellow">HOW TO RUN AN ULTRA</span><br />
               GUIDE
             </h1>
             
             {/* Subheading */}
-            <h2 className="brand-subtitle text-white/95 mb-8 animate-fade-in">
+            <h2 className="text-2xl md:text-3xl font-bold text-white/95 mb-8 animate-fade-in tracking-wide drop-shadow-md">
               EVERYTHING YOU NEED TO TRAIN, GEAR UP & FINISH STRONG
             </h2>
             
