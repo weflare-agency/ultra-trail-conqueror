@@ -37,7 +37,7 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ 
-          backgroundImage: `linear-gradient(135deg, rgba(14, 70, 73, 0.7) 0%, rgba(19, 142, 128, 0.6) 100%), url(${heroImage})` 
+          backgroundImage: `linear-gradient(135deg, rgba(23, 98, 80, 0.85) 0%, rgba(30, 140, 115, 0.75) 100%), url(${heroImage})` 
         }}
       />
       
@@ -47,7 +47,6 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto animate-fade-in">
-          {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
             <span className="transition-all duration-500 ease-in-out">
               {currentHeadline}
@@ -70,7 +69,7 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
           <div className="max-w-md mx-auto bg-white/95 backdrop-blur-sm rounded-2xl p-6 shadow-2xl animate-scale-in">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="text-left">
-                <Label htmlFor="firstName" className="text-harrier-dark-teal font-medium">
+                <Label htmlFor="firstName" className="text-harrier-dark-green font-medium">
                   First Name
                 </Label>
                 <Input
@@ -79,13 +78,13 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
                   placeholder="Enter your first name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
-                  className="mt-1 text-base h-12"
+                  className="mt-1 text-base h-12 border-harrier-light-green focus:ring-harrier-medium-green"
                   required
                 />
               </div>
               
               <div className="text-left">
-                <Label htmlFor="email" className="text-harrier-dark-teal font-medium">
+                <Label htmlFor="email" className="text-harrier-dark-green font-medium">
                   Email Address
                 </Label>
                 <Input
@@ -94,7 +93,7 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
                   placeholder="Enter your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="mt-1 text-base h-12"
+                  className="mt-1 text-base h-12 border-harrier-light-green focus:ring-harrier-medium-green"
                   required
                 />
               </div>

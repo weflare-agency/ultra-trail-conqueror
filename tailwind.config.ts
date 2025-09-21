@@ -48,9 +48,10 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         harrier: {
-          'dark-teal': "hsl(var(--harrier-dark-teal))",
-          'medium-teal': "hsl(var(--harrier-medium-teal))",
-          'light-teal': "hsl(var(--harrier-light-teal))",
+          'dark-green': "hsl(var(--harrier-dark-green))",
+          'medium-green': "hsl(var(--harrier-medium-green))",
+          'light-green': "hsl(var(--harrier-light-green))",
+          'mint': "hsl(var(--harrier-mint))",
           'yellow': "hsl(var(--harrier-yellow))",
           'white': "hsl(var(--harrier-white))",
           'dark-gray': "hsl(var(--harrier-dark-gray))",

@@ -35,13 +35,13 @@ const features = [
 
 export function WhatsInside() {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-harrier-light-green">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-harrier-dark-teal mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             What's Inside Your Free Guide
           </h2>
-          <p className="text-xl text-harrier-dark-gray max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 max-w-2xl mx-auto">
             96 pages of comprehensive ultra running knowledge, from beginner basics to advanced strategies
           </p>
         </div>
@@ -50,18 +50,18 @@ export function WhatsInside() {
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="feature-card animate-slide-up"
+              className="feature-card bg-harrier-dark-green border-harrier-medium-green animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-harrier-light-teal/20 rounded-xl flex items-center justify-center mr-4">
-                  <feature.icon className="w-6 h-6 text-harrier-medium-teal" />
+                <div className="w-12 h-12 bg-harrier-yellow/20 rounded-xl flex items-center justify-center mr-4">
+                  <feature.icon className="w-6 h-6 text-harrier-yellow" />
                 </div>
-                <h3 className="text-xl font-bold text-harrier-dark-teal">
+                <h3 className="text-xl font-bold text-white">
                   {feature.title}
                 </h3>
               </div>
-              <p className="text-harrier-dark-gray leading-relaxed">
+              <p className="text-harrier-mint leading-relaxed">
                 {feature.description}
               </p>
             </div>
@@ -70,7 +70,7 @@ export function WhatsInside() {
         
         {/* Bottom CTA */}
         <div className="text-center mt-16">
-          <p className="text-lg text-harrier-dark-gray mb-6">
+          <p className="text-lg text-white/90 mb-6">
             Ready to start your ultra running journey?
           </p>
           <a 

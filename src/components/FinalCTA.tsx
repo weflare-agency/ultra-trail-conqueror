@@ -52,7 +52,7 @@ export function FinalCTA({ onEmailSubmit }: FinalCTAProps) {
           <div className="max-w-md mx-auto bg-white/95 backdrop-blur-sm rounded-2xl p-6 mb-8 animate-scale-in">
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="text-left">
-                <Label htmlFor="finalFirstName" className="text-harrier-dark-teal font-medium">
+                <Label htmlFor="finalFirstName" className="text-harrier-dark-green font-medium">
                   First Name
                 </Label>
                 <Input
@@ -61,13 +61,13 @@ export function FinalCTA({ onEmailSubmit }: FinalCTAProps) {
                   placeholder="Enter your first name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
-                  className="mt-1 text-base h-12"
+                  className="mt-1 text-base h-12 border-harrier-light-green focus:ring-harrier-medium-green"
                   required
                 />
               </div>
               
               <div className="text-left">
-                <Label htmlFor="finalEmail" className="text-harrier-dark-teal font-medium">
+                <Label htmlFor="finalEmail" className="text-harrier-dark-green font-medium">
                   Email Address
                 </Label>
                 <Input
@@ -76,7 +76,7 @@ export function FinalCTA({ onEmailSubmit }: FinalCTAProps) {
                   placeholder="Enter your email address"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="mt-1 text-base h-12"
+                  className="mt-1 text-base h-12 border-harrier-light-green focus:ring-harrier-medium-green"
                   required
                 />
               </div>

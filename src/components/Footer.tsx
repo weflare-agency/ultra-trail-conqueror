@@ -3,7 +3,7 @@ import harrierLogo from "@/assets/harrier-logo.png";
 
 export function Footer() {
   return (
-    <footer className="bg-harrier-dark-teal text-white py-16">
+    <footer className="bg-harrier-dark-green text-white py-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Logo and Description */}
@@ -16,7 +16,7 @@ export function Footer() {
               />
               <div>
                 <h3 className="text-xl font-bold">HARRIER</h3>
-                <p className="text-harrier-light-teal text-sm tracking-wider">TRAIL RUNNING</p>
+                <p className="text-harrier-mint text-sm tracking-wider">TRAIL RUNNING</p>
               </div>
             </div>
             <p className="text-white/80 leading-relaxed max-w-md">

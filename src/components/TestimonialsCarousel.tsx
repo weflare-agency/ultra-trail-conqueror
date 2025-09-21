@@ -60,19 +60,19 @@ export function TestimonialsCarousel() {
   };
 
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-harrier-medium-green">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-harrier-dark-teal mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             What Trail Runners Are Saying
           </h2>
-          <p className="text-xl text-harrier-dark-gray">
+          <p className="text-xl text-white/90">
             Real feedback from runners who've used our guide
           </p>
         </div>
         
         <div className="max-w-4xl mx-auto relative">
-          <div className="testimonial-card text-center animate-scale-in">
+          <div className="testimonial-card bg-harrier-dark-green border-harrier-light-green text-center animate-scale-in">
             {/* Stars */}
             <div className="flex justify-center mb-6">
               {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
@@ -81,16 +81,16 @@ export function TestimonialsCarousel() {
             </div>
             
             {/* Quote */}
-            <blockquote className="text-2xl md:text-3xl text-harrier-dark-teal font-medium mb-8 leading-relaxed">
+            <blockquote className="text-2xl md:text-3xl text-white font-medium mb-8 leading-relaxed">
               "{testimonials[currentIndex].text}"
             </blockquote>
             
             {/* Author */}
-            <div className="text-harrier-dark-gray">
+            <div className="text-harrier-mint">
               <p className="font-semibold text-lg mb-1">
                 {testimonials[currentIndex].author}
               </p>
-              <p className="text-harrier-medium-teal">
+              <p className="text-harrier-yellow">
                 {testimonials[currentIndex].location}
               </p>
             </div>
@@ -102,7 +102,7 @@ export function TestimonialsCarousel() {
               variant="outline"
               size="icon"
               onClick={prevTestimonial}
-              className="rounded-full border-harrier-light-teal text-harrier-medium-teal hover:bg-harrier-light-teal hover:text-white"
+              className="rounded-full border-harrier-light-green text-harrier-yellow hover:bg-harrier-light-green hover:text-white bg-harrier-dark-green"
             >
               <ChevronLeft className="w-4 h-4" />
             </Button>
@@ -118,8 +118,8 @@ export function TestimonialsCarousel() {
                   }}
                   className={`w-3 h-3 rounded-full transition-all duration-300 ${
                     index === currentIndex 
-                      ? 'bg-harrier-medium-teal scale-125' 
-                      : 'bg-harrier-light-gray hover:bg-harrier-light-teal'
+                      ? 'bg-harrier-yellow scale-125' 
+                      : 'bg-harrier-light-green hover:bg-harrier-yellow'
                   }`}
                 />
               ))}
@@ -129,7 +129,7 @@ export function TestimonialsCarousel() {
               variant="outline"
               size="icon"
               onClick={nextTestimonial}
-              className="rounded-full border-harrier-light-teal text-harrier-medium-teal hover:bg-harrier-light-teal hover:text-white"
+              className="rounded-full border-harrier-light-green text-harrier-yellow hover:bg-harrier-light-green hover:text-white bg-harrier-dark-green"
             >
               <ChevronRight className="w-4 h-4" />
             </Button>

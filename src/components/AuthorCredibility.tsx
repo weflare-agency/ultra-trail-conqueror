@@ -20,13 +20,13 @@ const authors = [
 
 export function AuthorCredibility() {
   return (
-    <section className="py-20 bg-subtle-gradient">
+    <section className="py-20 bg-harrier-dark-green">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-harrier-dark-teal mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Written by Ultra Running Experts
           </h2>
-          <p className="text-xl text-harrier-dark-gray max-w-2xl mx-auto">
+          <p className="text-xl text-harrier-mint max-w-2xl mx-auto">
             Learn from professionals who've walked (and run) the path you're about to take
           </p>
         </div>
@@ -35,22 +35,22 @@ export function AuthorCredibility() {
           {authors.map((author, index) => (
             <div 
               key={index}
-              className="feature-card text-center animate-slide-up"
+              className="feature-card bg-harrier-medium-green border-harrier-light-green text-center animate-slide-up"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               <div className="mb-6">
                 <img
                   src={author.image}
                   alt={author.name}
-                  className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-harrier-light-teal shadow-lg"
+                  className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-harrier-yellow shadow-lg"
                 />
               </div>
               
-              <h3 className="text-2xl font-bold text-harrier-dark-teal mb-2">
+              <h3 className="text-2xl font-bold text-white mb-2">
                 {author.name}
               </h3>
               
-              <p className="text-harrier-medium-teal font-semibold mb-2">
+              <p className="text-harrier-yellow font-semibold mb-2">
                 {author.credentials}
               </p>
               
@@ -58,7 +58,7 @@ export function AuthorCredibility() {
                 {author.achievement}
               </p>
               
-              <p className="text-harrier-dark-gray leading-relaxed">
+              <p className="text-harrier-mint leading-relaxed">
                 {author.description}
               </p>
             </div>

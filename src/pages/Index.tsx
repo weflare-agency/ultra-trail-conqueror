@@ -5,6 +5,7 @@ import { TrustSignals } from "@/components/TrustSignals";
 import { WhatsInside } from "@/components/WhatsInside";
 import { AuthorCredibility } from "@/components/AuthorCredibility";
 import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
+import { IndustryAwards } from "@/components/IndustryAwards";
 import { OfferComparison } from "@/components/OfferComparison";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
@@ -80,6 +81,7 @@ const Index = () => {
       <WhatsInside />
       <AuthorCredibility />
       <TestimonialsCarousel />
+      <IndustryAwards />
       <OfferComparison />
       <FinalCTA onEmailSubmit={handleEmailSubmit} />
       <Footer />
