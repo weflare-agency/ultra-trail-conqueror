@@ -1,17 +1,10 @@
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
-import { TrustBar } from "@/components/TrustBar";
 import { HeroSection } from "@/components/HeroSection";
-import { TrustSignals } from "@/components/TrustSignals";
 import { WhatsInsideSimple } from "@/components/WhatsInsideSimple";
-import { ThreeTealBoxes } from "@/components/ThreeTealBoxes";
-import { FormSectionTeal } from "@/components/FormSectionTeal";
-import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
-import { IndustryAwards } from "@/components/IndustryAwards";
-import { AuthorCredibility } from "@/components/AuthorCredibility";
+import { SimpleTestimonials } from "@/components/SimpleTestimonials";
+import { FinalCTASimple } from "@/components/FinalCTASimple";
 import { Footer } from "@/components/Footer";
-import { ExitIntentPopup } from "@/components/ExitIntentPopup";
-import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 
 const Index = () => {
   const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -75,19 +68,11 @@ const Index = () => {
         })}
       </script>
 
-      <TrustBar />
       <HeroSection onEmailSubmit={handleEmailSubmit} />
-      <TrustSignals />
       <WhatsInsideSimple />
-      <ThreeTealBoxes />
-      <FormSectionTeal onEmailSubmit={handleEmailSubmit} />
-      <TestimonialsCarousel />
-      <IndustryAwards />
-      <AuthorCredibility />
+      <SimpleTestimonials />
+      <FinalCTASimple onEmailSubmit={handleEmailSubmit} />
       <Footer />
-      
-      {!hasSubmitted && <ExitIntentPopup onEmailSubmit={handleEmailSubmit} />}
-      <StickyMobileCTA onEmailSubmit={handleEmailSubmit} hasSubmitted={hasSubmitted} />
     </main>
   );
 };

@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import heroImage from "@/assets/hero-trail-runners.jpg";
 
-interface HeroSectionProps {
+interface FinalCTASimpleProps {
   onEmailSubmit: (email: string, firstName: string) => void;
 }
 
-export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
+export function FinalCTASimple({ onEmailSubmit }: FinalCTASimpleProps) {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -22,31 +21,17 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
   };
 
   return (
-    <section 
-      className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
-      style={{ backgroundImage: `url(${heroImage})` }}
-    >
-      <div className="absolute inset-0 bg-harrier-medium-green/80" />
-      
-      <div className="relative z-10 container mx-auto px-4 py-20">
-        <div className="max-w-2xl mx-auto text-center text-white">
-          <p className="text-lg font-medium mb-4 text-harrier-orange">
-            DOWNLOAD YOUR FREE 96 PAGE
+    <section className="py-16 bg-harrier-medium-green">
+      <div className="container mx-auto px-4">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="font-saira font-bold text-3xl md:text-4xl text-white mb-4">
+            GET YOUR FREE GUIDE
+          </h2>
+          <p className="text-xl text-white mb-8">
+            Join thousands of runners who've transformed their ultra game
           </p>
           
-          <h1 className="font-saira font-black text-6xl md:text-8xl mb-8 leading-tight">
-            HOW TO RUN AN ULTRA
-          </h1>
-          
-          <p className="text-xl mb-12 font-comfortaa">
-            The complete step-by-step guide that's helped thousands complete their first ultra
-          </p>
-
-          <div className="bg-white p-8 rounded-lg shadow-lg max-w-md mx-auto">
-            <h2 className="text-2xl font-bold text-harrier-dark-green mb-6">
-              FREE INSTANT ACCESS
-            </h2>
-            
+          <div className="bg-white p-8 rounded-lg shadow-lg">
             <form onSubmit={handleSubmit} className="space-y-4">
               <Input
                 type="text"
@@ -69,7 +54,7 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
                 disabled={isLoading}
                 className="w-full h-12 text-lg font-bold bg-harrier-orange hover:bg-harrier-orange/90"
               >
-                {isLoading ? "SENDING..." : "GET FREE GUIDE"}
+                {isLoading ? "SENDING..." : "DOWNLOAD NOW"}
               </Button>
             </form>
             
