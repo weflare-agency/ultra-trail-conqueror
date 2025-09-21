@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import heroImage from "@/assets/hero-trail-runners.jpg";
+import topographicPattern from "@/assets/topographic-pattern.png";
 
 interface CleanHeroProps {
   onEmailSubmit: (email: string, firstName: string) => void;
@@ -22,15 +22,16 @@ export function CleanHero({ onEmailSubmit }: CleanHeroProps) {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative">
-      {/* Background Image */}
+    <section className="min-h-screen flex items-center justify-center relative bg-primary">
+      {/* Topographic Pattern Background */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
+        className="absolute inset-0 opacity-10"
+        style={{ 
+          backgroundImage: `url(${topographicPattern})`,
+          backgroundSize: '400px 400px',
+          backgroundRepeat: 'repeat'
+        }}
       />
-      
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20">
@@ -44,7 +45,7 @@ export function CleanHero({ onEmailSubmit }: CleanHeroProps) {
               <span className="block">GUIDE</span>
             </h1>
             <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-              Created by passionate trail runners for trail runners
+              Everything You Need to Train, Gear Up & Finish Strong
             </p>
           </div>
 

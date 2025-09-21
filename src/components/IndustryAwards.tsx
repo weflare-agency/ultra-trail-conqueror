@@ -40,24 +40,20 @@ const awards = [
 
 export function IndustryAwards() {
   return (
-    <section className="py-20 bg-harrier-medium-green pattern-bg">
+    <section className="py-20 bg-primary">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="brand-title text-white mb-6">
-            INDUSTRY RECOGNITION
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            WHY HARRIER?
           </h2>
-          <p className="brand-body text-white/90 max-w-2xl mx-auto">
-            TRUSTED BY THE UK'S LEADING OUTDOOR & RUNNING PUBLICATIONS
+          <p className="text-lg text-white/90 max-w-2xl mx-auto">
+            We don't just win over trail runners - the gear nerds, kit testers, and industry experts rate us too.
           </p>
         </div>
         
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto mb-16">
           {awards.map((award, index) => (
-            <div 
-              key={index}
-              className="text-center animate-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
+            <div key={index} className="text-center">
               {/* Award Image */}
               <div className="relative mx-auto mb-4 w-24 h-24 md:w-32 md:h-32 bg-white rounded-xl p-3 shadow-lg">
                 <img 
@@ -66,39 +62,23 @@ export function IndustryAwards() {
                   className="w-full h-full object-contain"
                 />
                 {/* Year Badge */}
-                <div className="absolute -bottom-2 -right-2 bg-harrier-yellow text-harrier-dark-green text-xs font-bold px-2 py-1 rounded-full border-2 border-white">
+                <div className="absolute -bottom-2 -right-2 bg-accent text-white text-xs font-bold px-2 py-1 rounded-full border-2 border-white">
                   {award.year}
                 </div>
               </div>
               
-              <h3 className="brand-subtitle text-white text-sm md:text-base mb-1">
+              <h3 className="text-white text-sm md:text-base mb-1 font-semibold">
                 {award.title}
               </h3>
               
-              <p className="brand-body text-white/80 text-xs md:text-sm">
+              <p className="text-white/80 text-xs md:text-sm">
                 {award.organization}
               </p>
             </div>
           ))}
         </div>
         
-        {/* Free Access Highlight */}
-        <div className="text-center bg-white rounded-2xl p-8 max-w-2xl mx-auto shadow-xl">
-          <Star className="w-12 h-12 text-harrier-yellow mx-auto mb-4" />
-          <h3 className="brand-subtitle text-harrier-dark-green mb-4">
-            FREE INSTANT ACCESS
-          </h3>
-          <p className="brand-body text-harrier-dark-green/80 mb-6">
-            DOWNLOAD YOUR COMPLETE ULTRA RUNNING GUIDE AND START YOUR JOURNEY TODAY
-          </p>
-          <div className="flex flex-wrap justify-center items-center gap-4 text-sm md:text-base">
-            <div className="yellow-highlight">YOUR FIRST NAME</div>
-            <span className="text-harrier-dark-green font-bold">+</span>
-            <div className="yellow-highlight">YOUR EMAIL</div>
-            <span className="text-harrier-dark-green font-bold">=</span>
-            <div className="yellow-highlight">INSTANT GUIDE</div>
-          </div>
-        </div>
+        {/* Free Access Highlight - Removed for cleaner design */}
       </div>
     </section>
   );

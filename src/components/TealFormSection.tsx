@@ -21,18 +21,27 @@ export function TealFormSection({ onEmailSubmit }: TealFormSectionProps) {
   };
 
   return (
-    <section className="py-16 bg-primary">
-      <div className="container mx-auto px-4">
+    <section 
+      className="py-16 bg-primary relative"
+      style={{ 
+        backgroundImage: `url(/src/assets/topographic-pattern.png)`,
+        backgroundSize: '400px 400px',
+        backgroundRepeat: 'repeat'
+      }}
+    >
+      {/* Pattern overlay */}
+      <div className="absolute inset-0 bg-primary/90"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4">
             FREE INSTANT ACCESS
           </h2>
           <p className="text-lg text-white mb-8">
-            Drop your name and email below and we'll send you the guide immediately. 
-            No spam, just pure ultra running knowledge.
+            Drop your name and email below and we'll send the guide straight to your inbox.
           </p>
           
-          <div className="bg-white p-8 rounded-lg shadow-2xl">
+          <div className="bg-white p-8 rounded-lg shadow-2xl mb-12">
             <form onSubmit={handleSubmit} className="space-y-4">
               <Input
                 type="text"
@@ -60,8 +69,30 @@ export function TealFormSection({ onEmailSubmit }: TealFormSectionProps) {
             </form>
             
             <p className="text-sm text-gray-600 mt-4">
-              No credit card required. Instant download. Trusted by 15,000+ runners.
+              No credit card required. Instant download.
             </p>
+          </div>
+
+          {/* Physical Copy Section */}
+          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20">
+            <h3 className="text-xl font-bold text-white mb-4">
+              PREFER A PHYSICAL COPY?
+            </h3>
+            <p className="text-white/90 mb-4">
+              Grab the printed book for just £9.99.
+            </p>
+            <Button 
+              asChild
+              className="bg-accent hover:bg-accent/90 text-white font-bold px-8 py-3"
+            >
+              <a 
+                href="https://harrierrunfree.co.uk/collections/ultra-collection/products/how-to-run-an-ultra-book" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                Grab the printed version
+              </a>
+            </Button>
           </div>
         </div>
       </div>

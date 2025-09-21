@@ -1,22 +1,22 @@
-import { Package, CheckSquare, Trophy, Brain, Users } from "lucide-react";
+import { Target, CheckSquare, Package, Brain, Users } from "lucide-react";
 
 export function BenefitsBoxes() {
   const benefits = [
     {
-      icon: Package,
-      title: "Ultra gear, diet, and hydration essentials"
+      icon: Target,
+      title: "Choosing your ultra, goal setting and motivation"
     },
     {
       icon: CheckSquare,
-      title: "Specific checklists for kit, fuel and race day prep"
+      title: "Essential checklists for kit, fuelling, and race day prep"
     },
     {
-      icon: Trophy,
-      title: "Expert pre-race tactics that are professional level secrets"
+      icon: Package,
+      title: "Expert gear guidance to help you choose what to carry (and what not to)"
     },
     {
       icon: Brain,
-      title: "Mental strategies for decision making and pushing through tough miles"
+      title: "Mental strategies for decision making and pushing through the tough miles"
     },
     {
       icon: Users,
@@ -25,17 +25,16 @@ export function BenefitsBoxes() {
   ];
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-              READY TO RUN YOUR FIRST ULTRA OR TAKE YOUR NEXT ONE UP A NOTCH?
+              WHAT'S INSIDE
             </h2>
-            <p className="text-lg text-gray-600 max-w-4xl mx-auto">
-              Our comprehensive guide contains proven strategies, essential checklists, and expert insights 
-              that have helped thousands of runners successfully complete their ultra marathons.
-            </p>
+            
+            {/* Green accent divider */}
+            <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
           </div>
           
           {/* Desktop Layout: 3 boxes top, 2 boxes bottom */}
