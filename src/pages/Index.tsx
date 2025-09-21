@@ -3,14 +3,12 @@ import { toast } from "@/hooks/use-toast";
 import { TrustBar } from "@/components/TrustBar";
 import { HeroSection } from "@/components/HeroSection";
 import { TrustSignals } from "@/components/TrustSignals";
-import { FeaturesGrid } from "@/components/FeaturesGrid";
-import { WhatsInside } from "@/components/WhatsInside";
-import { RiskReversal } from "@/components/RiskReversal";
-import { AuthorCredibility } from "@/components/AuthorCredibility";
+import { WhatsInsideSimple } from "@/components/WhatsInsideSimple";
+import { ThreeTealBoxes } from "@/components/ThreeTealBoxes";
+import { FormSectionTeal } from "@/components/FormSectionTeal";
 import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import { IndustryAwards } from "@/components/IndustryAwards";
-import { OfferComparison } from "@/components/OfferComparison";
-import { FinalCTA } from "@/components/FinalCTA";
+import { AuthorCredibility } from "@/components/AuthorCredibility";
 import { Footer } from "@/components/Footer";
 import { ExitIntentPopup } from "@/components/ExitIntentPopup";
 import { StickyMobileCTA } from "@/components/StickyMobileCTA";
@@ -80,14 +78,12 @@ const Index = () => {
       <TrustBar />
       <HeroSection onEmailSubmit={handleEmailSubmit} />
       <TrustSignals />
-      <FeaturesGrid />
-      <WhatsInside />
-      <RiskReversal />
-      <AuthorCredibility />
+      <WhatsInsideSimple />
+      <ThreeTealBoxes />
+      <FormSectionTeal onEmailSubmit={handleEmailSubmit} />
       <TestimonialsCarousel />
       <IndustryAwards />
-      <OfferComparison onEmailSubmit={handleEmailSubmit} />
-      <FinalCTA onEmailSubmit={handleEmailSubmit} />
+      <AuthorCredibility />
       <Footer />
       
       {!hasSubmitted && <ExitIntentPopup onEmailSubmit={handleEmailSubmit} />}
