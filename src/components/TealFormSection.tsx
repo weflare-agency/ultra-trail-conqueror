@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import heroImage from "@/assets/hero-trail-runners.jpg";
 
-interface CleanHeroProps {
+interface TealFormSectionProps {
   onEmailSubmit: (email: string, firstName: string) => void;
 }
 
-export function CleanHero({ onEmailSubmit }: CleanHeroProps) {
+export function TealFormSection({ onEmailSubmit }: TealFormSectionProps) {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -22,38 +21,18 @@ export function CleanHero({ onEmailSubmit }: CleanHeroProps) {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      />
-      
-      {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/60" />
-      
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-20">
-        <div className="max-w-4xl mx-auto text-center text-white">
+    <section className="py-16 bg-primary">
+      <div className="container mx-auto px-4">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4">
+            FREE INSTANT ACCESS
+          </h2>
+          <p className="text-lg text-white mb-8">
+            Drop your name and email below and we'll send you the guide immediately. 
+            No spam, just pure ultra running knowledge.
+          </p>
           
-          {/* Main Headline */}
-          <div className="mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-              DOWNLOAD YOUR FREE
-              <span className="block text-accent">HOW TO RUN AN ULTRA</span>
-              <span className="block">GUIDE</span>
-            </h1>
-            <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-              Created by passionate trail runners for trail runners
-            </p>
-          </div>
-
-          {/* Lead Capture Form */}
-          <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-2xl">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">
-              Get Instant Access
-            </h2>
-            
+          <div className="bg-white p-8 rounded-lg shadow-2xl">
             <form onSubmit={handleSubmit} className="space-y-4">
               <Input
                 type="text"
@@ -81,7 +60,7 @@ export function CleanHero({ onEmailSubmit }: CleanHeroProps) {
             </form>
             
             <p className="text-sm text-gray-600 mt-4">
-              No spam. Unsubscribe anytime. Trusted by 15,000+ runners.
+              No credit card required. Instant download. Trusted by 15,000+ runners.
             </p>
           </div>
         </div>

@@ -23,7 +23,7 @@ export function TestimonialSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
-            Join 15,000+ Runners Who've Transformed Their Ultra Game
+            TRUSTED BY TRAIL RUNNERS ACROSS THE UK AND BEYOND
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8">
