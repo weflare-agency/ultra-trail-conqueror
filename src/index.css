@@ -1,81 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Saira:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  :root {
-    /* Simplified 3-color brand system */
-    --harrier-dark-green: 21 61 52;
-    --harrier-medium-green: 19 142 128;
-    --harrier-orange: 253 157 0;
-    
-    /* Conversion-Optimized UI System */
-    --background: 0 0% 100%;
-    --foreground: 193 88% 18%;
-    --card: 0 0% 100%;
-    --card-foreground: 193 88% 18%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 193 88% 18%;
-    --primary: 193 88% 18%;                 /* Deep Teal */
-    --primary-foreground: 0 0% 98%;
-    --secondary: 171 75% 29%;               /* Teal */
-    --secondary-foreground: 0 0% 98%;
-    --muted: 171 35% 90%;                   /* Light mint */
-    --muted-foreground: 193 88% 18%;
-    --accent: 38 100% 49%;                  /* Orange */
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 171 35% 85%;
-    --input: 0 0% 96%;
-    --ring: 171 75% 29%;
-    --radius: 0.75rem;
-
-    /* Professional Shadows - Conversion Optimized */
-    --shadow-light: 0 4px 25px -4px hsl(193 88% 18% / 0.12);
-    --shadow-medium: 0 10px 40px -8px hsl(193 88% 18% / 0.18);
-    --shadow-strong: 0 20px 80px -12px hsl(193 88% 18% / 0.25);
-    --shadow-orange: 0 8px 32px -4px hsl(38 100% 49% / 0.3);
-    --shadow-teal: 0 8px 32px -4px hsl(171 75% 29% / 0.3);
-
-    /* High-Converting Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(193 88% 18% / 0.95), hsl(171 75% 29% / 0.85));
-    --gradient-section: linear-gradient(135deg, hsl(171 75% 29%), hsl(171 75% 35%));
-    --gradient-cta: linear-gradient(135deg, hsl(38 100% 49%), hsl(38 100% 54%));
-    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(171 35% 96%));
-  }
-
   * {
     @apply border-border;
   }
   
   body {
-    @apply bg-background text-foreground font-comfortaa;
+    @apply bg-background text-foreground;
+    font-family: system-ui, -apple-system, sans-serif;
     line-height: 1.6;
   }
-
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-saira;
-    line-height: 1.2;
-  }
-}
-
-@layer components {
-  /* Simplified component styles */
-  .trust-bar {
-    @apply bg-gray-50 py-3 border-b border-gray-200;
-  }
-}
-
-/* Removed excessive animations */
-
-/* Clean utility classes */
-.bg-hero-gradient {
-  background: linear-gradient(135deg, 
-    hsl(var(--harrier-medium-green)) 0%, 
-    hsl(var(--harrier-dark-green)) 100%);
 }

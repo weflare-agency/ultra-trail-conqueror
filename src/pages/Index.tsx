@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
-import { HeroSection } from "@/components/HeroSection";
-import { WhatsInsideSimple } from "@/components/WhatsInsideSimple";
-import { SimpleTestimonials } from "@/components/SimpleTestimonials";
-import { FinalCTASimple } from "@/components/FinalCTASimple";
-import { Footer } from "@/components/Footer";
+import { CleanHero } from "@/components/CleanHero";
+import { BenefitsSection } from "@/components/BenefitsSection";
+import { TestimonialSection } from "@/components/TestimonialSection";
+import { FinalCTA } from "@/components/FinalCTA";
+import { SimpleFooter } from "@/components/SimpleFooter";
 
 const Index = () => {
   const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -68,11 +68,11 @@ const Index = () => {
         })}
       </script>
 
-      <HeroSection onEmailSubmit={handleEmailSubmit} />
-      <WhatsInsideSimple />
-      <SimpleTestimonials />
-      <FinalCTASimple onEmailSubmit={handleEmailSubmit} />
-      <Footer />
+      <CleanHero onEmailSubmit={handleEmailSubmit} />
+      <BenefitsSection />
+      <TestimonialSection />
+      <FinalCTA onEmailSubmit={handleEmailSubmit} />
+      <SimpleFooter />
     </main>
   );
 };

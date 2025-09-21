@@ -1,8 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Users, Clock, Shield } from "lucide-react";
 
 interface FinalCTAProps {
   onEmailSubmit: (email: string, firstName: string) => void;
@@ -23,94 +21,51 @@ export function FinalCTA({ onEmailSubmit }: FinalCTAProps) {
   };
 
   return (
-    <section className="py-20 bg-harrier-medium-green pattern-bg text-white relative overflow-hidden">
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Urgency Message */}
-          <div className="mb-8 animate-fade-in">
-            <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6">
-              <Users className="w-5 h-5 mr-2" />
-              <span className="brand-body">
-                JOIN 15,000+ RUNNERS WHO'VE DOWNLOADED THIS WEEK
-              </span>
-            </div>
-            
-            <h2 className="brand-title mb-6">
-              READY TO START YOUR<br />
-              <span className="text-harrier-yellow">ULTRA JOURNEY?</span>
-            </h2>
-            
-            <p className="brand-body text-white/95 mb-8">
-              GET YOUR FREE GUIDE AND TAKE THE FIRST STEP TOWARDS COMPLETING YOUR FIRST ULTRA MARATHON
-            </p>
-          </div>
+    <section className="py-16 bg-teal-600">
+      <div className="container mx-auto px-4">
+        <div className="max-w-2xl mx-auto text-center text-white">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Conquer Your First Ultra?
+          </h2>
+          <p className="text-xl mb-8">
+            Get your free 96-page guide and join thousands of successful ultra runners
+          </p>
           
-          {/* Form */}
-          <div className="max-w-md mx-auto bg-white/95 backdrop-blur-sm rounded-2xl p-6 mb-8 animate-scale-in">
+          <div className="bg-white p-8 rounded-lg shadow-2xl">
+            <h3 className="text-2xl font-bold text-gray-800 mb-6">
+              Download Your Free Guide
+            </h3>
+            
             <form onSubmit={handleSubmit} className="space-y-4">
-              <div className="text-left">
-                <Label htmlFor="finalFirstName" className="text-harrier-dark-green font-medium">
-                  First Name
-                </Label>
-                <Input
-                  id="finalFirstName"
-                  type="text"
-                  placeholder="Enter your first name"
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
-                  className="mt-1 text-base h-12 border-harrier-light-green focus:ring-harrier-medium-green"
-                  required
-                />
-              </div>
-              
-              <div className="text-left">
-                <Label htmlFor="finalEmail" className="text-harrier-dark-green font-medium">
-                  Email Address
-                </Label>
-                <Input
-                  id="finalEmail"
-                  type="email"
-                  placeholder="Enter your email address"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="mt-1 text-base h-12 border-harrier-light-green focus:ring-harrier-medium-green"
-                  required
-                />
-              </div>
-              
-              <Button 
-                type="submit" 
-                size="lg" 
-                className="w-full text-lg cta-button brand-body h-14"
+              <Input
+                type="text"
+                placeholder="Your First Name"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                className="h-12 text-lg border-2"
+                required
+              />
+              <Input
+                type="email"
+                placeholder="Your Email Address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="h-12 text-lg border-2"
+                required
+              />
+              <Button
+                type="submit"
                 disabled={isLoading}
+                className="w-full h-12 text-lg font-bold bg-yellow-500 hover:bg-yellow-600 text-black"
               >
-                {isLoading ? "sending..." : "send my free guide now"}
+                {isLoading ? "SENDING..." : "GET MY FREE GUIDE"}
               </Button>
             </form>
+            
+            <p className="text-sm text-gray-600 mt-4">
+              100% Free. No Credit Card Required. Instant Download.
+            </p>
           </div>
-          
-          {/* Trust Indicators */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div className="flex items-center justify-center">
-              <Clock className="w-5 h-5 mr-2 text-harrier-yellow" />
-              <span className="text-white/90">Instant Access</span>
-            </div>
-            <div className="flex items-center justify-center">
-              <Shield className="w-5 h-5 mr-2 text-harrier-yellow" />
-              <span className="text-white/90">100% Secure</span>
-            </div>
-            <div className="flex items-center justify-center">
-              <Users className="w-5 h-5 mr-2 text-harrier-yellow" />
-              <span className="text-white/90">No Spam Promise</span>
-            </div>
-          </div>
-          
-          {/* Privacy Note */}
-          <p className="text-sm text-white/70 mt-8 max-w-2xl mx-auto">
-            We respect your privacy. Your email will only be used to send you the guide and occasional ultra running tips. 
-            You can unsubscribe at any time. See our{" "}
-            <a href="#" className="text-harrier-yellow hover:underline">privacy policy</a>.
-          </p>
         </div>
       </div>
     </section>
