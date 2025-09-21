@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import topographicPattern from "@/assets/topographic-pattern.png";
+import { CheckCircle, Users } from "lucide-react";
+import heroImage from "@/assets/hero-trail-runners.jpg";
+import harrierLogo from "@/assets/harrier-logo-white.png";
 
 interface CleanHeroProps {
   onEmailSubmit: (email: string, firstName: string) => void;
@@ -14,76 +16,102 @@ export function CleanHero({ onEmailSubmit }: CleanHeroProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !firstName) return;
+    if (!email.trim() || !firstName.trim()) return;
     
     setIsLoading(true);
-    await onEmailSubmit(email, firstName);
-    setIsLoading(false);
+    try {
+      await onEmailSubmit(email, firstName);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative bg-primary">
-      {/* Topographic Pattern Background */}
+    <section className="relative min-h-screen flex items-center justify-center">
+      {/* Background Image */}
       <div 
-        className="absolute inset-0 opacity-10"
-        style={{ 
-          backgroundImage: `url(${topographicPattern})`,
-          backgroundSize: '400px 400px',
-          backgroundRepeat: 'repeat'
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url(${heroImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
         }}
       />
       
+      {/* Dark Overlay */}
+      <div className="absolute inset-0 bg-black/40" />
+      
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 py-20">
-        <div className="max-w-4xl mx-auto text-center text-white">
+      <div className="relative z-10 container mx-auto px-4 text-center">
+        <div className="max-w-4xl mx-auto">
+          {/* Logo */}
+          <div className="mb-8">
+            <img 
+              src={harrierLogo} 
+              alt="Harrier" 
+              className="h-12 md:h-16 mx-auto"
+            />
+          </div>
+
+          <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-2 leading-tight">
+            DOWNLOAD YOUR <span className="text-accent">FREE</span> 96 PAGE
+          </h1>
           
-          {/* Main Headline */}
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-accent mb-8 leading-tight">
+            HOW TO RUN AN ULTRA GUIDE
+          </h2>
+
+          {/* What's Inside Section */}
           <div className="mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-              DOWNLOAD YOUR FREE
-              <span className="block text-accent">HOW TO RUN AN ULTRA</span>
-              <span className="block">GUIDE</span>
-            </h1>
-            <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-              Everything You Need to Train, Gear Up & Finish Strong
-            </p>
+            <h3 className="text-xl md:text-2xl font-bold text-white mb-6">
+              WHAT'S INSIDE
+            </h3>
+            
+            <div className="max-w-2xl mx-auto space-y-4">
+              <div className="flex items-start gap-4 text-left">
+                <CheckCircle className="w-8 h-8 text-accent mt-1 flex-shrink-0" />
+                <p className="text-white text-lg md:text-xl leading-relaxed">
+                  Essential checklists for kit, fuelling, and race day prep
+                </p>
+              </div>
+              
+              <div className="flex items-start gap-4 text-left">
+                <Users className="w-8 h-8 text-accent mt-1 flex-shrink-0" />
+                <p className="text-white text-lg md:text-xl leading-relaxed">
+                  Pro insights from ultra runners who've been there, done it, and gone back for more
+                </p>
+              </div>
+            </div>
           </div>
 
           {/* Lead Capture Form */}
-          <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-2xl">
-            <h2 className="text-2xl font-bold text-gray-800 mb-6">
-              Get Instant Access
-            </h2>
-            
+          <div className="max-w-md mx-auto">
             <form onSubmit={handleSubmit} className="space-y-4">
               <Input
                 type="text"
-                placeholder="Your First Name"
+                placeholder="First Name"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
-                className="h-12 text-lg border-2"
+                className="bg-white border-0 text-gray-800 placeholder:text-gray-500 text-lg py-6"
                 required
               />
               <Input
                 type="email"
-                placeholder="Your Email Address"
+                placeholder="Email Address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="h-12 text-lg border-2"
+                className="bg-white border-0 text-gray-800 placeholder:text-gray-500 text-lg py-6"
                 required
               />
-              <Button
-                type="submit"
+              <Button 
+                type="submit" 
+                className="w-full bg-accent hover:bg-accent/90 text-white text-lg font-semibold py-6"
                 disabled={isLoading}
-                className="w-full h-12 text-lg font-bold bg-accent hover:bg-accent/90 text-white"
               >
-                {isLoading ? "SENDING..." : "GET FREE GUIDE NOW"}
+                {isLoading ? "Sending..." : "GET MY FREE GUIDE →"}
               </Button>
             </form>
-            
-            <p className="text-sm text-gray-600 mt-4">
-              No spam. Unsubscribe anytime. Trusted by 15,000+ runners.
-            </p>
           </div>
         </div>
       </div>

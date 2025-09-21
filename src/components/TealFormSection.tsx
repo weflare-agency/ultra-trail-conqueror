@@ -21,73 +21,65 @@ export function TealFormSection({ onEmailSubmit }: TealFormSectionProps) {
   };
 
   return (
-    <section 
-      className="py-16 bg-primary relative"
-      style={{ 
-        backgroundImage: `url(/src/assets/topographic-pattern.png)`,
-        backgroundSize: '400px 400px',
-        backgroundRepeat: 'repeat'
-      }}
-    >
-      {/* Pattern overlay */}
-      <div className="absolute inset-0 bg-primary/90"></div>
+    <section className="py-20 bg-primary">
       
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-accent mb-4">
-            FREE INSTANT ACCESS
-          </h2>
-          <p className="text-lg text-white mb-8">
-            Drop your name and email below and we'll send the guide straight to your inbox.
-          </p>
-          
-          <div className="bg-white p-8 rounded-lg shadow-2xl mb-12">
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <Input
-                type="text"
-                placeholder="Your First Name"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                className="h-12 text-lg border-2"
-                required
-              />
-              <Input
-                type="email"
-                placeholder="Your Email Address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="h-12 text-lg border-2"
-                required
-              />
-              <Button
-                type="submit"
-                disabled={isLoading}
-                className="w-full h-12 text-lg font-bold bg-accent hover:bg-accent/90 text-white"
-              >
-                {isLoading ? "SENDING..." : "GET FREE GUIDE NOW"}
-              </Button>
-            </form>
-            
-            <p className="text-sm text-gray-600 mt-4">
-              No credit card required. Instant download.
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          {/* Main CTA Section */}
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-bold text-accent mb-6">
+              FREE INSTANT ACCESS
+            </h2>
+            <p className="text-xl md:text-2xl text-white mb-12 leading-relaxed">
+              Drop your name and email below and we'll send the guide straight to your inbox.
             </p>
+            
+            <div className="max-w-md mx-auto mb-12">
+              <div className="bg-white rounded-lg p-8 shadow-2xl">
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <Input
+                    type="text"
+                    placeholder="First Name"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    className="border-2 border-gray-200 text-gray-800 placeholder:text-gray-500 text-lg py-6 focus:border-primary"
+                    required
+                  />
+                  <Input
+                    type="email"
+                    placeholder="Email Address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="border-2 border-gray-200 text-gray-800 placeholder:text-gray-500 text-lg py-6 focus:border-primary"
+                    required
+                  />
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-accent hover:bg-accent/90 text-white text-xl font-bold py-6 rounded-lg"
+                    disabled={isLoading}
+                  >
+                    {isLoading ? "Sending..." : "GET MY FREE GUIDE →"}
+                  </Button>
+                </form>
+              </div>
+            </div>
           </div>
 
           {/* Physical Copy Section */}
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg border border-white/20">
-            <h3 className="text-xl font-bold text-white mb-4">
+          <div className="text-center bg-primary/80 backdrop-blur-sm rounded-lg p-8 border border-white/20">
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
               PREFER A PHYSICAL COPY?
             </h3>
-            <p className="text-white/90 mb-4">
+            <p className="text-white/90 text-lg mb-6">
               Grab the printed book for just £9.99.
             </p>
             <Button 
-              asChild
-              className="bg-accent hover:bg-accent/90 text-white font-bold px-8 py-3"
+              asChild 
+              className="bg-white text-primary hover:bg-white/90 font-bold px-8 py-4 text-lg"
             >
               <a 
-                href="https://harrierrunfree.co.uk/collections/ultra-collection/products/how-to-run-an-ultra-book" 
-                target="_blank" 
+                href="https://harrierrunfree.co.uk/collections/ultra-collection/products/how-to-run-an-ultra-book"
+                target="_blank"
                 rel="noopener noreferrer"
               >
                 Grab the printed version
