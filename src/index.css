@@ -9,14 +9,15 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Harrier Brand Colors - More Green Dominant */
-    --harrier-dark-green: 175 85% 18%; /* Deeper forest green */
-    --harrier-medium-green: 175 75% 28%; /* Main brand green */
-    --harrier-light-green: 175 65% 38%; /* Lighter green accent */
-    --harrier-mint: 175 45% 55%; /* Mint green for highlights */
-    --harrier-yellow: 38 100% 50%; /* #fd9d00 */
+    /* Harrier Official Brand Colors - Per Brand Guidelines */
+    --harrier-dark-green: 183 66% 17%; /* #0e4649 */
+    --harrier-darker-green: 184 66% 20%; /* #0f4e5a */ 
+    --harrier-medium-green: 174 84% 32%; /* #138e80 */
+    --harrier-light-green: 174 46% 50%; /* #4eb2a4 */
+    --harrier-mint: 174 46% 75%; /* lighter tint of brand green */
+    --harrier-yellow: 37 100% 49%; /* #fd9d00 */
     --harrier-white: 0 0% 100%; /* #ffffff */
-    --harrier-dark-gray: 210 2% 19%; /* #303031 */
+    --harrier-dark-gray: 240 1% 19%; /* #303031 */
     --harrier-light-gray: 240 2% 75%; /* #c0bec0 */
 
     /* Core Design System - Green Background Focus */
@@ -111,11 +112,39 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
+    font-family: "Comfortaa", "Inter", system-ui, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
+    font-family: "Saira", sans-serif;
     @apply font-bold tracking-wide;
+  }
+
+  /* Brand Typography Classes per Brand Guidelines */
+  .brand-title {
+    font-family: "Saira", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  .brand-subtitle {
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+  }
+
+  .brand-body {
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+  }
+
+  .brand-condensed {
+    font-family: "Saira Extra Condensed", sans-serif;
+    letter-spacing: 0.2em;
   }
 }
 

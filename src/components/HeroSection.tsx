@@ -1,299 +1,173 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ChevronDown, Users, Shield, Clock, CheckCircle, Star, Play, TrendingUp } from "lucide-react";
-import heroRunner1 from "@/assets/runner-action-1.jpg";
-import heroRunner2 from "@/assets/runner-action-2.jpg";
-import heroRunner3 from "@/assets/runner-action-3.jpg";
-import diverseRunner from "@/assets/harrier-diverse-runner.jpg";
+import { Check, Shield, Star, Zap } from "lucide-react";
+import heroImage1 from "@/assets/hero-trail-runners.jpg";
+import heroImage2 from "@/assets/runner-action-1.jpg";
+import heroImage3 from "@/assets/runner-action-2.jpg";
 
 interface HeroSectionProps {
   onEmailSubmit: (email: string, firstName: string) => void;
 }
 
-const heroImages = [heroRunner1, heroRunner2, heroRunner3, diverseRunner];
-
-const socialProofMessages = [
-  { name: "Sarah from Manchester", action: "just downloaded the guide", time: "2 min ago" },
-  { name: "Mike from Edinburgh", action: "completed his first ultra", time: "5 min ago" },
-  { name: "Emma from Bristol", action: "started the 12-week plan", time: "8 min ago" },
-  { name: "James from Cardiff", action: "joined the community", time: "12 min ago" },
-  { name: "Lisa from Newcastle", action: "downloaded bonus materials", time: "15 min ago" }
-];
-
-const compellingHeadlines = [
-  { main: "Transform Your", sub: "Ultra Running Journey" },
-  { main: "Master Every", sub: "Mile of Your Ultra" },
-  { main: "Conquer Your", sub: "First Ultra Marathon" },
-  { main: "Dominate The", sub: "Trail Like a Pro" }
-];
+const heroImages = [heroImage1, heroImage2, heroImage3];
 
 export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
-  const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [currentHeadlineIndex, setCurrentHeadlineIndex] = useState(0);
+  const [email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState('');
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
-  const [showSocialProof, setShowSocialProof] = useState(false);
-  const [currentProofIndex, setCurrentProofIndex] = useState(0);
-  const [formStep, setFormStep] = useState(1);
-  const [downloadCount, setDownloadCount] = useState(15247);
 
-  // Cycle between compelling headlines
+  // Cycle hero background images
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentHeadlineIndex(prev => (prev + 1) % compellingHeadlines.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Cycle through hero images
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex(prev => (prev + 1) % heroImages.length);
+      setCurrentImageIndex((prev) => (prev + 1) % heroImages.length);
     }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Show social proof notifications
-  useEffect(() => {
-    const showProof = () => {
-      setCurrentProofIndex(prev => (prev + 1) % socialProofMessages.length);
-      setShowSocialProof(true);
-      setTimeout(() => setShowSocialProof(false), 5000);
-      // Increment download counter occasionally
-      if (Math.random() > 0.7) {
-        setDownloadCount(prev => prev + 1);
-      }
-    };
-
-    const interval = setInterval(showProof, 12000);
-    setTimeout(showProof, 4000); // First notification after 4 seconds
     return () => clearInterval(interval);
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!email || !firstName) return;
     
-    if (formStep === 1) {
-      if (!email.trim()) return;
-      setFormStep(2);
-      return;
-    }
-    
-    if (!firstName.trim()) return;
-
     setIsLoading(true);
-    await onEmailSubmit(email, firstName);
-    setIsLoading(false);
+    try {
+      await onEmailSubmit(email, firstName);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
-  const currentImage = heroImages[currentImageIndex];
-  const currentHeadline = compellingHeadlines[currentHeadlineIndex];
-
   return (
-    <>
-      {/* Live Social Proof Notifications */}
-      {showSocialProof && (
-        <div className="social-proof-notification">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center">
-              <CheckCircle className="w-4 h-4 text-white" />
-            </div>
-            <div>
-              <div className="font-semibold text-sm text-gray-800">
-                {socialProofMessages[currentProofIndex].name}
-              </div>
-              <div className="text-xs text-gray-600">
-                {socialProofMessages[currentProofIndex].action} • {socialProofMessages[currentProofIndex].time}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      <section 
-        className="hero-cycling-bg min-h-screen flex items-center justify-center relative overflow-hidden"
-        style={{ backgroundImage: `url(${currentImage})` }}
-      >
-        <div className="hero-content container mx-auto px-4 py-12">
-          {/* Urgency Banner */}
-          <div className="text-center mb-6">
-            <div className="urgency-banner inline-flex items-center gap-2 text-white text-sm font-bold px-4 py-2">
-              <TrendingUp className="w-4 h-4" />
-              LIMITED: Complete Ultra System + Bonus Materials FREE
-            </div>
-          </div>
-
-          <div className="max-w-5xl mx-auto text-center">
-            {/* Dynamic Main Headline */}
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
-              <span className="transition-all duration-700 ease-in-out block">
-                {currentHeadline.main}
-              </span>
-              <span className="block mt-2 text-yellow-400 text-3xl md:text-5xl lg:text-6xl">
-                {currentHeadline.sub}
-              </span>
+    <section 
+      id="hero-form"
+      className="relative min-h-screen flex items-center justify-center py-20 hero-cycling-bg"
+      style={{ backgroundImage: `url(${heroImages[currentImageIndex]})` }}
+    >
+      <div className="absolute inset-0 bg-harrier-dark-green/40"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          
+          {/* Left Column - Content */}
+          <div className="text-center lg:text-left">
+            {/* Main Headline */}
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 brand-title animate-fade-in">
+              DOWNLOAD YOUR FREE<br />
+              <span className="text-harrier-yellow">HOW TO RUN AN ULTRA</span><br />
+              GUIDE
             </h1>
-
-            {/* Problem-Solution Subheadline */}
-            <p className="text-xl md:text-2xl text-white/95 mb-3 max-w-4xl mx-auto font-medium">
-              Stop guessing, start succeeding. The complete system that's helped 15,000+ runners 
-              cross the ultra finish line strong.
-            </p>
-
-            {/* Social Proof Counter */}
-            <div className="mb-8">
-              <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 text-white">
-                <Users className="w-4 h-4 text-yellow-400" />
-                <span className="font-semibold">{downloadCount.toLocaleString()}+ runners</span>
-                <span>have downloaded this guide</span>
-              </div>
+            
+            {/* Subheading */}
+            <h2 className="text-xl md:text-2xl text-white/90 mb-8 brand-subtitle animate-fade-in">
+              Everything You Need to Train, Gear Up & Finish Strong
+            </h2>
+            
+            {/* Description */}
+            <div className="text-lg text-white/80 mb-8 max-w-xl mx-auto lg:mx-0 brand-body animate-fade-in space-y-4">
+              <p>Ready to run your first ultra or take your next one up a notch?</p>
+              <p>This free 96-page guide gives you everything you need to succeed. Packed with practical advice, proven strategies, and hard-earned wisdom, this is your go-to ultra companion.</p>
             </div>
-
-            <div className="grid lg:grid-cols-2 gap-8 items-center max-w-6xl mx-auto">
-              {/* Left Column - Value Props */}
-              <div className="text-left space-y-6">
-                <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-yellow-400 mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="text-lg font-semibold text-white">No More Training Guesswork</h3>
-                      <p className="text-white/80">Proven 12-week progressive plans for every fitness level</p>
+            
+            {/* What's Inside */}
+            <div className="mb-8">
+              <h3 className="text-2xl font-bold text-white mb-6 brand-subtitle">WHAT'S INSIDE</h3>
+              <div className="space-y-3 animate-slide-up">
+                {[
+                  "Choosing your ultra, goal setting and motivation",
+                  "Essential checklists for kit, fuelling, and race day prep", 
+                  "Expert gear guidance to help you choose what to carry (and what not to)",
+                  "Mental strategies for decision making and pushing through the tough miles",
+                  "Pro insights from ultra runners who've been there, done it, and gone back for more"
+                ].map((item, index) => (
+                  <div key={index} className="flex items-start text-white/90 text-left">
+                    <div className="w-6 h-6 bg-harrier-yellow rounded-full flex items-center justify-center mr-4 flex-shrink-0 mt-1">
+                      <Check className="w-4 h-4 text-harrier-dark-green" />
                     </div>
+                    <span className="brand-body">{item}</span>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-yellow-400 mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="text-lg font-semibold text-white">Avoid Costly Mistakes</h3>
-                      <p className="text-white/80">Learn from 100+ ultra finishers' hard-earned wisdom</p>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-yellow-400 mt-1 flex-shrink-0" />
-                    <div>
-                      <h3 className="text-lg font-semibold text-white">Finish Strong, Not Broken</h3>
-                      <p className="text-white/80">Injury prevention strategies that actually work</p>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Video Testimonial */}
-                <div className="max-w-sm">
-                  <div className="video-overlay aspect-video flex items-center justify-center cursor-pointer">
-                    <div className="play-button">
-                      <Play className="w-8 h-8 text-green-700 ml-1" />
-                    </div>
-                  </div>
-                  <p className="text-white/90 text-sm mt-2 font-medium">
-                    "This guide literally changed my ultra game" - Sarah M., Ultra Finisher
-                  </p>
-                </div>
-              </div>
-
-              {/* Right Column - Conversion Form */}
-              <div className="lg:max-w-md mx-auto w-full">
-                <div className="conversion-form p-8">
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-gray-800 mb-2">
-                      Get Your Complete Ultra System
-                    </h3>
-                    <p className="text-gray-600 font-medium">
-                      96 pages + bonus materials • 100% FREE
-                    </p>
-                    
-                    {/* Progress Steps */}
-                    <div className="flex justify-center gap-2 mt-4 mb-6">
-                      <div className={`progress-step ${formStep >= 1 ? 'active' : ''}`}>1</div>
-                      <div className="w-8 h-0.5 bg-gray-300 self-center"></div>
-                      <div className={`progress-step ${formStep >= 2 ? 'active' : ''}`}>2</div>
-                      <div className="w-8 h-0.5 bg-gray-300 self-center"></div>
-                      <div className={`progress-step ${formStep >= 3 ? 'completed' : ''}`}>✓</div>
-                    </div>
-                  </div>
-
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    {formStep === 1 && (
-                      <div>
-                        <Input
-                          type="email"
-                          placeholder="Enter your email address"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          className="conversion-input h-14 text-base"
-                          required
-                        />
-                        <p className="text-xs text-gray-500 mt-2">
-                          Step 1 of 2 • We'll never spam you
-                        </p>
-                      </div>
-                    )}
-
-                    {formStep === 2 && (
-                      <div>
-                        <Input
-                          type="text"
-                          placeholder="What's your first name?"
-                          value={firstName}
-                          onChange={(e) => setFirstName(e.target.value)}
-                          className="conversion-input h-14 text-base"
-                          required
-                        />
-                        <p className="text-xs text-gray-500 mt-2">
-                          Just so we can personalize your guide
-                        </p>
-                      </div>
-                    )}
-
-                    <Button 
-                      type="submit" 
-                      className="cta-button w-full h-14 text-lg font-bold"
-                      disabled={isLoading}
-                    >
-                      {isLoading ? (
-                        <div className="flex items-center gap-2">
-                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                          Preparing Your Guide...
-                        </div>
-                      ) : formStep === 1 ? (
-                        "Continue to Step 2 →"
-                      ) : (
-                        "Send My Free Ultra System →"
-                      )}
-                    </Button>
-                  </form>
-
-                  {/* Enhanced Trust Indicators */}
-                  <div className="grid grid-cols-3 gap-4 mt-6 text-center">
-                    <div className="flex flex-col items-center gap-1">
-                      <Shield className="w-5 h-5 text-green-600" />
-                      <span className="text-xs text-gray-600 font-medium">SSL Secure</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-1">
-                      <Clock className="w-5 h-5 text-green-600" />
-                      <span className="text-xs text-gray-600 font-medium">Instant Access</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-1">
-                      <Star className="w-5 h-5 text-green-600" />
-                      <span className="text-xs text-gray-600 font-medium">5-Star Rated</span>
-                    </div>
-                  </div>
-
-                  <p className="text-center text-xs text-gray-500 mt-4">
-                    By downloading, you agree to receive helpful ultra running tips. 
-                    Unsubscribe anytime.
-                  </p>
-                </div>
+                ))}
               </div>
             </div>
           </div>
+          
+          {/* Right Column - Form */}
+          <div className="max-w-md mx-auto lg:mx-0 lg:ml-auto">
+            <div className="conversion-form p-8 animate-scale-in">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl font-bold text-harrier-dark-green mb-2 brand-title">
+                  FREE INSTANT ACCESS
+                </h3>
+                <p className="text-harrier-dark-green/80 brand-body">
+                  Drop your name and email below and we'll send the guide straight to your inbox.
+                </p>
+              </div>
+              
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div>
+                  <Input
+                    type="text"
+                    placeholder="Your First Name"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    className="conversion-input h-12 text-lg"
+                    required
+                  />
+                </div>
+                
+                <div>
+                  <Input
+                    type="email"
+                    placeholder="Your Email Address"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="conversion-input h-12 text-lg"
+                    required
+                  />
+                </div>
+                
+                <Button
+                  type="submit"
+                  disabled={!email || !firstName || isLoading}
+                  className="w-full h-14 text-lg cta-button brand-title"
+                >
+                  {isLoading ? "SENDING..." : "GET YOUR FREE GUIDE NOW"}
+                </Button>
+              </form>
+              
+              {/* Trust Indicators */}
+              <div className="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-harrier-light-green/20">
+                <div className="text-center">
+                  <Zap className="w-6 h-6 text-harrier-medium-green mx-auto mb-1" />
+                  <p className="text-xs text-harrier-dark-green/70 brand-body">Instant Access</p>
+                </div>
+                <div className="text-center">
+                  <Shield className="w-6 h-6 text-harrier-medium-green mx-auto mb-1" />
+                  <p className="text-xs text-harrier-dark-green/70 brand-body">100% Secure</p>
+                </div>
+                <div className="text-center">
+                  <Star className="w-6 h-6 text-harrier-yellow mx-auto mb-1" />
+                  <p className="text-xs text-harrier-dark-green/70 brand-body">5-Star Rated</p>
+                </div>
+              </div>
+            </div>
 
-          {/* Scroll Indicator */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <ChevronDown className="w-8 h-8 text-white/70" />
+            {/* Physical Book Option */}
+            <div className="mt-6 text-center">
+              <p className="text-white/90 mb-3 brand-subtitle text-lg">PREFER A PHYSICAL COPY?</p>
+              <p className="text-white/70 text-sm mb-4 brand-body">Grab the printed book for just £9.99.</p>
+              <a 
+                href="https://harrierrunfree.co.uk/collections/ultra-collection/products/how-to-run-an-ultra-book"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-3 border-2 border-white text-white hover:bg-white hover:text-harrier-dark-green transition-all duration-300 rounded-lg brand-subtitle text-sm"
+              >
+                GRAB THE PRINTED VERSION
+              </a>
+            </div>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 }

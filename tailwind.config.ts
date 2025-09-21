@@ -13,6 +13,12 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        sans: ["Comfortaa", "Inter", "system-ui", "sans-serif"],
+        saira: ["Saira", "sans-serif"],
+        "saira-condensed": ["Saira Extra Condensed", "sans-serif"],
+        comfortaa: ["Comfortaa", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -48,14 +54,15 @@ export default {
           foreground: "hsl(var(--card-foreground))",
         },
         harrier: {
-          'dark-green': "hsl(var(--harrier-dark-green))",
-          'medium-green': "hsl(var(--harrier-medium-green))",
-          'light-green': "hsl(var(--harrier-light-green))",
-          'mint': "hsl(var(--harrier-mint))",
-          'yellow': "hsl(var(--harrier-yellow))",
-          'white': "hsl(var(--harrier-white))",
-          'dark-gray': "hsl(var(--harrier-dark-gray))",
-          'light-gray': "hsl(var(--harrier-light-gray))",
+          "dark-green": "hsl(var(--harrier-dark-green))",
+          "darker-green": "hsl(var(--harrier-darker-green))",
+          "medium-green": "hsl(var(--harrier-medium-green))",
+          "light-green": "hsl(var(--harrier-light-green))",
+          "mint": "hsl(var(--harrier-mint))",
+          "yellow": "hsl(var(--harrier-yellow))",
+          "white": "hsl(var(--harrier-white))",
+          "dark-gray": "hsl(var(--harrier-dark-gray))",
+          "light-gray": "hsl(var(--harrier-light-gray))",
         },
       },
       borderRadius: {
