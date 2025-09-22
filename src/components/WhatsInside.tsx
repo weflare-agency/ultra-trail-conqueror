@@ -1,84 +1,90 @@
 import { MapPin, Calendar, Backpack, Apple, Brain, Users } from "lucide-react";
+import hydrationIcon1 from "@/assets/hydration-icon-1.svg";
+import hydrationIcon2 from "@/assets/hydration-icon-2.svg";
 
 const features = [
   {
     icon: MapPin,
-    title: "Choosing Your First Ultra",
-    description: "Expert guidance on selecting the perfect ultra marathon for your experience level and goals."
+    title: "Choosing Your Ultra",
+    description: "Goal setting and motivation - find the perfect ultra for your experience level."
   },
   {
     icon: Calendar,
-    title: "Training Plans & Schedules",
-    description: "Comprehensive training programs designed by experienced ultra runners and coaches."
+    title: "Essential Checklists",
+    description: "Kit, fuelling, and race day prep - everything you need to succeed."
   },
   {
     icon: Backpack,
-    title: "Essential Gear Checklists",
-    description: "Complete equipment lists for different ultra distances and terrain types."
+    title: "Expert Gear Guidance", 
+    description: "What to carry (and what not to) - pro tips for ultra running equipment."
   },
   {
-    icon: Apple,
-    title: "Nutrition & Fueling Strategies",
-    description: "Proven nutrition protocols to keep you energized throughout your ultra journey."
+    customIcon: hydrationIcon1,
+    title: "Mental Strategies",
+    description: "Decision making and pushing through the tough miles - psychological techniques that work."
   },
   {
     icon: Brain,
-    title: "Mental Strategies",
-    description: "Psychological techniques to overcome the toughest miles and push through barriers."
+    title: "Proven Training Methods",
+    description: "Build endurance and prevent injury with tried-and-tested training approaches."
   },
   {
-    icon: Users,
-    title: "Pro Insights & Tips",
-    description: "Exclusive advice from experienced ultra runners who've completed 100+ mile events."
+    customIcon: hydrationIcon2,
+    title: "Pro Insights",
+    description: "From ultra runners who've been there, done it, and gone back for more."
   }
 ];
 
 export function WhatsInside() {
   return (
-    <section className="py-20 bg-harrier-light-green">
+    <section className="py-24 bg-harrier-medium-green pattern-bg">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            What's Inside Your Free Guide
+        <div className="text-center mb-20 animate-fade-in">
+          <h2 className="font-saira font-black text-5xl md:text-6xl lg:text-7xl text-white mb-8 tracking-wider leading-tight">
+            WHAT'S INSIDE YOUR<br />FREE GUIDE
           </h2>
-          <p className="text-xl text-white/90 max-w-2xl mx-auto">
-            96 pages of comprehensive ultra running knowledge, from beginner basics to advanced strategies
+          <p className="font-comfortaa font-semibold text-xl md:text-2xl lg:text-3xl text-white/95 max-w-4xl mx-auto leading-relaxed">
+            96 PAGES OF COMPREHENSIVE ULTRA RUNNING KNOWLEDGE<br />
+            FROM BEGINNER BASICS TO ADVANCED STRATEGIES
           </p>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className="feature-card bg-harrier-dark-green border-harrier-medium-green animate-slide-up"
+              className="bg-white rounded-2xl p-10 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 animate-slide-up border-2 border-harrier-yellow/20"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-harrier-yellow/20 rounded-xl flex items-center justify-center mr-4">
-                  <feature.icon className="w-6 h-6 text-harrier-yellow" />
-                </div>
-                <h3 className="text-xl font-bold text-white">
-                  {feature.title}
-                </h3>
+              <div className="bg-harrier-yellow w-20 h-20 rounded-full flex items-center justify-center mb-8 mx-auto shadow-xl">
+                {feature.customIcon ? (
+                  <img src={feature.customIcon} alt="" className="w-10 h-10 opacity-80" />
+                ) : (
+                  <feature.icon className="w-10 h-10 text-harrier-dark-green" />
+                )}
               </div>
-              <p className="text-harrier-mint leading-relaxed">
+              
+              <h3 className="font-saira font-black text-xl md:text-2xl text-harrier-dark-green mb-6 text-center tracking-wide leading-tight">
+                {feature.title.toUpperCase()}
+              </h3>
+              
+              <p className="font-comfortaa font-medium text-lg md:text-xl text-harrier-dark-green/85 text-center leading-relaxed">
                 {feature.description}
               </p>
             </div>
           ))}
         </div>
         
-        {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <p className="text-lg text-white/90 mb-6">
-            Ready to start your ultra running journey?
+        {/* Call to Action */}
+        <div className="text-center mt-20">
+          <div className="inline-block bg-harrier-yellow px-8 py-4 rounded-xl shadow-lg mb-6">
+            <span className="font-saira font-black text-2xl md:text-3xl text-harrier-dark-green tracking-wide">
+              DOWNLOAD YOUR FREE GUIDE NOW
+            </span>
+          </div>
+          <p className="font-comfortaa font-semibold text-xl md:text-2xl text-white/95 max-w-2xl mx-auto">
+            JOIN 15,000+ SUCCESSFUL ULTRA FINISHERS TODAY
           </p>
-          <a 
-            href="#hero-form" 
-            className="inline-block px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 cta-button"
-          >
-            Download Your Free Guide Now
-          </a>
         </div>
       </div>
     </section>

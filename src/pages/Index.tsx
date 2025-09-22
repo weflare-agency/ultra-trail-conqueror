@@ -85,7 +85,7 @@ const Index = () => {
       <AuthorCredibility />
       <TestimonialsCarousel />
       <IndustryAwards />
-      <OfferComparison />
+      <OfferComparison onEmailSubmit={handleEmailSubmit} />
       <FinalCTA onEmailSubmit={handleEmailSubmit} />
       <Footer />
       

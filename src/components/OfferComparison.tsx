@@ -2,7 +2,11 @@ import { Check, Download, Package } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ultraGuideImage from "@/assets/ultra-guide-preview.jpg";
 
-export function OfferComparison() {
+interface OfferComparisonProps {
+  onEmailSubmit: (email: string, firstName: string) => void;
+}
+
+export function OfferComparison({ onEmailSubmit }: OfferComparisonProps) {
   return (
     <section className="py-20 bg-harrier-light-green">
       <div className="container mx-auto px-4">
@@ -55,12 +59,17 @@ export function OfferComparison() {
               </div>
             </div>
             
-            <a 
-              href="#hero-form"
-              className="block text-center py-4 rounded-xl font-bold text-lg cta-button"
+            <button 
+              onClick={() => {
+                document.getElementById('hero-form')?.scrollIntoView({ 
+                  behavior: 'smooth',
+                  block: 'center'
+                });
+              }}
+              className="w-full text-center py-4 rounded-xl font-bold text-lg cta-button"
             >
               Get Free Digital Copy
-            </a>
+            </button>
           </div>
           
           {/* Physical Book */}

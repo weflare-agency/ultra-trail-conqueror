@@ -1,175 +1,155 @@
-import { useState } from "react";
+import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ChevronDown, Shield, Clock, CheckCircle, Star } from "lucide-react";
-import heroBackground from "@/assets/harrier-hero-runner.jpg";
-import harrierLogoWhite from "@/assets/harrier-logo-white.png";
+import { Shield, Star, Zap } from "lucide-react";
+import heroImage from "@/assets/hero-trail-runners.jpg";
 
 interface HeroSectionProps {
   onEmailSubmit: (email: string, firstName: string) => void;
 }
 
-
-
-const whatsInsideItems = [
-  "12-week progressive training plans for all levels",
-  "Nutrition strategies that prevent bonking", 
-  "Gear recommendations from ultra veterans",
-  "Mental training techniques for tough miles",
-  "Recovery protocols to prevent injury",
-  "Race day execution checklist"
-];
-
 export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
-  const [email, setEmail] = useState("");
-  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState('');
+  const [firstName, setFirstName] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [formStep, setFormStep] = useState(1);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!email || !firstName) return;
     
-    if (formStep === 1) {
-      if (!email.trim()) return;
-      setFormStep(2);
-      return;
-    }
-    
-    if (!fullName.trim()) return;
-
     setIsLoading(true);
-    await onEmailSubmit(email, fullName);
-    setIsLoading(false);
+    try {
+      await onEmailSubmit(email, firstName);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
     <section 
-      className="min-h-screen flex items-center justify-center relative overflow-hidden"
-      style={{ backgroundImage: `url(${heroBackground})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      id="hero-form"
+      className="relative min-h-screen flex items-center justify-center py-12"
+      style={{ 
+        backgroundImage: `url(${heroImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
     >
-      <div className="absolute inset-0 bg-black/40 z-10"></div>
-      <div className="hero-content container mx-auto px-4 py-12 relative z-20">
-        {/* Header with Logo */}
-        <div className="text-center mb-8">
-          <img 
-            src={harrierLogoWhite} 
-            alt="Harrier Trail Running" 
-            className="h-12 mx-auto mb-6"
-          />
+      <div className="absolute inset-0 bg-black/40"></div>
+      
+      <div className="container mx-auto px-4 relative z-10 text-center">
+        {/* Problem-Focused Headline */}
+        <div className="max-w-5xl mx-auto mb-12">
+          <h1 className="font-saira font-black text-6xl md:text-7xl lg:text-8xl text-white mb-8 leading-[0.9] tracking-[0.02em] drop-shadow-2xl">
+            DON'T LET YOUR FIRST<br />
+            <span className="text-harrier-yellow">ULTRA END IN</span><br />
+            FAILURE
+          </h1>
+          
+          <p className="font-saira font-bold text-2xl md:text-3xl lg:text-4xl text-white mb-8 leading-tight tracking-wide drop-shadow-lg">
+            73% OF FIRST-TIME ULTRA RUNNERS DON'T FINISH<br />
+            HERE'S HOW TO BE IN THE 27% WHO DO
+          </p>
         </div>
 
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Left Column - Main Content */}
-            <div className="text-left">
-              {/* Main Headlines */}
-              <div className="mb-8">
-                <h2 className="text-lg md:text-xl font-bold text-white mb-2 tracking-wide">
-                  DOWNLOAD YOUR <span className="text-orange-400">FREE</span> 96 PAGE
-                </h2>
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-orange-400 mb-4 leading-tight tracking-tight">
-                  HOW TO RUN AN ULTRA GUIDE
-                </h1>
+        {/* Centered Form - Primary Focus */}
+        <div className="max-w-lg mx-auto mb-12">
+          <div className="bg-white rounded-2xl p-8 md:p-10 shadow-2xl border-4 border-harrier-yellow">
+            <div className="text-center mb-8">
+              <div className="inline-flex items-center gap-2 bg-harrier-yellow px-6 py-2 rounded-full mb-4">
+                <Star className="w-5 h-5 text-harrier-dark-green" />
+                <span className="font-saira font-black text-harrier-dark-green text-sm tracking-wider">FREE INSTANT ACCESS</span>
+                <Star className="w-5 h-5 text-harrier-dark-green" />
               </div>
-
-              {/* What's Inside Section */}
-              <div className="mb-8">
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 tracking-wide">
-                  WHAT'S INSIDE
-                </h3>
-                <div className="space-y-3">
-                  {whatsInsideItems.map((item, index) => (
-                    <div key={index} className="flex items-start gap-3">
-                      <div className="w-6 h-6 bg-orange-400 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <CheckCircle className="w-4 h-4 text-white" />
-                      </div>
-                      <p className="text-white text-lg font-medium">{item}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <h3 className="font-saira font-black text-2xl md:text-3xl text-harrier-dark-green mb-3 tracking-wide">
+                GET YOUR FREE 96-PAGE<br />ULTRA RUNNING GUIDE
+              </h3>
+              <p className="font-comfortaa font-medium text-harrier-dark-green/80 text-lg leading-relaxed">
+                EVERYTHING YOU NEED TO TRAIN, GEAR UP & FINISH STRONG
+              </p>
             </div>
-
-            {/* Right Column - Conversion Form */}
-            <div className="lg:max-w-md mx-auto w-full">
-              <div className="conversion-form p-6">
-                <div className="text-center mb-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
-                    Get Your Free Guide
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    Instant download • 100% FREE
-                  </p>
-                </div>
-
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  {formStep === 1 && (
-                    <div>
-                      <Input
-                        type="email"
-                        placeholder="Enter your email address"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="h-12 text-base"
-                        required
-                      />
-                    </div>
-                  )}
-
-                  {formStep === 2 && (
-                    <div>
-                      <Input
-                        type="text"
-                        placeholder="What's your full name?"
-                        value={fullName}
-                        onChange={(e) => setFullName(e.target.value)}
-                        className="h-12 text-base"
-                        required
-                      />
-                    </div>
-                  )}
-
-                  <Button 
-                    type="submit" 
-                    className="cta-button w-full h-12 text-base font-bold"
-                    disabled={isLoading}
-                  >
-                    {isLoading ? (
-                      <div className="flex items-center gap-2">
-                        <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-                        Preparing...
-                      </div>
-                    ) : formStep === 1 ? (
-                      "Continue →"
-                    ) : (
-                      "Download Free Guide →"
-                    )}
-                  </Button>
-                </form>
-
-                {/* Trust Indicators */}
-                <div className="flex justify-center gap-6 mt-4 text-center">
-                  <div className="flex flex-col items-center gap-1">
-                    <Shield className="w-4 h-4 text-green-600" />
-                    <span className="text-xs text-gray-600">Secure</span>
-                  </div>
-                  <div className="flex flex-col items-center gap-1">
-                    <Clock className="w-4 h-4 text-green-600" />
-                    <span className="text-xs text-gray-600">Instant</span>
-                  </div>
-                  <div className="flex flex-col items-center gap-1">
-                    <Star className="w-4 h-4 text-green-600" />
-                    <span className="text-xs text-gray-600">Rated</span>
-                  </div>
-                </div>
+            
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div>
+                <Input
+                  type="text"
+                  placeholder="Your First Name"
+                  value={firstName}
+                  onChange={(e) => setFirstName(e.target.value)}
+                  className="h-14 text-xl font-medium border-2 border-harrier-light-green/30 focus:border-harrier-medium-green rounded-xl"
+                  required
+                />
+              </div>
+              
+              <div>
+                <Input
+                  type="email"
+                  placeholder="Your Email Address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="h-14 text-xl font-medium border-2 border-harrier-light-green/30 focus:border-harrier-medium-green rounded-xl"
+                  required
+                />
+              </div>
+              
+              <Button
+                type="submit"
+                disabled={!email || !firstName || isLoading}
+                className="w-full h-16 text-xl font-black bg-harrier-yellow hover:bg-harrier-yellow/90 text-harrier-dark-green rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              >
+                {isLoading ? "SENDING YOUR GUIDE..." : "GET MY FREE GUIDE NOW"}
+              </Button>
+            </form>
+            
+            {/* Trust Indicators */}
+            <div className="grid grid-cols-3 gap-4 mt-8 pt-6 border-t border-harrier-light-green/20">
+              <div className="text-center">
+                <Zap className="w-8 h-8 text-harrier-medium-green mx-auto mb-2" />
+                <p className="text-sm font-semibold text-harrier-dark-green/70">INSTANT ACCESS</p>
+              </div>
+              <div className="text-center">
+                <Shield className="w-8 h-8 text-harrier-medium-green mx-auto mb-2" />
+                <p className="text-sm font-semibold text-harrier-dark-green/70">100% SECURE</p>
+              </div>
+              <div className="text-center">
+                <Star className="w-8 h-8 text-harrier-yellow mx-auto mb-2" />
+                <p className="text-sm font-semibold text-harrier-dark-green/70">5-STAR RATED</p>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <ChevronDown className="w-8 h-8 text-white/70" />
+        {/* Social Proof */}
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-white/95 backdrop-blur-sm rounded-xl p-6 mb-8 shadow-lg">
+            <p className="font-saira font-bold text-xl md:text-2xl text-harrier-dark-green mb-4">
+              JOIN 15,000+ SUCCESSFUL ULTRA FINISHERS
+            </p>
+            <div className="flex items-center justify-center gap-1 mb-2">
+              {[...Array(5)].map((_, i) => (
+                <Star key={i} className="w-6 h-6 fill-harrier-yellow text-harrier-yellow" />
+              ))}
+            </div>
+            <p className="font-comfortaa text-lg text-harrier-dark-green/80">
+              "Full of great advice and information for those, like myself, looking to take on the ultra" - Arlene M
+            </p>
+          </div>
+
+          {/* Physical Book Option */}
+          <div className="text-center">
+            <p className="font-comfortaa font-medium text-white text-lg mb-4">
+              PREFER A PHYSICAL COPY? GRAB THE PRINTED BOOK FOR JUST £9.99
+            </p>
+            <a 
+              href="https://harrierrunfree.co.uk/collections/ultra-collection/products/how-to-run-an-ultra-book"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block px-8 py-4 border-3 border-white text-white hover:bg-white hover:text-harrier-dark-green transition-all duration-300 rounded-xl font-saira font-bold text-lg tracking-wide shadow-lg hover:shadow-xl"
+            >
+              GET THE PRINTED VERSION
+            </a>
+          </div>
         </div>
       </div>
     </section>

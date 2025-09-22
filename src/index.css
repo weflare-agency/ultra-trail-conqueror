@@ -9,14 +9,15 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Harrier Brand Colors - More Green Dominant */
-    --harrier-dark-green: 175 85% 18%; /* Deeper forest green */
-    --harrier-medium-green: 175 75% 28%; /* Main brand green */
-    --harrier-light-green: 175 65% 38%; /* Lighter green accent */
-    --harrier-mint: 175 45% 55%; /* Mint green for highlights */
-    --harrier-yellow: 38 100% 50%; /* #fd9d00 */
+    /* Harrier Official Brand Colors - Per Brand Guidelines */
+    --harrier-dark-green: 183 66% 17%; /* #0e4649 */
+    --harrier-darker-green: 184 66% 20%; /* #0f4e5a */ 
+    --harrier-medium-green: 174 84% 32%; /* #138e80 */
+    --harrier-light-green: 174 46% 50%; /* #4eb2a4 */
+    --harrier-mint: 174 46% 75%; /* lighter tint of brand green */
+    --harrier-yellow: 37 100% 49%; /* #fd9d00 */
     --harrier-white: 0 0% 100%; /* #ffffff */
-    --harrier-dark-gray: 210 2% 19%; /* #303031 */
+    --harrier-dark-gray: 240 1% 19%; /* #303031 */
     --harrier-light-gray: 240 2% 75%; /* #c0bec0 */
 
     /* Core Design System - Green Background Focus */
@@ -111,11 +112,65 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
+    font-family: "Comfortaa", "Inter", system-ui, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
+    font-family: "Saira", sans-serif;
     @apply font-bold tracking-wide;
+  }
+
+  /* Typography Classes */
+  .brand-title {
+    @apply font-saira font-black text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-wider leading-tight;
+  }
+
+  .brand-subtitle {
+    @apply font-saira font-bold text-2xl md:text-3xl lg:text-4xl tracking-wide leading-snug;
+  }
+
+  .brand-body {
+    @apply font-comfortaa font-medium text-lg md:text-xl lg:text-2xl leading-relaxed;
+  }
+
+  .brand-condensed {
+    @apply font-saira-condensed font-bold text-base md:text-lg lg:text-xl tracking-wide uppercase;
+  }
+
+  /* Yellow highlight boxes - brand compliance */
+  .yellow-highlight {
+    background: hsl(var(--harrier-yellow));
+    color: hsl(var(--harrier-dark-green));
+    padding: 0.75rem 1.25rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    border: 2px solid hsl(var(--harrier-yellow));
+    box-shadow: 0 4px 12px hsl(var(--harrier-yellow) / 0.3);
+  }
+
+  /* Pattern backgrounds - mandatory for green sections */
+  .pattern-bg {
+    position: relative;
+  }
+
+  .pattern-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/src/assets/topographic-pattern.png');
+    background-size: 600px;
+    background-repeat: repeat;
+    opacity: 0.15;
+    z-index: 0;
+  }
+
+  .pattern-bg > * {
+    position: relative;
+    z-index: 1;
   }
 }
 
@@ -174,6 +229,19 @@ All colors MUST be HSL.
     position: relative;
   }
 
+  .hero-cycling-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, 
+      rgba(175, 85%, 18%, 0.7) 0%, 
+      rgba(175, 75%, 28%, 0.5) 50%, 
+      rgba(175, 65%, 38%, 0.3) 100%);
+    z-index: 1;
+  }
 
   .hero-content {
     position: relative;
