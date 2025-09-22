@@ -4,34 +4,34 @@ import { Button } from "@/components/ui/button";
 
 const testimonials = [
   {
-    text: "Full of great advice and information for those, like myself, looking to take on the ultra. The mental strategies section was a game-changer.",
-    author: "Arlene M.",
+    text: "Full of great advice for those looking to take on the ultra",
+    author: "Arlene M",
     rating: 5,
-    location: "Peak District"
+    location: "Yorkshire"
   },
   {
-    text: "This guide completely transformed my approach to ultra running. The gear recommendations alone saved me hundreds of pounds.",
-    author: "Sarah M.",
-    rating: 5,
-    location: "Yorkshire Dales"
-  },
-  {
-    text: "As a beginner, I was overwhelmed by conflicting advice online. This guide cut through the noise and gave me a clear path forward.",
-    author: "James R.",
+    text: "Packed with good advice. I wish I'd had this for my first ultra",
+    author: "Sandra E",
     rating: 5,
     location: "Lake District"
   },
   {
-    text: "Practical, no-nonsense advice from people who've actually done it. The training schedules are realistic and achievable.",
-    author: "Emma L.",
+    text: "Great tips, especially if you're new to trail running",
+    author: "Stephanie V",
     rating: 5,
-    location: "Pennine Way"
+    location: "Peak District"
   },
   {
-    text: "I've read dozens of running books, but this is the first one that specifically addresses ultra running challenges. Brilliant resource.",
-    author: "Michael T.",
+    text: "This guide gave me the confidence to sign up for my first 50k",
+    author: "Michael R",
     rating: 5,
-    location: "Scottish Highlands"
+    location: "Scotland"
+  },
+  {
+    text: "Brilliant resource - covers everything you need to know",
+    author: "Emma L",
+    rating: 5,
+    location: "Wales"
   }
 ];
 
@@ -59,83 +59,80 @@ export function TestimonialsCarousel() {
     setIsAutoPlaying(false);
   };
 
-  const currentTestimonial = testimonials[currentIndex];
-
   return (
-    <section className="py-24 bg-white">
+    <section className="py-20 bg-harrier-medium-green">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-20">
-          <h2 className="font-saira font-black text-5xl md:text-6xl lg:text-7xl text-harrier-dark-green mb-8 tracking-wider leading-tight">
-            WHAT ULTRA RUNNERS<br />ARE SAYING
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            What Trail Runners Are Saying
           </h2>
-          <p className="font-comfortaa font-semibold text-xl md:text-2xl lg:text-3xl text-harrier-dark-green/80 max-w-4xl mx-auto leading-relaxed">
-            JOIN THOUSANDS OF SUCCESSFUL ULTRA FINISHERS<br />WHO USED THIS GUIDE
+          <p className="text-xl text-white/90">
+            Real feedback from runners who've used our guide
           </p>
         </div>
-
-        <div className="max-w-5xl mx-auto">
-          <div className="bg-gradient-to-br from-harrier-light-green/10 to-harrier-mint/10 rounded-3xl p-10 md:p-16 shadow-2xl border-2 border-harrier-yellow/20">
-            {/* Star Rating */}
-            <div className="flex justify-center gap-2 mb-8">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="w-10 h-10 md:w-12 md:h-12 fill-harrier-yellow text-harrier-yellow"
+        
+        <div className="max-w-4xl mx-auto relative">
+          <div className="testimonial-card bg-harrier-dark-green border-harrier-light-green text-center animate-scale-in">
+            {/* Stars */}
+            <div className="flex justify-center mb-6">
+              {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
+                <Star key={i} className="w-6 h-6 fill-harrier-yellow text-harrier-yellow mr-1" />
+              ))}
+            </div>
+            
+            {/* Quote */}
+            <blockquote className="text-2xl md:text-3xl text-white font-medium mb-8 leading-relaxed">
+              "{testimonials[currentIndex].text}"
+            </blockquote>
+            
+            {/* Author */}
+            <div className="text-harrier-mint">
+              <p className="font-semibold text-lg mb-1">
+                {testimonials[currentIndex].author}
+              </p>
+              <p className="text-harrier-yellow">
+                {testimonials[currentIndex].location}
+              </p>
+            </div>
+          </div>
+          
+          {/* Navigation */}
+          <div className="flex justify-center items-center mt-8 space-x-4">
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={prevTestimonial}
+              className="rounded-full border-harrier-light-green text-harrier-yellow hover:bg-harrier-light-green hover:text-white bg-harrier-dark-green"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </Button>
+            
+            {/* Dots */}
+            <div className="flex space-x-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    setCurrentIndex(index);
+                    setIsAutoPlaying(false);
+                  }}
+                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                    index === currentIndex 
+                      ? 'bg-harrier-yellow scale-125' 
+                      : 'bg-harrier-light-green hover:bg-harrier-yellow'
+                  }`}
                 />
               ))}
             </div>
-
-            {/* Testimonial Text */}
-            <blockquote className="font-comfortaa font-medium text-2xl md:text-3xl lg:text-4xl text-harrier-dark-green text-center mb-10 leading-relaxed max-w-4xl mx-auto">
-              "{currentTestimonial.text}"
-            </blockquote>
-
-            {/* Author Info */}
-            <div className="text-center mb-10">
-              <cite className="font-saira font-bold text-2xl md:text-3xl text-harrier-medium-green not-italic">
-                {currentTestimonial.author}
-              </cite>
-              <p className="font-comfortaa font-semibold text-lg md:text-xl text-harrier-dark-green/70 mt-2">
-                {currentTestimonial.location}
-              </p>
-            </div>
-
-            {/* Navigation */}
-            <div className="flex items-center justify-between">
-              <button
-                onClick={prevTestimonial}
-                className="flex items-center gap-3 px-8 py-4 bg-harrier-medium-green text-white rounded-xl hover:bg-harrier-dark-green transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-                aria-label="Previous testimonial"
-              >
-                <ChevronLeft className="w-6 h-6" />
-                <span className="font-saira font-bold text-lg tracking-wide">PREVIOUS</span>
-              </button>
-
-              {/* Pagination Dots */}
-              <div className="flex gap-3">
-                {testimonials.map((_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentIndex(index)}
-                    className={`w-4 h-4 rounded-full transition-all duration-300 ${
-                      index === currentIndex
-                        ? 'bg-harrier-medium-green shadow-lg scale-125'
-                        : 'bg-harrier-light-green/40 hover:bg-harrier-light-green/60'
-                    }`}
-                    aria-label={`Go to testimonial ${index + 1}`}
-                  />
-                ))}
-              </div>
-
-              <button
-                onClick={nextTestimonial}
-                className="flex items-center gap-3 px-8 py-4 bg-harrier-medium-green text-white rounded-xl hover:bg-harrier-dark-green transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-                aria-label="Next testimonial"
-              >
-                <span className="font-saira font-bold text-lg tracking-wide">NEXT</span>
-                <ChevronRight className="w-6 h-6" />
-              </button>
-            </div>
+            
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={nextTestimonial}
+              className="rounded-full border-harrier-light-green text-harrier-yellow hover:bg-harrier-light-green hover:text-white bg-harrier-dark-green"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </Button>
           </div>
         </div>
       </div>

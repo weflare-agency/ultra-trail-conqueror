@@ -3,7 +3,7 @@ import harrierLogo from "@/assets/harrier-logo.png";
 
 export function Footer() {
   return (
-    <footer className="bg-harrier-dark-green text-white py-16 pattern-bg">
+    <footer className="bg-harrier-dark-green text-white py-16">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           {/* Logo and Description */}
@@ -15,38 +15,38 @@ export function Footer() {
                 className="h-12 w-auto mr-4 brightness-0 invert"
               />
               <div>
-                <h3 className="brand-subtitle text-white">HARRIER</h3>
-                <p className="brand-body text-harrier-mint text-sm tracking-wider">TRAIL RUNNING</p>
+                <h3 className="text-xl font-bold">HARRIER</h3>
+                <p className="text-harrier-mint text-sm tracking-wider">TRAIL RUNNING</p>
               </div>
             </div>
-            <p className="brand-body text-white/80 leading-relaxed max-w-md">
-              THE UK'S FASTEST GROWING BRAND FOR TRAIL RUNNERS. MADE BY TRAIL RUNNERS, FOR TRAIL RUNNERS. 
-              OVER 50,000 ORDERS SHIPPED ACROSS THE UK AND BEYOND.
+            <p className="text-white/80 leading-relaxed max-w-md">
+              The UK's fastest growing brand for trail runners. Made by trail runners, for trail runners. 
+              Over 50,000 orders shipped across the UK and beyond.
             </p>
           </div>
           
           {/* Quick Links */}
           <div>
-            <h4 className="brand-subtitle text-harrier-yellow mb-4">QUICK LINKS</h4>
+            <h4 className="text-lg font-bold mb-4 text-harrier-yellow">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
-                  main website
+                <a href="#" className="text-white/80 hover:text-harrier-yellow transition-colors">
+                  Main Website
                 </a>
               </li>
               <li>
-                <a href="#" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
-                  shop trail gear
+                <a href="#" className="text-white/80 hover:text-harrier-yellow transition-colors">
+                  Shop Trail Gear
                 </a>
               </li>
               <li>
-                <a href="#" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
-                  training plans
+                <a href="#" className="text-white/80 hover:text-harrier-yellow transition-colors">
+                  Training Plans
                 </a>
               </li>
               <li>
-                <a href="#" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
-                  race calendar
+                <a href="#" className="text-white/80 hover:text-harrier-yellow transition-colors">
+                  Race Calendar
                 </a>
               </li>
             </ul>
@@ -54,26 +54,26 @@ export function Footer() {
           
           {/* Legal */}
           <div>
-            <h4 className="brand-subtitle text-harrier-yellow mb-4">LEGAL</h4>
+            <h4 className="text-lg font-bold mb-4 text-harrier-yellow">Legal</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
-                  privacy policy
+                <a href="#" className="text-white/80 hover:text-harrier-yellow transition-colors">
+                  Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
-                  terms of service
+                <a href="#" className="text-white/80 hover:text-harrier-yellow transition-colors">
+                  Terms of Service
                 </a>
               </li>
               <li>
-                <a href="#" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
-                  cookie policy
+                <a href="#" className="text-white/80 hover:text-harrier-yellow transition-colors">
+                  Cookie Policy
                 </a>
               </li>
               <li>
-                <a href="#" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
-                  gdpr compliance
+                <a href="#" className="text-white/80 hover:text-harrier-yellow transition-colors">
+                  GDPR Compliance
                 </a>
               </li>
             </ul>
@@ -84,36 +84,36 @@ export function Footer() {
         <div className="border-t border-white/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <h4 className="brand-subtitle text-harrier-yellow mb-4 md:mb-0">
-                JOIN OUR TRAIL COMMUNITY
+              <h4 className="text-lg font-bold mb-4 md:mb-0 text-harrier-yellow">
+                Join Our Trail Community
               </h4>
             </div>
             
             <div className="flex space-x-4">
               <a 
                 href="#" 
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-harrier-yellow hover:text-harrier-dark-green transition-all duration-300"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-harrier-yellow hover:text-harrier-dark-teal transition-all duration-300"
                 aria-label="Facebook"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a 
                 href="#" 
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-harrier-yellow hover:text-harrier-dark-green transition-all duration-300"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-harrier-yellow hover:text-harrier-dark-teal transition-all duration-300"
                 aria-label="Instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a 
                 href="#" 
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-harrier-yellow hover:text-harrier-dark-green transition-all duration-300"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-harrier-yellow hover:text-harrier-dark-teal transition-all duration-300"
                 aria-label="Youtube"
               >
                 <Youtube className="w-5 h-5" />
               </a>
               <a 
                 href="#" 
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-harrier-yellow hover:text-harrier-dark-green transition-all duration-300"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-harrier-yellow hover:text-harrier-dark-teal transition-all duration-300"
                 aria-label="Twitter"
               >
                 <Twitter className="w-5 h-5" />
@@ -124,8 +124,8 @@ export function Footer() {
         
         {/* Copyright */}
         <div className="text-center mt-8 pt-8 border-t border-white/20">
-          <p className="brand-body text-white/60 text-sm">
-            © 2024 harrier trail running. all rights reserved. made by trail runners, for trail runners.
+          <p className="text-white/60 text-sm">
+            © 2024 Harrier Trail Running. All rights reserved. Made by trail runners, for trail runners.
           </p>
         </div>
       </div>

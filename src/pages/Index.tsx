@@ -1,11 +1,17 @@
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
-import { CleanHero } from "@/components/CleanHero";
-import { BenefitsBoxes } from "@/components/BenefitsBoxes";
-import { TealFormSection } from "@/components/TealFormSection";
-import { TestimonialSection } from "@/components/TestimonialSection";
+import { HeroSection } from "@/components/HeroSection";
+import { TrustSignals } from "@/components/TrustSignals";
+import { WhatsInside } from "@/components/WhatsInside";
+import { RiskReversal } from "@/components/RiskReversal";
+import { AuthorCredibility } from "@/components/AuthorCredibility";
+import { TestimonialsCarousel } from "@/components/TestimonialsCarousel";
 import { IndustryAwards } from "@/components/IndustryAwards";
-import { SimpleFooter } from "@/components/SimpleFooter";
+import { OfferComparison } from "@/components/OfferComparison";
+import { FinalCTA } from "@/components/FinalCTA";
+import { Footer } from "@/components/Footer";
+import { ExitIntentPopup } from "@/components/ExitIntentPopup";
+import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 
 const Index = () => {
   const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -69,12 +75,22 @@ const Index = () => {
         })}
       </script>
 
-      <CleanHero onEmailSubmit={handleEmailSubmit} />
-      <BenefitsBoxes />
-      <TealFormSection onEmailSubmit={handleEmailSubmit} />
-      <TestimonialSection />
+      <div id="hero-form">
+        <HeroSection onEmailSubmit={handleEmailSubmit} />
+      </div>
+      
+      <TrustSignals />
+      <WhatsInside />
+      <RiskReversal />
+      <AuthorCredibility />
+      <TestimonialsCarousel />
       <IndustryAwards />
-      <SimpleFooter />
+      <OfferComparison onEmailSubmit={handleEmailSubmit} />
+      <FinalCTA onEmailSubmit={handleEmailSubmit} />
+      <Footer />
+      
+      <StickyMobileCTA onEmailSubmit={handleEmailSubmit} hasSubmitted={hasSubmitted} />
+      {!hasSubmitted && <ExitIntentPopup onEmailSubmit={handleEmailSubmit} />}
     </main>
   );
 };

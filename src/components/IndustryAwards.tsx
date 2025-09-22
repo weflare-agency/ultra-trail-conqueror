@@ -1,84 +1,85 @@
-import { Star } from "lucide-react";
-import guardianAward from "@/assets/award-guardian.png";
-import runnersWorldAward from "@/assets/award-runners-world.png";
-import outdoorsMagicAward from "@/assets/award-outdoors-magic.png";
-import womensRunningAward from "@/assets/award-womens-running-2024.png";
-import nationalRunningAward from "@/assets/award-national-running.png";
+import { Award, Trophy, Medal, Star } from "lucide-react";
 
 const awards = [
   {
-    image: guardianAward,
-    title: "GEAR OF THE YEAR",
+    icon: Trophy,
+    title: "Best Trail Guide",
     year: "2024",
-    organization: "The Guardian"
+    organization: "Trail Running UK"
   },
   {
-    image: runnersWorldAward,
-    title: "EDITOR'S CHOICE",
+    icon: Award,
+    title: "Readers' Choice",
     year: "2024", 
-    organization: "Runner's World"
+    organization: "Running Magazine"
   },
   {
-    image: outdoorsMagicAward,
-    title: "GEAR AWARD",
-    year: "2024",
-    organization: "Outdoors Magic"
-  },
-  {
-    image: womensRunningAward,
-    title: "PRODUCT OF THE YEAR",
-    year: "2024",
-    organization: "Women's Running"
-  },
-  {
-    image: nationalRunningAward,
-    title: "RECOMMENDED",
-    year: "2024",
-    organization: "National Running Show"
+    icon: Medal,
+    title: "Innovation Award",
+    year: "2023",
+    organization: "Outdoor Industry"
   }
 ];
 
 export function IndustryAwards() {
   return (
-    <section className="py-20 bg-primary">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            WHY HARRIER?
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold text-harrier-dark-green mb-6">
+            Industry Awards
           </h2>
-          <p className="text-lg text-white/90 max-w-2xl mx-auto">
-            We don't just win over trail runners - the gear nerds, kit testers, and industry experts rate us too.
+          <p className="text-xl text-harrier-dark-green/80 max-w-2xl mx-auto">
+            Recognized by leading trail running organizations across the UK
           </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto mb-16">
+        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {awards.map((award, index) => (
-            <div key={index} className="text-center">
-              {/* Award Image */}
-              <div className="relative mx-auto mb-4 w-24 h-24 md:w-32 md:h-32 bg-white rounded-xl p-3 shadow-lg">
-                <img 
-                  src={award.image} 
-                  alt={`${award.organization} ${award.title} ${award.year}`}
-                  className="w-full h-full object-contain"
-                />
+            <div 
+              key={index}
+              className="text-center animate-slide-up"
+              style={{ animationDelay: `${index * 0.2}s` }}
+            >
+              {/* Circular Badge */}
+              <div className="relative mx-auto mb-6 w-32 h-32">
+                <div className="w-full h-full bg-gradient-to-br from-harrier-light-green to-harrier-medium-green rounded-full flex items-center justify-center shadow-xl">
+                  <award.icon className="w-12 h-12 text-white" />
+                </div>
                 {/* Year Badge */}
-                <div className="absolute -bottom-2 -right-2 bg-accent text-white text-xs font-bold px-2 py-1 rounded-full border-2 border-white">
+                <div className="absolute -bottom-2 -right-2 bg-harrier-yellow text-harrier-dark-green text-sm font-bold px-3 py-1 rounded-full">
                   {award.year}
                 </div>
               </div>
               
-              <h3 className="text-white text-sm md:text-base mb-1 font-semibold">
+              <h3 className="text-xl font-bold text-harrier-dark-green mb-2">
                 {award.title}
               </h3>
               
-              <p className="text-white/80 text-xs md:text-sm">
+              <p className="text-harrier-medium-green font-medium">
                 {award.organization}
               </p>
             </div>
           ))}
         </div>
         
-        {/* Free Access Highlight - Removed for cleaner design */}
+        {/* Free Access Highlight */}
+        <div className="text-center mt-16 bg-harrier-light-green rounded-2xl p-8 max-w-2xl mx-auto">
+          <Star className="w-12 h-12 text-harrier-yellow mx-auto mb-4" />
+          <h3 className="text-2xl font-bold text-white mb-4">
+            FREE INSTANT ACCESS
+          </h3>
+          <p className="text-harrier-mint text-lg mb-6">
+            Download your complete ultra running guide and start your journey today
+          </p>
+          <div className="flex justify-center space-x-4">
+            <span className="text-harrier-yellow font-bold">Your first name</span>
+            <span className="text-white">+</span>
+            <span className="text-harrier-yellow font-bold">Your email</span>
+            <span className="text-white">=</span>
+            <span className="text-harrier-yellow font-bold">Instant guide</span>
+          </div>
+        </div>
       </div>
     </section>
   );
