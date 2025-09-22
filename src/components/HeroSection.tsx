@@ -27,7 +27,7 @@ const compellingHeadlines = [
 
 export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
   const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
+  const [fullName, setFullName] = useState("");
   const [currentHeadlineIndex, setCurrentHeadlineIndex] = useState(0);
   
   const [isLoading, setIsLoading] = useState(false);
@@ -71,10 +71,10 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
       return;
     }
     
-    if (!firstName.trim()) return;
+    if (!fullName.trim()) return;
 
     setIsLoading(true);
-    await onEmailSubmit(email, firstName);
+    await onEmailSubmit(email, fullName);
     setIsLoading(false);
   };
 
@@ -212,9 +212,9 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
                       <div>
                         <Input
                           type="text"
-                          placeholder="What's your first name?"
-                          value={firstName}
-                          onChange={(e) => setFirstName(e.target.value)}
+                          placeholder="What's your full name?"
+                          value={fullName}
+                          onChange={(e) => setFullName(e.target.value)}
                           className="conversion-input h-14 text-base"
                           required
                         />
