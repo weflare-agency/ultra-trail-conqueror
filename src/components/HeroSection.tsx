@@ -145,25 +145,25 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
               {/* Left Column - Value Props */}
               <div className="text-left space-y-6">
                 <div className="space-y-4">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-yellow-400 mt-1 flex-shrink-0" />
+                  <div className="bg-harrier-medium-green/20 backdrop-blur-sm border-2 border-harrier-yellow/60 rounded-lg p-4 flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-harrier-yellow mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-lg font-semibold text-white">No More Training Guesswork</h3>
-                      <p className="text-white/80">Proven 12-week progressive plans for every fitness level</p>
+                      <p className="text-white/90">Proven 12-week progressive plans for every fitness level</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-yellow-400 mt-1 flex-shrink-0" />
+                  <div className="bg-harrier-medium-green/20 backdrop-blur-sm border-2 border-harrier-yellow/60 rounded-lg p-4 flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-harrier-yellow mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-lg font-semibold text-white">Avoid Costly Mistakes</h3>
-                      <p className="text-white/80">Learn from 100+ ultra finishers' hard-earned wisdom</p>
+                      <p className="text-white/90">Learn from 100+ ultra finishers' hard-earned wisdom</p>
                     </div>
                   </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-6 h-6 text-yellow-400 mt-1 flex-shrink-0" />
+                  <div className="bg-harrier-medium-green/20 backdrop-blur-sm border-2 border-harrier-yellow/60 rounded-lg p-4 flex items-start gap-3">
+                    <CheckCircle className="w-6 h-6 text-harrier-yellow mt-1 flex-shrink-0" />
                     <div>
                       <h3 className="text-lg font-semibold text-white">Finish Strong, Not Broken</h3>
-                      <p className="text-white/80">Injury prevention strategies that actually work</p>
+                      <p className="text-white/90">Injury prevention strategies that actually work</p>
                     </div>
                   </div>
                 </div>
