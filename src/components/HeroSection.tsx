@@ -2,16 +2,13 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ChevronDown, Users, Shield, Clock, CheckCircle, Star, Play, TrendingUp } from "lucide-react";
-import heroRunner1 from "@/assets/runner-action-1.jpg";
-import heroRunner2 from "@/assets/runner-action-2.jpg";
-import heroRunner3 from "@/assets/runner-action-3.jpg";
-import diverseRunner from "@/assets/harrier-diverse-runner.jpg";
+import heroBackground from "@/assets/harrier-hero-runner.jpg";
 
 interface HeroSectionProps {
   onEmailSubmit: (email: string, firstName: string) => void;
 }
 
-const heroImages = [heroRunner1, heroRunner2, heroRunner3, diverseRunner];
+
 
 const socialProofMessages = [
   { name: "Sarah from Manchester", action: "just downloaded the guide", time: "2 min ago" },
@@ -32,7 +29,7 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [currentHeadlineIndex, setCurrentHeadlineIndex] = useState(0);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
   const [isLoading, setIsLoading] = useState(false);
   const [showSocialProof, setShowSocialProof] = useState(false);
   const [currentProofIndex, setCurrentProofIndex] = useState(0);
@@ -47,13 +44,6 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
     return () => clearInterval(interval);
   }, []);
 
-  // Cycle through hero images
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex(prev => (prev + 1) % heroImages.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
 
   // Show social proof notifications
   useEffect(() => {
@@ -88,7 +78,7 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
     setIsLoading(false);
   };
 
-  const currentImage = heroImages[currentImageIndex];
+  
   const currentHeadline = compellingHeadlines[currentHeadlineIndex];
 
   return (
@@ -114,7 +104,7 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
 
       <section 
         className="hero-cycling-bg min-h-screen flex items-center justify-center relative overflow-hidden"
-        style={{ backgroundImage: `url(${currentImage})` }}
+        style={{ backgroundImage: `url(${heroBackground})` }}
       >
         <div className="hero-content container mx-auto px-4 py-12">
           {/* Urgency Banner */}
@@ -178,17 +168,6 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
                   </div>
                 </div>
 
-                {/* Video Testimonial */}
-                <div className="max-w-sm">
-                  <div className="video-overlay aspect-video flex items-center justify-center cursor-pointer">
-                    <div className="play-button">
-                      <Play className="w-8 h-8 text-green-700 ml-1" />
-                    </div>
-                  </div>
-                  <p className="text-white/90 text-sm mt-2 font-medium">
-                    "This guide literally changed my ultra game" - Sarah M., Ultra Finisher
-                  </p>
-                </div>
               </div>
 
               {/* Right Column - Conversion Form */}
