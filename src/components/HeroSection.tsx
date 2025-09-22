@@ -45,9 +45,14 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
   return (
     <section 
       className="min-h-screen flex items-center justify-center relative overflow-hidden"
-      style={{ backgroundImage: `url(${heroBackground})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      style={{ 
+        backgroundImage: `url(${heroBackground})`, 
+        backgroundSize: 'cover', 
+        backgroundPosition: 'center top',
+        backgroundAttachment: 'fixed'
+      }}
     >
-      <div className="absolute inset-0 bg-black/40 z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 z-10"></div>
       <div className="hero-content container mx-auto px-4 py-12 relative z-20">
         {/* Header with Logo */}
         <div className="text-center mb-8">
@@ -92,13 +97,17 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
 
             {/* Right Column - Conversion Form */}
             <div className="lg:max-w-md mx-auto w-full">
-              <div className="conversion-form p-6">
-                <div className="text-center mb-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">
+              <div className="conversion-form p-8 shadow-2xl bg-white/95 backdrop-blur-sm border border-white/20">
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-500 to-red-500 text-white px-4 py-2 rounded-full text-sm font-bold mb-4">
+                    <span className="w-2 h-2 bg-white rounded-full animate-pulse"></span>
+                    LIMITED TIME OFFER
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     Get Your Free Guide
                   </h3>
-                  <p className="text-gray-600 text-sm">
-                    Instant download • 100% FREE
+                  <p className="text-gray-600 text-sm font-medium">
+                    Instant download • 100% FREE • No spam, ever
                   </p>
                 </div>
 
@@ -131,7 +140,7 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
 
                   <Button 
                     type="submit" 
-                    className="cta-button w-full h-12 text-base font-bold"
+                    className="cta-button w-full h-14 text-lg font-bold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5"
                     disabled={isLoading}
                   >
                     {isLoading ? (
@@ -148,19 +157,29 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
                 </form>
 
                 {/* Trust Indicators */}
-                <div className="flex justify-center gap-6 mt-4 text-center">
-                  <div className="flex flex-col items-center gap-1">
-                    <Shield className="w-4 h-4 text-green-600" />
-                    <span className="text-xs text-gray-600">Secure</span>
+                <div className="flex justify-center gap-8 mt-6 text-center">
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                      <Shield className="w-5 h-5 text-green-600" />
+                    </div>
+                    <span className="text-xs text-gray-700 font-medium">100% Secure</span>
                   </div>
-                  <div className="flex flex-col items-center gap-1">
-                    <Clock className="w-4 h-4 text-green-600" />
-                    <span className="text-xs text-gray-600">Instant</span>
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                      <Clock className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <span className="text-xs text-gray-700 font-medium">Instant Access</span>
                   </div>
-                  <div className="flex flex-col items-center gap-1">
-                    <Star className="w-4 h-4 text-green-600" />
-                    <span className="text-xs text-gray-600">Rated</span>
+                  <div className="flex flex-col items-center gap-2">
+                    <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                      <Star className="w-5 h-5 text-orange-600" />
+                    </div>
+                    <span className="text-xs text-gray-700 font-medium">5-Star Rated</span>
                   </div>
+                </div>
+                
+                <div className="text-center mt-4">
+                  <p className="text-xs text-gray-500">Join 12,000+ runners who downloaded this guide</p>
                 </div>
               </div>
             </div>
