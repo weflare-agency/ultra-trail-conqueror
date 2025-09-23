@@ -109,23 +109,23 @@ export const RiskReversal = () => {
         {/* Bottom Trust Indicators */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto">
           <div className="text-center">
-            <Shield className="w-8 h-8 text-harrier-medium-green mx-auto mb-2" />
-            <p className="font-semibold text-harrier-dark-green">Risk-Free</p>
+            <Shield className="w-8 h-8 text-harrier-yellow mx-auto mb-2" />
+            <p className="font-bold text-harrier-dark-green">Risk-Free</p>
             <p className="text-sm text-harrier-dark-green/70">100% Free Guide</p>
           </div>
           <div className="text-center">
-            <Clock className="w-8 h-8 text-harrier-medium-green mx-auto mb-2" />
-            <p className="font-semibold text-harrier-dark-green">Instant Access</p>
+            <Clock className="w-8 h-8 text-harrier-yellow mx-auto mb-2" />
+            <p className="font-bold text-harrier-dark-green">Instant Access</p>
             <p className="text-sm text-harrier-dark-green/70">Download Immediately</p>
           </div>
           <div className="text-center">
-            <Award className="w-8 h-8 text-harrier-medium-green mx-auto mb-2" />
-            <p className="font-semibold text-harrier-dark-green">Proven Results</p>
+            <Award className="w-8 h-8 text-harrier-yellow mx-auto mb-2" />
+            <p className="font-bold text-harrier-dark-green">Proven Results</p>
             <p className="text-sm text-harrier-dark-green/70">15,000+ Success Stories</p>
           </div>
           <div className="text-center">
-            <Zap className="w-8 h-8 text-harrier-medium-green mx-auto mb-2" />
-            <p className="font-semibold text-harrier-dark-green">Expert Authors</p>
+            <Zap className="w-8 h-8 text-harrier-yellow mx-auto mb-2" />
+            <p className="font-bold text-harrier-dark-green">Expert Authors</p>
             <p className="text-sm text-harrier-dark-green/70">Ultra Champions</p>
           </div>
         </div>
