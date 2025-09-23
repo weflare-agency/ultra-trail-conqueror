@@ -116,17 +116,17 @@ export const RiskReversal = () => {
           <div className="text-center">
             <Clock className="w-8 h-8 text-harrier-yellow mx-auto mb-2" />
             <p className="font-bold text-harrier-dark-green">Instant Access</p>
-            <p className="text-sm text-harrier-dark-green/70">Download Immediately</p>
+            <p className="text-base font-bold text-harrier-yellow">Download Immediately</p>
           </div>
           <div className="text-center">
             <Award className="w-8 h-8 text-harrier-yellow mx-auto mb-2" />
             <p className="font-bold text-harrier-dark-green">Proven Results</p>
-            <p className="text-sm text-harrier-dark-green/70">15,000+ Success Stories</p>
+            <p className="text-base font-bold text-harrier-yellow">15,000+ Success Stories</p>
           </div>
           <div className="text-center">
             <Zap className="w-8 h-8 text-harrier-yellow mx-auto mb-2" />
             <p className="font-bold text-harrier-dark-green">Expert Authors</p>
-            <p className="text-sm text-harrier-dark-green/70">Ultra Champions</p>
+            <p className="text-base font-bold text-harrier-yellow">Ultra Champions</p>
           </div>
         </div>
       </div>
