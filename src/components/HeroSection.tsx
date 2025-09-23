@@ -65,7 +65,7 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
               <h3 className="font-saira font-black text-2xl md:text-3xl text-harrier-dark-green mb-3 tracking-wide">
                 GET YOUR FREE 96-PAGE<br />ULTRA RUNNING GUIDE
               </h3>
-              <p className="font-comfortaa font-medium text-harrier-dark-green/80 text-lg leading-relaxed">
+              <p className="font-comfortaa font-bold text-harrier-dark-green/80 text-lg leading-relaxed">
                 EVERYTHING YOU NEED TO TRAIN, GEAR UP & FINISH STRONG
               </p>
             </div>
