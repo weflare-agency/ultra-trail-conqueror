@@ -62,7 +62,7 @@ export function TestimonialsCarousel() {
   const currentTestimonial = testimonials[currentIndex];
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-gradient-to-br from-harrier-light-green/5 to-harrier-mint/10 pattern-bg">
       <div className="container mx-auto px-4">
         <div className="text-center mb-20">
           <h2 className="font-saira font-black text-5xl md:text-6xl lg:text-7xl text-harrier-dark-green mb-8 tracking-wider leading-tight">
