@@ -85,7 +85,7 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
               </div>
               
               <div>
-                <p className="text-sm font-semibold text-harrier-dark-green mb-3">I am a:</p>
+                <p className="text-sm font-black text-harrier-dark-green mb-3 uppercase tracking-wide">I AM A:</p>
                 <RadioGroup
                   value={runnerLevel}
                   onValueChange={setRunnerLevel}
@@ -93,20 +93,20 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
                 >
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="beginner" id="beginner" />
-                    <label htmlFor="beginner" className="text-sm font-medium text-harrier-dark-green cursor-pointer">
-                      Beginner
+                    <label htmlFor="beginner" className="text-sm font-bold text-harrier-dark-green cursor-pointer uppercase tracking-wide">
+                      BEGINNER
                     </label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="regular" id="regular" />
-                    <label htmlFor="regular" className="text-sm font-medium text-harrier-dark-green cursor-pointer">
-                      Regular
+                    <label htmlFor="regular" className="text-sm font-bold text-harrier-dark-green cursor-pointer uppercase tracking-wide">
+                      REGULAR
                     </label>
                   </div>
                   <div className="flex items-center space-x-2">
                     <RadioGroupItem value="veteran" id="veteran" />
-                    <label htmlFor="veteran" className="text-sm font-medium text-harrier-dark-green cursor-pointer">
-                      Ultra Veteran
+                    <label htmlFor="veteran" className="text-sm font-bold text-harrier-dark-green cursor-pointer uppercase tracking-wide">
+                      ULTRA VETERAN
                     </label>
                   </div>
                 </RadioGroup>
