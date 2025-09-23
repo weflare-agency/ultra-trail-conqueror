@@ -71,11 +71,19 @@ export function WhatsInside() {
         
         {/* Call to Action */}
         <div className="text-center mt-20">
-          <div className="inline-block bg-harrier-yellow px-8 py-4 rounded-xl shadow-lg mb-6">
+          <button 
+            onClick={() => {
+              const heroForm = document.getElementById('hero-form');
+              if (heroForm) {
+                heroForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+              }
+            }}
+            className="inline-block bg-harrier-yellow px-8 py-4 rounded-xl shadow-lg mb-6 hover:bg-harrier-yellow/90 transition-colors cursor-pointer"
+          >
             <span className="font-saira font-black text-2xl md:text-3xl text-harrier-dark-green tracking-wide">
               DOWNLOAD YOUR FREE GUIDE NOW
             </span>
-          </div>
+          </button>
           <p className="font-comfortaa font-semibold text-xl md:text-2xl text-white/95 max-w-2xl mx-auto">
             JOIN 15,000+ SUCCESSFUL ULTRA FINISHERS TODAY
           </p>
