@@ -48,13 +48,13 @@ export function ExitIntentPopup({ onEmailSubmit }: ExitIntentPopupProps) {
       <div className="bg-white rounded-2xl max-w-md w-full p-6 relative animate-scale-in">
         <button
           onClick={handleClose}
-          className="absolute top-4 right-4 text-harrier-dark-gray hover:text-harrier-dark-teal"
+          className="absolute top-4 right-4 text-harrier-dark-gray hover:text-harrier-dark-green"
         >
           <X className="w-5 h-5" />
         </button>
         
         <div className="text-center mb-6">
-          <h3 className="text-2xl font-bold text-harrier-dark-teal mb-3">
+          <h3 className="text-2xl font-bold text-harrier-dark-green mb-3">
             Wait! Don't Miss Out
           </h3>
           <p className="text-harrier-dark-gray">
@@ -64,7 +64,7 @@ export function ExitIntentPopup({ onEmailSubmit }: ExitIntentPopupProps) {
         
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <Label htmlFor="popupFirstName" className="text-harrier-dark-teal font-medium">
+            <Label htmlFor="popupFirstName" className="text-harrier-dark-green font-medium">
               First Name
             </Label>
             <Input
@@ -79,7 +79,7 @@ export function ExitIntentPopup({ onEmailSubmit }: ExitIntentPopupProps) {
           </div>
           
           <div>
-            <Label htmlFor="popupEmail" className="text-harrier-dark-teal font-medium">
+            <Label htmlFor="popupEmail" className="text-harrier-dark-green font-medium">
               Email Address
             </Label>
             <Input
