@@ -33,7 +33,7 @@ export function FinalCTA({ onEmailSubmit }: FinalCTAProps) {
             <div className="inline-flex items-center bg-white/10 backdrop-blur-sm rounded-full px-6 py-3 mb-6">
               <Users className="w-5 h-5 mr-2" />
               <span className="brand-body">
-                JOIN 15,000+ RUNNERS WHO'VE DOWNLOADED THIS WEEK
+                TRUSTED BY ULTRA RUNNERS WORLDWIDE
               </span>
             </div>
             
