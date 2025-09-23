@@ -2,23 +2,25 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Users, Clock, Shield } from "lucide-react";
 
 interface FinalCTAProps {
-  onEmailSubmit: (email: string, firstName: string) => void;
+  onEmailSubmit: (email: string, firstName: string, experienceLevel?: string) => void;
 }
 
 export function FinalCTA({ onEmailSubmit }: FinalCTAProps) {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
+  const [experienceLevel, setExperienceLevel] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !firstName) return;
+    if (!email || !firstName || !experienceLevel) return;
     
     setIsLoading(true);
-    await onEmailSubmit(email, firstName);
+    await onEmailSubmit(email, firstName, experienceLevel);
     setIsLoading(false);
   };
 
@@ -76,6 +78,23 @@ export function FinalCTA({ onEmailSubmit }: FinalCTAProps) {
                   className="mt-1 text-base h-12 border-harrier-light-green focus:ring-harrier-medium-green"
                   required
                 />
+              </div>
+              
+              <div className="text-left">
+                <Label className="text-harrier-dark-green font-medium">
+                  Running Experience Level
+                </Label>
+                <Select value={experienceLevel} onValueChange={setExperienceLevel} required>
+                  <SelectTrigger className="mt-1 h-12 border-harrier-light-green focus:ring-harrier-medium-green">
+                    <SelectValue placeholder="Select your experience level" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="beginner">Beginner (0-2 marathons)</SelectItem>
+                    <SelectItem value="intermediate">Intermediate (2-5 marathons)</SelectItem>
+                    <SelectItem value="advanced">Advanced (5+ marathons)</SelectItem>
+                    <SelectItem value="expert">Ultra Veteran (completed ultras)</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
               
               <Button 
