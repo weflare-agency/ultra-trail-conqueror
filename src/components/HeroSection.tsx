@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Shield, Star, Zap } from "lucide-react";
 import heroImage from "@/assets/hero-trail-runners.jpg";
 
@@ -11,6 +12,7 @@ interface HeroSectionProps {
 export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
   const [email, setEmail] = useState('');
   const [firstName, setFirstName] = useState('');
+  const [runnerLevel, setRunnerLevel] = useState('beginner');
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -80,6 +82,34 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
                   className="h-14 text-xl font-medium border-2 border-harrier-light-green/30 focus:border-harrier-medium-green rounded-xl"
                   required
                 />
+              </div>
+              
+              <div>
+                <p className="text-sm font-semibold text-harrier-dark-green mb-3">I am a:</p>
+                <RadioGroup
+                  value={runnerLevel}
+                  onValueChange={setRunnerLevel}
+                  className="flex gap-4 justify-center"
+                >
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="beginner" id="beginner" />
+                    <label htmlFor="beginner" className="text-sm font-medium text-harrier-dark-green cursor-pointer">
+                      Beginner
+                    </label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="regular" id="regular" />
+                    <label htmlFor="regular" className="text-sm font-medium text-harrier-dark-green cursor-pointer">
+                      Regular
+                    </label>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <RadioGroupItem value="veteran" id="veteran" />
+                    <label htmlFor="veteran" className="text-sm font-medium text-harrier-dark-green cursor-pointer">
+                      Ultra Veteran
+                    </label>
+                  </div>
+                </RadioGroup>
               </div>
               
               <div>
