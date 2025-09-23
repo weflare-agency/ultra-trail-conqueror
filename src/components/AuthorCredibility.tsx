@@ -24,7 +24,7 @@ export function AuthorCredibility() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-20 animate-fade-in">
           <h2 className="font-saira font-black text-5xl md:text-6xl lg:text-7xl text-white mb-8 tracking-wider leading-tight">
-            WRITTEN BY ULTRA<br />RUNNING EXPERTS
+            WRITTEN BY ULTRA<br /><span className="text-harrier-yellow">RUNNING EXPERTS</span>
           </h2>
           <p className="font-comfortaa font-semibold text-xl md:text-2xl lg:text-3xl text-white/95 max-w-4xl mx-auto leading-relaxed">
             LEARN FROM PROFESSIONALS WHO'VE WALKED (AND RUN)<br />
