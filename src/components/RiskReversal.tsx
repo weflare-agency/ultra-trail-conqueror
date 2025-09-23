@@ -111,7 +111,7 @@ export const RiskReversal = () => {
           <div className="text-center">
             <Shield className="w-8 h-8 text-harrier-yellow mx-auto mb-2" />
             <p className="font-bold text-harrier-dark-green">Risk-Free</p>
-            <p className="text-sm text-harrier-dark-green/70">100% Free Guide</p>
+            <p className="text-base font-bold text-harrier-yellow">100% Free Guide</p>
           </div>
           <div className="text-center">
             <Clock className="w-8 h-8 text-harrier-yellow mx-auto mb-2" />
