@@ -2,7 +2,7 @@ import { Star, Shield, Users, Award } from "lucide-react";
 
 export function TrustSignals() {
   return (
-    <section className="py-12 bg-harrier-medium-green pattern-bg">
+    <section className="py-12 bg-harrier-medium-green">
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <p className="text-white font-medium text-lg">
