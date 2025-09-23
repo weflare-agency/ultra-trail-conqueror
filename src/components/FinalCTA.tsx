@@ -12,7 +12,7 @@ interface FinalCTAProps {
 export function FinalCTA({ onEmailSubmit }: FinalCTAProps) {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
-  const [experienceLevel, setExperienceLevel] = useState("");
+  const [experienceLevel, setExperienceLevel] = useState<string | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
