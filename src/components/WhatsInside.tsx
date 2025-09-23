@@ -1,6 +1,4 @@
-import { MapPin, Calendar, Backpack, Apple, Brain, Users } from "lucide-react";
-import hydrationIcon1 from "@/assets/hydration-icon-1.svg";
-import hydrationIcon2 from "@/assets/hydration-icon-2.svg";
+import { MapPin, Calendar, Backpack, Target, Brain, Star } from "lucide-react";
 
 const features = [
   {
@@ -19,7 +17,7 @@ const features = [
     description: "What to carry (and what not to) - pro tips for ultra running equipment."
   },
   {
-    customIcon: hydrationIcon1,
+    icon: Target,
     title: "Mental Strategies",
     description: "Decision making and pushing through the tough miles - psychological techniques that work."
   },
@@ -29,7 +27,7 @@ const features = [
     description: "Build endurance and prevent injury with tried-and-tested training approaches."
   },
   {
-    customIcon: hydrationIcon2,
+    icon: Star,
     title: "Pro Insights",
     description: "From ultra runners who've been there, done it, and gone back for more."
   }
@@ -57,11 +55,7 @@ export function WhatsInside() {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="bg-harrier-yellow w-20 h-20 rounded-full flex items-center justify-center mb-8 mx-auto shadow-xl">
-                {feature.customIcon ? (
-                  <img src={feature.customIcon} alt="" className="w-10 h-10 opacity-80" />
-                ) : (
-                  <feature.icon className="w-10 h-10 text-harrier-dark-green" />
-                )}
+                <feature.icon className="w-10 h-10 text-harrier-dark-green" />
               </div>
               
               <h3 className="font-saira font-black text-xl md:text-2xl text-harrier-dark-green mb-6 text-center tracking-wide leading-tight">
