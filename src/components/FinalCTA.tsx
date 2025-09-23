@@ -89,6 +89,7 @@ export function FinalCTA({ onEmailSubmit }: FinalCTAProps) {
                     <SelectValue placeholder="Select your experience level" />
                   </SelectTrigger>
                   <SelectContent>
+                    <SelectItem value="">Choose your experience level?</SelectItem>
                     <SelectItem value="beginner">Beginner (0-2 marathons)</SelectItem>
                     <SelectItem value="intermediate">Intermediate (2-5 marathons)</SelectItem>
                     <SelectItem value="advanced">Advanced (5+ marathons)</SelectItem>
