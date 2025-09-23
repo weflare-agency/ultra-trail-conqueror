@@ -48,10 +48,10 @@ export const StickyMobileCTA = ({ onEmailSubmit, hasSubmitted }: StickyMobileCTA
         {!showForm ? (
           <div className="flex items-center justify-between gap-3">
             <div className="flex-1">
-              <p className="text-sm font-semibold text-gray-800">
+              <p className="text-sm font-semibold text-harrier-dark-green">
                 FREE Ultra Running Guide
               </p>
-              <p className="text-xs text-gray-600">
+              <p className="text-xs text-harrier-dark-green/70">
                 Join 15,000+ successful finishers
               </p>
             </div>
@@ -65,7 +65,7 @@ export const StickyMobileCTA = ({ onEmailSubmit, hasSubmitted }: StickyMobileCTA
         ) : (
           <div className="space-y-3">
             <div className="flex items-center justify-between">
-              <h4 className="font-semibold text-gray-800">Get Your Free Guide</h4>
+              <h4 className="font-semibold text-harrier-dark-green">Get Your Free Guide</h4>
               <Button 
                 variant="ghost" 
                 size="sm" 
@@ -82,7 +82,7 @@ export const StickyMobileCTA = ({ onEmailSubmit, hasSubmitted }: StickyMobileCTA
                 placeholder="First name"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
-                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-3 py-2 text-sm border border-harrier-light-green/50 rounded-md focus:outline-none focus:ring-2 focus:ring-harrier-medium-green"
                 required
               />
               <input
@@ -90,7 +90,7 @@ export const StickyMobileCTA = ({ onEmailSubmit, hasSubmitted }: StickyMobileCTA
                 placeholder="Email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-3 py-2 text-sm border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                className="w-full px-3 py-2 text-sm border border-harrier-light-green/50 rounded-md focus:outline-none focus:ring-2 focus:ring-harrier-medium-green"
                 required
               />
               <Button 
@@ -108,7 +108,7 @@ export const StickyMobileCTA = ({ onEmailSubmit, hasSubmitted }: StickyMobileCTA
       {/* Scroll to Top Button */}
       <Button
         onClick={scrollToTop}
-        className="fixed bottom-20 right-4 z-50 w-12 h-12 rounded-full bg-green-600 hover:bg-green-700 text-white shadow-lg md:hidden"
+        className="fixed bottom-20 right-4 z-50 w-12 h-12 rounded-full bg-harrier-medium-green hover:bg-harrier-dark-green text-harrier-white shadow-lg md:hidden"
         size="sm"
       >
         <ArrowUp className="w-5 h-5" />
