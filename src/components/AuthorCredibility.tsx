@@ -1,5 +1,5 @@
 const danSummersImage = "/lovable-uploads/026219ba-e91e-4724-bdbe-57f3ad98098a.png";
-import ronnieStatonImage from "@/assets/ronnie-staton.jpg";
+const ronnieStatonImage = "/lovable-uploads/da781824-0895-4ea5-a8e2-08165cdb724f.png";
 
 const authors = [
   {
