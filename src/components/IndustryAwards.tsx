@@ -50,27 +50,6 @@ export function IndustryAwards() {
           />
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto mb-16">
-          {awards.map((award, index) => (
-            <div 
-              key={index}
-              className="text-center animate-slide-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <h3 className="brand-subtitle text-white text-sm md:text-base mb-1">
-                {award.title}
-              </h3>
-              
-              <p className="brand-body text-white/80 text-xs md:text-sm mb-2">
-                {award.organization}
-              </p>
-              
-              <div className="bg-harrier-yellow text-harrier-dark-green text-xs font-bold px-2 py-1 rounded-full inline-block">
-                {award.year}
-              </div>
-            </div>
-          ))}
-        </div>
         
         {/* Free Access Highlight */}
         <div className="text-center bg-white rounded-2xl p-8 max-w-2xl mx-auto shadow-xl">
