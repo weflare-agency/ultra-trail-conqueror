@@ -91,32 +91,31 @@ export function Footer() {
             
             <div className="flex space-x-4">
               <a 
-                href="#" 
+                href="https://www.facebook.com/Harrierrunfree/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-harrier-yellow hover:text-harrier-dark-green transition-all duration-300"
-                aria-label="Facebook"
+                aria-label="Follow us on Facebook"
               >
                 <Facebook className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href="https://www.instagram.com/harrierrunfree/" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-harrier-yellow hover:text-harrier-dark-green transition-all duration-300"
-                aria-label="Instagram"
+                aria-label="Follow us on Instagram"
               >
                 <Instagram className="w-5 h-5" />
               </a>
               <a 
-                href="#" 
+                href="https://www.linkedin.com/company/harrier-trail-running" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-harrier-yellow hover:text-harrier-dark-green transition-all duration-300"
-                aria-label="Youtube"
+                aria-label="Connect with us on LinkedIn"
               >
                 <Youtube className="w-5 h-5" />
-              </a>
-              <a 
-                href="#" 
-                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-harrier-yellow hover:text-harrier-dark-green transition-all duration-300"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -125,7 +124,7 @@ export function Footer() {
         {/* Copyright */}
         <div className="text-center mt-8 pt-8 border-t border-white/20">
           <p className="brand-body text-white/60 text-sm">
-            © 2024 harrier trail running. all rights reserved. made by trail runners, for trail runners.
+            © 2025 harrier trail running. all rights reserved. made by trail runners, for trail runners.
           </p>
         </div>
       </div>
