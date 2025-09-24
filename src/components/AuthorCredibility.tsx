@@ -1,4 +1,4 @@
-import danSummersImage from "@/assets/dan-summers.jpg";
+import danSummersImage from "@/assets/dan-summers-new.jpg";
 import ronnieStatonImage from "@/assets/ronnie-staton.jpg";
 
 const authors = [
