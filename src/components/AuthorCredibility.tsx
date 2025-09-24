@@ -1,4 +1,4 @@
-import danSummersImage from "@/assets/dan-summers.jpg";
+const danSummersImage = "/lovable-uploads/026219ba-e91e-4724-bdbe-57f3ad98098a.png";
 import ronnieStatonImage from "@/assets/ronnie-staton.jpg";
 
 const authors = [
@@ -44,6 +44,7 @@ export function AuthorCredibility() {
                   src={author.image}
                   alt={author.name}
                   className="w-40 h-40 rounded-full mx-auto object-cover border-6 border-harrier-yellow shadow-2xl"
+                  style={{ objectPosition: author.name === "Dan Summers" ? "center 30%" : "center" }}
                 />
               </div>
               
