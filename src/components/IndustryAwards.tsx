@@ -1,39 +1,29 @@
 import { Star } from "lucide-react";
-import guardianAward from "@/assets/award-guardian.png";
-import runnersWorldAward from "@/assets/award-runners-world.png";
-import outdoorsMagicAward from "@/assets/award-outdoors-magic.png";
-import womensRunningAward from "@/assets/award-womens-running-2024.png";
-import nationalRunningAward from "@/assets/award-national-running.png";
 
 const awards = [
   {
-    image: guardianAward,
     title: "GEAR OF THE YEAR",
-    year: "2024",
+    year: "2025",
     organization: "The Guardian"
   },
   {
-    image: runnersWorldAward,
     title: "EDITOR'S CHOICE",
-    year: "2024", 
+    year: "2025", 
     organization: "Runner's World"
   },
   {
-    image: outdoorsMagicAward,
     title: "GEAR AWARD",
-    year: "2024",
+    year: "2025",
     organization: "Outdoors Magic"
   },
   {
-    image: womensRunningAward,
     title: "PRODUCT OF THE YEAR",
-    year: "2024",
+    year: "2025",
     organization: "Women's Running"
   },
   {
-    image: nationalRunningAward,
     title: "RECOMMENDED",
-    year: "2024",
+    year: "2025",
     organization: "National Running Show"
   }
 ];
@@ -51,6 +41,15 @@ export function IndustryAwards() {
           </p>
         </div>
         
+        {/* Awards Banner */}
+        <div className="text-center mb-12 animate-slide-up">
+          <img 
+            src="/lovable-uploads/b0cc1e85-7f8f-48c3-bf27-a174414ad0cf.png"
+            alt="Industry Awards 2025"
+            className="max-w-full h-auto mx-auto mb-8"
+          />
+        </div>
+        
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto mb-16">
           {awards.map((award, index) => (
             <div 
@@ -58,26 +57,17 @@ export function IndustryAwards() {
               className="text-center animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              {/* Award Image */}
-              <div className="relative mx-auto mb-4 w-24 h-24 md:w-32 md:h-32 bg-white rounded-xl p-3 shadow-lg">
-                <img 
-                  src={award.image} 
-                  alt={`${award.organization} ${award.title} ${award.year}`}
-                  className="w-full h-full object-contain"
-                />
-                {/* Year Badge */}
-                <div className="absolute -bottom-2 -right-2 bg-harrier-yellow text-harrier-dark-green text-xs font-bold px-2 py-1 rounded-full border-2 border-white">
-                  {award.year}
-                </div>
-              </div>
-              
               <h3 className="brand-subtitle text-white text-sm md:text-base mb-1">
                 {award.title}
               </h3>
               
-              <p className="brand-body text-white/80 text-xs md:text-sm">
+              <p className="brand-body text-white/80 text-xs md:text-sm mb-2">
                 {award.organization}
               </p>
+              
+              <div className="bg-harrier-yellow text-harrier-dark-green text-xs font-bold px-2 py-1 rounded-full inline-block">
+                {award.year}
+              </div>
             </div>
           ))}
         </div>
