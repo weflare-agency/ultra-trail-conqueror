@@ -43,9 +43,9 @@ export function AuthorCredibility() {
                 <img
                   src={author.image}
                   alt={author.name}
-                  className={`${author.name === "Dan Summers" ? "w-48 h-48" : "w-40 h-40"} rounded-full mx-auto object-cover border-6 border-harrier-yellow shadow-2xl`}
+                  className={`${author.name === "Dan Summers" ? "w-48 h-48" : "w-48 h-48"} rounded-full mx-auto object-cover border-6 border-harrier-yellow shadow-2xl`}
                   style={{ 
-                    objectPosition: author.name === "Dan Summers" ? "center 20%" : "center 15%",
+                    objectPosition: author.name === "Dan Summers" ? "left center" : "center center",
                     objectFit: "cover"
                   }}
                 />
