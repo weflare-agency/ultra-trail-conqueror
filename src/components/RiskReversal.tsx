@@ -9,8 +9,11 @@ export const RiskReversal = () => {
             Why Risk Starting Unprepared?
           </h2>
           <p className="text-xl text-harrier-dark-green/80 max-w-3xl mx-auto">
-            Don't let poor preparation cost you months of training, potential injury, 
-            or the heartbreak of a DNF (Did Not Finish).
+            With some UK ultra events reporting DNF rates of up to 40%*, it's crucial to be physically, 
+            mentally and practically prepared for the event. Also to choose the ultra that's right for you!
+          </p>
+          <p className="text-sm text-harrier-dark-green/60 max-w-3xl mx-auto mt-2 italic">
+            *UTS100 2025 DNF rate
           </p>
         </div>
 
