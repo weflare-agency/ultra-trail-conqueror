@@ -395,8 +395,8 @@ Complete landing page matching React version exactly
       </div>
     </section>
 
-    <!-- Risk Reversal Section - Basic structure -->
-    <section class="section" style="background: var(--gradient-primary);">
+    <!-- Risk Reversal Section - Detailed -->
+    <section class="risk-reversal-section section">
       <div class="container">
         <div class="text-center mb-8">
           <h2 class="brand-title mb-4" style="color: white;">Why Risk Starting Unprepared?</h2>
@@ -405,32 +405,98 @@ Complete landing page matching React version exactly
           </p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="text-center">
-            <h3 class="brand-body font-bold text-xl mb-6" style="color: white;">
-              ❌ Without Our System
-            </h3>
-            <div class="space-y-4">
-              <p class="brand-body" style="color: rgba(255, 255, 255, 0.9);">• High injury risk from poor progression</p>
-              <p class="brand-body" style="color: rgba(255, 255, 255, 0.9);">• Nutritional disasters costing races</p>
-              <p class="brand-body" style="color: rgba(255, 255, 255, 0.9);">• Mental breakdowns at mile 20+</p>
-              <p class="brand-body" style="color: rgba(255, 255, 255, 0.9);">• Expensive gear mistakes</p>
+        <div class="comparison-grid">
+          <div class="problem-side">
+            <h3 class="brand-body font-bold text-xl mb-6" style="color: white; text-align: center;">❌ Without Our System</h3>
+
+            <div class="comparison-item">
+              <svg class="comparison-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+                <line x1="12" y1="9" x2="12" y2="13"/>
+                <line x1="12" y1="17" x2="12.01" y2="17"/>
+              </svg>
+              <div>
+                <h4 style="color: white;">High Injury Risk</h4>
+                <p style="color: white;">No structured progression leads to overuse injuries and burnout</p>
+              </div>
+            </div>
+
+            <div class="comparison-item">
+              <svg class="comparison-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M3 2v6h6m-6 3a9 9 0 1 0 9-9"/>
+              </svg>
+              <div>
+                <h4 style="color: white;">Nutrition Mistakes</h4>
+                <p style="color: white;">Under-fueling and hydration errors wreck race day</p>
+              </div>
+            </div>
+
+            <div class="comparison-item">
+              <svg class="comparison-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+              <div>
+                <h4 style="color: white;">Mental Collapse</h4>
+                <p style="color: white;">No coping strategies when the race gets hard</p>
+              </div>
+            </div>
+
+            <div class="comparison-item">
+              <svg class="comparison-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+              <div>
+                <h4 style="color: white;">Expensive Gear Errors</h4>
+                <p style="color: white;">Buying the wrong kit leads to blisters and blow-ups</p>
+              </div>
             </div>
           </div>
-          
-          <div class="text-center">
-            <h3 class="brand-body font-bold text-xl mb-6" style="color: white;">
-              ✅ With Our Proven System
-            </h3>
-            <div class="space-y-4">
-              <p class="brand-body" style="color: rgba(255, 255, 255, 0.9);">• Structured, injury-preventing progression</p>
-              <p class="brand-body" style="color: rgba(255, 255, 255, 0.9);">• Race-tested nutrition protocols</p>
-              <p class="brand-body" style="color: rgba(255, 255, 255, 0.9);">• Mental resilience strategies</p>
-              <p class="brand-body" style="color: rgba(255, 255, 255, 0.9);">• Curated gear recommendations</p>
+
+          <div class="solution-side">
+            <h3 class="brand-body font-bold text-xl mb-6" style="color: white; text-align: center;">✅ With Our Proven System</h3>
+
+            <div class="comparison-item">
+              <svg class="comparison-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 6L9 17l-5-5"/>
+              </svg>
+              <div>
+                <h4 style="color: white;">Structured Progression</h4>
+                <p style="color: white;">Smart weekly increases that prevent injury and build capacity</p>
+              </div>
+            </div>
+
+            <div class="comparison-item">
+              <svg class="comparison-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 6L9 17l-5-5"/>
+              </svg>
+              <div>
+                <h4 style="color: white;">Race-Tested Nutrition</h4>
+                <p style="color: white;">Practical fueling protocols that keep you strong all day</p>
+              </div>
+            </div>
+
+            <div class="comparison-item">
+              <svg class="comparison-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 6L9 17l-5-5"/>
+              </svg>
+              <div>
+                <h4 style="color: white;">Mental Toughness Tools</h4>
+                <p style="color: white;">Pro techniques to handle the lows and keep moving</p>
+              </div>
+            </div>
+
+            <div class="comparison-item">
+              <svg class="comparison-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 6L9 17l-5-5"/>
+              </svg>
+              <div>
+                <h4 style="color: white;">Dialed Gear Guidance</h4>
+                <p style="color: white;">Only what you need—no fluff, no waste, no pain</p>
+              </div>
             </div>
           </div>
         </div>
-        
+
         <div class="text-center mt-8">
           <button class="cta-button" style="background: hsl(var(--accent)); color: hsl(var(--primary));">
             GET YOUR SYSTEM NOW - FREE
