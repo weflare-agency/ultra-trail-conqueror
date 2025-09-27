@@ -14,36 +14,36 @@ const CONFIG = {
   }
 };
 
-// Testimonials data
+// Testimonials data - Matching React testimonials exactly
 const TESTIMONIALS = [
   {
-    text: "This guide transformed my approach to ultra running. The nutrition section alone was worth its weight in gold.",
+    text: "This guide completely changed how I approach ultra training. The nutrition protocols alone helped me finish my first 100K without hitting the wall.",
     author: "Sarah Mitchell",
-    location: "Peak District",
+    location: "Peak District Trail Runner",
     rating: 5
   },
   {
-    text: "Finally finished my first 50k thanks to the training plan in this guide. The mental preparation tips were game-changing.",
+    text: "After failing my first ultra attempt, this system got me to the finish line of my next race. The mental strategies section is pure gold.",
     author: "James Wilson",
-    location: "Lake District", 
+    location: "Lake District Ultra Club", 
     rating: 5
   },
   {
-    text: "The gear recommendations saved me from costly mistakes. Everything I needed to know in one comprehensive guide.",
+    text: "The gear recommendations saved me hundreds of pounds and prevented the blisters that ruined my previous race. Wish I'd found this sooner.",
     author: "Emma Thompson",
-    location: "Yorkshire Dales",
+    location: "Yorkshire Dales Runner",
     rating: 5
   },
   {
-    text: "As a beginner, this guide gave me the confidence to attempt my first ultra. The step-by-step approach is perfect.",
-    author: "Michael Davis",
+    text: "From couch to 50-mile finisher in 8 months using this exact system. The progressive training plans are brilliant for beginners.",
+    author: "Michael Chen",
     location: "Scottish Highlands",
     rating: 5
   },
   {
-    text: "The injury prevention strategies actually work. I've been pain-free for 6 months following their advice.",
-    author: "Lisa Chen", 
-    location: "Brecon Beacons",
+    text: "Been injury-free for 18 months following their recovery protocols. This guide should be mandatory reading for every ultra runner.",
+    author: "Rebecca Davies", 
+    location: "Brecon Beacons Trail Society",
     rating: 5
   }
 ];
@@ -234,32 +234,32 @@ class TestimonialsCarousel {
     
     this.container.innerHTML = `
       <div class="testimonial-card animate-fade-in">
-        <div class="stars">
+        <div class="mb-4" style="display: flex; justify-content: center; gap: 0.25rem; color: hsl(var(--accent));">
           ${Array(testimonial.rating).fill('').map(() => 
-            '<svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>'
+            '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>'
           ).join('')}
         </div>
-        <p class="testimonial-text">"${testimonial.text}"</p>
-        <div class="testimonial-author">${testimonial.author}</div>
-        <div class="testimonial-location">${testimonial.location}</div>
+        <p class="brand-body text-lg italic mb-6" style="color: hsl(var(--primary)); line-height: 1.6;">"${testimonial.text}"</p>
+        <div class="brand-body font-bold mb-2" style="color: hsl(var(--primary));">${testimonial.author}</div>
+        <div class="brand-body text-sm" style="color: hsl(var(--muted-foreground));">${testimonial.location}</div>
       </div>
       
-      <div class="carousel-nav">
-        <button class="carousel-btn" id="prevBtn">
+      <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem;">
+        <button class="btn btn-outline" id="prevBtn" style="width: auto; padding: 0.5rem;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
             <path d="M15 18l-6-6 6-6v12z"/>
           </svg>
         </button>
-        <button class="carousel-btn" id="nextBtn">
+        <button class="btn btn-outline" id="nextBtn" style="width: auto; padding: 0.5rem;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
             <path d="M9 18l6-6-6-6v12z"/>
           </svg>
         </button>
       </div>
       
-      <div class="carousel-dots">
+      <div style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 1rem;">
         ${this.testimonials.map((_, index) => 
-          `<button class="carousel-dot ${index === this.currentIndex ? 'active' : ''}" data-index="${index}"></button>`
+          `<button class="carousel-dot ${index === this.currentIndex ? 'active' : ''}" data-index="${index}" style="width: 12px; height: 12px; border-radius: 50%; border: 2px solid hsl(var(--primary)); background: ${index === this.currentIndex ? 'hsl(var(--primary))' : 'transparent'}; cursor: pointer; transition: var(--transition-smooth);"></button>`
         ).join('')}
       </div>
     `;

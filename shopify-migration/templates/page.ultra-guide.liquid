@@ -1,7 +1,7 @@
 <!-- 
 =============================================
 HARRIER ULTRA GUIDE - SHOPIFY LIQUID TEMPLATE
-Complete landing page for Shopify migration
+Complete landing page matching React version exactly
 ============================================= 
 -->
 
@@ -35,7 +35,7 @@ Complete landing page for Shopify migration
   <!-- Favicon -->
   <link rel="icon" href="{{ 'favicon.ico' | asset_url }}" type="image/x-icon">
   
-  <!-- Google Fonts -->
+  <!-- Google Fonts - Matching React exactly -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Saira:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -75,488 +75,452 @@ Complete landing page for Shopify migration
 </head>
 
 <body>
-  <!-- Hero Section -->
-  <section class="hero-section" id="hero">
-    <div class="container">
-      <div class="hero-content">
-        <h1 class="hero-title">
-          Struggling to Finish Your First Ultra?
-        </h1>
-        <p class="hero-subtitle">
-          87% of first-time ultra runners don't finish. Don't be one of them. 
-          Get our proven system used by 15,000+ successful ultra finishers.
-        </p>
-        
-        <div class="hero-form" id="heroForm">
-          <h3>Get Your FREE "How to Run an Ultra" Guide</h3>
-          <p style="color: hsl(var(--harrier-dark-green)); margin-bottom: 2rem;">
-            96 pages of expert ultra running advice - Instant download
+  <main>
+    <!-- Hero Section - Matching React HeroSection component exactly -->
+    <section class="hero-section hero-cycling-bg" id="hero">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="brand-title animate-slide-up">
+            Struggling to Finish Your First Ultra?
+          </h1>
+          <p class="brand-subtitle animate-slide-up">
+            87% of first-time ultra runners don't finish. Don't be one of them. 
+            Get our proven system used by 15,000+ successful ultra finishers.
           </p>
           
-          <form id="heroFormSubmit">
-            <div class="form-group">
-              <input 
-                type="text" 
-                class="form-input" 
-                placeholder="First name" 
-                id="heroFirstName" 
-                required
-              >
-            </div>
+          <div class="conversion-form animate-scale-in" id="heroForm">
+            <h3 class="mb-4">Get Your FREE "How to Run an Ultra" Guide</h3>
+            <p class="brand-body mb-6" style="color: hsl(var(--primary));">
+              96 pages of expert ultra running advice - Instant download
+            </p>
             
-            <div class="form-group">
-              <input 
-                type="email" 
-                class="form-input" 
-                placeholder="Email address" 
-                id="heroEmail" 
-                required
-              >
-            </div>
+            <form id="heroFormSubmit" class="grid gap-4">
+              <div class="form-group">
+                <input 
+                  type="text" 
+                  class="form-input" 
+                  placeholder="First name" 
+                  id="heroFirstName" 
+                  required
+                >
+              </div>
+              
+              <div class="form-group">
+                <input 
+                  type="email" 
+                  class="form-input" 
+                  placeholder="Email address" 
+                  id="heroEmail" 
+                  required
+                >
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">I am a:</label>
+                <div class="radio-group">
+                  <div class="radio-item">
+                    <input type="radio" name="runnerLevel" value="beginner" id="beginner" class="radio-input" checked>
+                    <label for="beginner" class="radio-label">Complete Beginner</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" name="runnerLevel" value="some_experience" id="some_experience" class="radio-input">
+                    <label for="some_experience" class="radio-label">Some Experience</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" name="runnerLevel" value="experienced" id="experienced" class="radio-input">
+                    <label for="experienced" class="radio-label">Experienced Runner</label>
+                  </div>
+                </div>
+              </div>
+              
+              <button type="submit" class="cta-button animate-pulse-glow" id="heroSubmitBtn">
+                Get My Free Guide
+              </button>
+            </form>
             
-            <div class="form-group">
-              <label class="form-label">I am a:</label>
-              <div class="radio-group">
-                <div class="radio-item">
-                  <input type="radio" name="runnerLevel" value="beginner" id="beginner" checked>
-                  <label for="beginner">Complete Beginner</label>
-                </div>
-                <div class="radio-item">
-                  <input type="radio" name="runnerLevel" value="some_experience" id="some_experience">
-                  <label for="some_experience">Some Experience</label>
-                </div>
-                <div class="radio-item">
-                  <input type="radio" name="runnerLevel" value="experienced" id="experienced">
-                  <label for="experienced">Experienced Runner</label>
-                </div>
+            <div class="trust-indicators">
+              <div class="trust-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                <span>15,000+ Users</span>
+              </div>
+              <div class="trust-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12,6 12,12 16,14"/>
+                </svg>
+                <span>Instant Access</span>
+              </div>
+              <div class="trust-indicator">
+                <svg width="16" height="16" viewBox="0 0 24 24">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span>No Spam</span>
               </div>
             </div>
             
-            <button type="submit" class="btn btn-cta" id="heroSubmitBtn">
-              Get My Free Guide
-            </button>
-          </form>
-          
-          <div style="display: flex; align-items: center; justify-content: center; gap: 1rem; margin-top: 1.5rem; font-size: 0.9rem; color: hsl(var(--harrier-dark-green));">
-            <div style="display: flex; align-items: center; gap: 0.25rem;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="hsl(var(--harrier-medium-green))">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-              </svg>
-              <span>15,000+ Users</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 0.25rem;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="hsl(var(--harrier-medium-green))">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12,6 12,12 16,14"/>
-              </svg>
-              <span>Instant Access</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 0.25rem;">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="hsl(var(--harrier-medium-green))">
-                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-              </svg>
-              <span>No Spam</span>
-            </div>
+            <p class="brand-body mt-4 text-center" style="font-size: 0.8rem; color: hsl(var(--muted-foreground));">
+              We respect your privacy. Unsubscribe at any time.
+            </p>
           </div>
           
-          <p style="font-size: 0.8rem; color: hsl(var(--harrier-dark-green) / 0.7); margin-top: 1rem; text-align: center;">
-            We respect your privacy. Unsubscribe at any time.
-          </p>
-        </div>
-        
-        <div style="margin-top: 2rem;">
-          <p style="color: white; font-size: 0.9rem;">
-            Prefer a physical copy? 
-            <a href="/products/ultra-guide-book" style="color: hsl(var(--harrier-yellow)); text-decoration: underline;">
-              Get the printed book here
-            </a>
-          </p>
+          <div class="mt-8">
+            <p class="brand-body" style="color: white; font-size: 0.9rem;">
+              Prefer a physical copy? 
+              <a href="/products/ultra-guide-book" style="color: hsl(var(--accent)); text-decoration: underline;">
+                Get the printed book here
+              </a>
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Trust Signals Section -->
-  <section class="trust-signals section">
-    <div class="container">
-      <h2 style="text-align: center; margin-bottom: 1rem;">
-        Trusted by trail runners across the UK and beyond
-      </h2>
-      
-      <div class="trust-grid">
-        <div class="trust-badge">
-          <div class="trust-icon">
-            <div class="stars">
-              <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-              <svg class="star" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-            </div>
-          </div>
-          <h4>5-Star Rated</h4>
-          <p>Rated 5/5 by our community</p>
-        </div>
-        
-        <div class="trust-badge">
-          <div class="trust-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-              <circle cx="9" cy="7" r="4"/>
-              <path d="m22 21-3-3m0 0-3-3m3 3 3-3m-3 3-3 3"/>
-            </svg>
-          </div>
-          <h4>15,000+ Downloads</h4>
-          <p>Trusted by thousands of runners</p>
-        </div>
-        
-        <div class="trust-badge">
-          <div class="trust-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
-          </div>
-          <h4>SSL Secure</h4>
-          <p>Your data is safe with us</p>
-        </div>
-        
-        <div class="trust-badge">
-          <div class="trust-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.3-2.3a1 1 0 0 1 1.4 1.4L20.5 11a3 3 0 0 1-4.2 0l-2.3-2.3a1 1 0 0 1 1.4-1.4z"/>
-              <path d="M8.5 7.5 6.2 9.8a1 1 0 0 1-1.4 0L2.5 7.5a1 1 0 0 0-1.4 1.4L3.5 11a3 3 0 0 0 4.2 0l2.3-2.3a1 1 0 0 0-1.4-1.4z"/>
-            </svg>
-          </div>
-          <h4>No Spam</h4>
-          <p>Quality content, no junk</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- What's Inside Section -->
-  <section class="whats-inside-section section">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 3rem;">
-        <h2>What's Inside Your FREE Guide</h2>
-        <p style="font-size: 1.1rem; color: hsl(var(--harrier-dark-green) / 0.8);">
-          96 pages of expert ultra running knowledge
-        </p>
-      </div>
-      
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-              <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
-              <line x1="12" y1="22.08" x2="12" y2="12"/>
-            </svg>
-          </div>
-          <h3 class="feature-title">Complete Training Plans</h3>
-          <p>Step-by-step training schedules for 50K, 50-mile, and 100K distances with weekly progressions.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M3 2v6h6m-6 3a9 9 0 1 0 9-9"/>
-            </svg>
-          </div>
-          <h3 class="feature-title">Nutrition Strategies</h3>
-          <p>Proven fueling protocols, race-day nutrition plans, and recovery strategies that actually work.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-            </svg>
-          </div>
-          <h3 class="feature-title">Mental Toughness</h3>
-          <p>Psychological strategies to push through the hardest moments and maintain motivation.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-            </svg>
-          </div>
-          <h3 class="feature-title">Gear Essentials</h3>
-          <p>Must-have equipment lists, gear reviews, and cost-effective recommendations for every budget.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/>
-              <path d="M12 6v6l4 2"/>
-            </svg>
-          </div>
-          <h3 class="feature-title">Recovery Protocols</h3>
-          <p>Science-backed recovery methods to prevent injuries and optimize your training adaptations.</p>
-        </div>
-        
-        <div class="feature-card">
-          <div class="feature-icon">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-              <path d="M9 11H7l5-9 5 9h-2l-3 7-3-7z"/>
-            </svg>
-          </div>
-          <h3 class="feature-title">Race Day Success</h3>
-          <p>Complete race day strategies, pacing guides, and troubleshooting for common race problems.</p>
-        </div>
-      </div>
-      
-      <div class="book-preview">
-        <img 
-          src="https://cdn.shopify.com/s/files/1/0287/7279/4465/files/Book_Cover.png?v=1759001820" 
-          alt="How to Run an Ultra - Free Guide Preview" 
-          class="book-cover"
-        >
-      </div>
-      
-      <div style="text-align: center; margin-top: 3rem;">
-        <button class="btn btn-cta download-btn">
-          DOWNLOAD YOUR FREE GUIDE NOW
-        </button>
-        <p style="margin-top: 1rem; font-size: 1.1rem; color: hsl(var(--harrier-dark-green));">
-          Join 15,000+ other successful ultra finishers
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Author Credibility Section -->
-  <section class="author-section section">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 3rem;">
-        <h2>Meet Your Ultra Running Coaches</h2>
-        <p style="font-size: 1.1rem; color: hsl(var(--harrier-dark-green) / 0.8);">
-          Learn from champions who've completed over 200 ultras between them
-        </p>
-      </div>
-      
-      <div class="author-grid">
-        <div class="author-card">
-          <img 
-            src="https://cdn.shopify.com/s/files/1/0287/7279/4465/files/Dan_far.jpg?v=1759002115"
-            alt="Dan Summers - Ultra Running Coach" 
-            class="author-image"
-          >
-          <h3 class="author-name">Dan Summers</h3>
-          <p class="author-credentials">UESCA Certified Ultra Coach</p>
-          <p class="author-achievement">Grand Slam Finisher</p>
-          <p>Dan has completed over 100 ultra marathons including the prestigious Grand Slam of Ultrarunning. His systematic approach to training has helped hundreds of runners achieve their ultra goals, with a 94% finish rate among his coached athletes.</p>
-        </div>
-        
-        <div class="author-card">
-          <img 
-            src="https://cdn.shopify.com/s/files/1/0287/7279/4465/files/Ronnie_black.jpg?v=1759002123"
-            alt="Ronnie Staton - Ultra Running Nutritionist" 
-            class="author-image"
-          >
-          <h3 class="author-name">Ronnie Staton</h3>
-          <p class="author-credentials">Sports Nutritionist & Ultra Runner</p>
-          <p class="author-achievement">100-Mile World Champion</p>
-          <p>Ronnie combines elite-level racing experience with deep nutritional expertise. As a former 100-mile world champion, he understands the critical role of fueling in ultra success and has developed the nutrition protocols used by top ultra athletes worldwide.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="testimonials-section section">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 3rem;">
-        <h2>What Our Readers Say</h2>
-        <p style="font-size: 1.1rem; color: hsl(var(--harrier-dark-green) / 0.8);">
-          Real results from real runners
-        </p>
-      </div>
-      
-      <div id="testimonialsCarousel" class="testimonials-carousel">
-        <!-- Testimonials will be populated by JavaScript -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Risk Reversal Section -->
-  <section class="risk-reversal-section section">
-    <div class="container">
-      <div style="text-align: center; margin-bottom: 3rem;">
-        <h2 style="color: white;">Why Risk Starting Unprepared?</h2>
-        <p style="color: white; font-size: 1.1rem; opacity: 0.9;">
-          87% of first-time ultra runners don't finish. The difference? Preparation.
-        </p>
-      </div>
-      
-      <div class="comparison-grid">
-        <div class="problem-side">
-          <h3 style="color: white; margin-bottom: 2rem; text-align: center;">
-            ❌ Without Our System
-          </h3>
-          
-          <div class="comparison-item">
-            <svg class="comparison-icon" viewBox="0 0 24 24" fill="white">
-              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
-              <line x1="12" y1="9" x2="12" y2="13"/>
-              <line x1="12" y1="17" x2="12.01" y2="17"/>
-            </svg>
-            <div>
-              <h4 style="color: white; margin-bottom: 0.5rem;">High Injury Risk</h4>
-              <p style="color: white; opacity: 0.9;">No structured progression leads to overuse injuries and burnout</p>
-            </div>
-          </div>
-          
-          <div class="comparison-item">
-            <svg class="comparison-icon" viewBox="0 0 24 24" fill="white">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-            </svg>
-            <div>
-              <h4 style="color: white; margin-bottom: 0.5rem;">Nutrition Disasters</h4>
-              <p style="color: white; opacity: 0.9;">Stomach issues, bonking, and DNFs from poor fueling strategies</p>
-            </div>
-          </div>
-          
-          <div class="comparison-item">
-            <svg class="comparison-icon" viewBox="0 0 24 24" fill="white">
-              <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/>
-            </svg>
-            <div>
-              <h4 style="color: white; margin-bottom: 0.5rem;">Mental Breakdown</h4>
-              <p style="color: white; opacity: 0.9;">Unprepared for the mental challenges that destroy race dreams</p>
-            </div>
-          </div>
-        </div>
-        
-        <div class="solution-side">
-          <h3 style="color: white; margin-bottom: 2rem; text-align: center;">
-            ✅ With Our Proven System
-          </h3>
-          
-          <div class="comparison-item">
-            <svg class="comparison-icon" viewBox="0 0 24 24" fill="white">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-              <polyline points="22,4 12,14.01 9,11.01"/>
-            </svg>
-            <div>
-              <h4 style="color: white; margin-bottom: 0.5rem;">Injury-Proof Training</h4>
-              <p style="color: white; opacity: 0.9;">Progressive training plans with built-in recovery and injury prevention</p>
-            </div>
-          </div>
-          
-          <div class="comparison-item">
-            <svg class="comparison-icon" viewBox="0 0 24 24" fill="white">
-              <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/>
-              <path d="M12 6v6l4 2"/>
-            </svg>
-            <div>
-              <h4 style="color: white; margin-bottom: 0.5rem;">Bulletproof Nutrition</h4>
-              <p style="color: white; opacity: 0.9;">Race-tested fueling strategies that eliminate stomach problems</p>
-            </div>
-          </div>
-          
-          <div class="comparison-item">
-            <svg class="comparison-icon" viewBox="0 0 24 24" fill="white">
-              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-            </svg>
-            <div>
-              <h4 style="color: white; margin-bottom: 0.5rem;">Mental Toughness Toolkit</h4>
-              <p style="color: white; opacity: 0.9;">Proven psychological strategies to push through any challenge</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div style="text-align: center; margin-top: 3rem;">
-        <button class="btn btn-cta download-btn">
-          GET YOUR PROVEN SYSTEM FREE
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Final CTA Section -->
-  <section class="final-cta-section section">
-    <div class="container">
-      <div style="text-align: center;">
-        <h2 style="color: white; margin-bottom: 1rem;">
-          Ready to Join 15,000+ Successful Ultra Finishers?
+    <!-- Trust Signals Section - Matching React TrustSignals component -->
+    <section class="section pattern-bg">
+      <div class="container">
+        <h2 class="brand-title text-center mb-8">
+          Trusted by trail runners across the UK and beyond
         </h2>
-        <p style="color: white; font-size: 1.2rem; opacity: 0.95; margin-bottom: 2rem;">
-          Download your free guide now and start your ultra journey with confidence
-        </p>
         
-        <div class="cta-form">
-          <form id="finalCTAForm">
-            <div class="form-group">
-              <input 
-                type="text" 
-                class="form-input" 
-                placeholder="First name" 
-                id="finalFirstName" 
-                required
-              >
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="trust-badge animate-fade-in">
+            <div class="mb-4">
+              <div style="display: flex; gap: 0.25rem; color: hsl(var(--accent));">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+              </div>
             </div>
-            
-            <div class="form-group">
-              <input 
-                type="email" 
-                class="form-input" 
-                placeholder="Email address" 
-                id="finalEmail" 
-                required
-              >
-            </div>
-            
-            <div class="form-group">
-              <select class="form-select" id="experienceLevel" required>
-                <option value="">Select your experience level</option>
-                <option value="complete_beginner">Complete Beginner</option>
-                <option value="some_running">Some Running Experience</option>
-                <option value="marathon_runner">Marathon Runner</option>
-                <option value="experienced_ultra">Experienced Ultra Runner</option>
-              </select>
-            </div>
-            
-            <button type="submit" class="btn btn-cta" id="finalSubmitBtn">
-              Send My Free Guide
-            </button>
-          </form>
+            <h4 class="brand-body font-semibold mb-2">5-Star Rated</h4>
+            <p class="brand-body text-sm">Rated 5/5 by our community</p>
+          </div>
           
-          <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; margin-top: 2rem; font-size: 0.9rem; color: white; opacity: 0.9;">
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+          <div class="trust-badge animate-fade-in">
+            <div class="mb-4">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="hsl(var(--primary))">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
                 <circle cx="9" cy="7" r="4"/>
                 <path d="m22 21-3-3m0 0-3-3m3 3 3-3m-3 3-3 3"/>
               </svg>
-              <span>15,000+ Users</span>
             </div>
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                <circle cx="12" cy="12" r="10"/>
-                <polyline points="12,6 12,12 16,14"/>
-              </svg>
-              <span>Instant Access</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 0.5rem;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-              </svg>
-              <span>100% Secure</span>
-            </div>
+            <h4 class="brand-body font-semibold mb-2">15,000+ Downloads</h4>
+            <p class="brand-body text-sm">Trusted by thousands of runners</p>
           </div>
           
-          <p style="font-size: 0.8rem; color: white; opacity: 0.8; margin-top: 1.5rem; text-align: center;">
-            We respect your privacy. No spam, unsubscribe at any time.
+          <div class="trust-badge animate-fade-in">
+            <div class="mb-4">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="hsl(var(--primary))">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h4 class="brand-body font-semibold mb-2">SSL Secure</h4>
+            <p class="brand-body text-sm">Your data is safe with us</p>
+          </div>
+          
+          <div class="trust-badge animate-fade-in">
+            <div class="mb-4">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="hsl(var(--primary))">
+                <path d="m15.5 7.5 2.3 2.3a1 1 0 0 0 1.4 0l2.3-2.3a1 1 0 0 1 1.4 1.4L20.5 11a3 3 0 0 1-4.2 0l-2.3-2.3a1 1 0 0 1 1.4-1.4z"/>
+                <path d="M8.5 7.5 6.2 9.8a1 1 0 0 1-1.4 0L2.5 7.5a1 1 0 0 0-1.4 1.4L3.5 11a3 3 0 0 0 4.2 0l2.3-2.3a1 1 0 0 0-1.4-1.4z"/>
+              </svg>
+            </div>
+            <h4 class="brand-body font-semibold mb-2">No Spam</h4>
+            <p class="brand-body text-sm">Quality content, no junk</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's Inside Section - Matching React WhatsInside component -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center mb-8">
+          <h2 class="brand-title mb-4">What's Inside Your FREE Guide</h2>
+          <p class="brand-subtitle">
+            96 pages of expert ultra running knowledge
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          <div class="feature-card animate-fade-in">
+            <div class="mb-4">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="hsl(var(--primary))" style="margin: 0 auto;">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                <line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+            </div>
+            <h3 class="brand-body font-bold text-lg mb-4">Complete Training Plans</h3>
+            <p class="brand-body">Step-by-step training schedules for 50K, 50-mile, and 100K distances with weekly progressions.</p>
+          </div>
+          
+          <div class="feature-card animate-fade-in">
+            <div class="mb-4">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="hsl(var(--primary))" style="margin: 0 auto;">
+                <path d="M3 2v6h6m-6 3a9 9 0 1 0 9-9"/>
+              </svg>
+            </div>
+            <h3 class="brand-body font-bold text-lg mb-4">Nutrition Strategies</h3>
+            <p class="brand-body">Proven fueling protocols, race-day nutrition plans, and recovery strategies that actually work.</p>
+          </div>
+          
+          <div class="feature-card animate-fade-in">
+            <div class="mb-4">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="hsl(var(--primary))" style="margin: 0 auto;">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+            </div>
+            <h3 class="brand-body font-bold text-lg mb-4">Mental Toughness</h3>
+            <p class="brand-body">Psychological strategies to push through the hardest moments and maintain motivation.</p>
+          </div>
+          
+          <div class="feature-card animate-fade-in">
+            <div class="mb-4">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="hsl(var(--primary))" style="margin: 0 auto;">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+            </div>
+            <h3 class="brand-body font-bold text-lg mb-4">Gear Essentials</h3>
+            <p class="brand-body">Must-have equipment lists, gear reviews, and cost-effective recommendations for every budget.</p>
+          </div>
+          
+          <div class="feature-card animate-fade-in">
+            <div class="mb-4">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="hsl(var(--primary))" style="margin: 0 auto;">
+                <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8z"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <h3 class="brand-body font-bold text-lg mb-4">Recovery Protocols</h3>
+            <p class="brand-body">Science-backed recovery methods to prevent injuries and optimize your training adaptations.</p>
+          </div>
+          
+          <div class="feature-card animate-fade-in">
+            <div class="mb-4">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="hsl(var(--primary))" style="margin: 0 auto;">
+                <path d="M9 11H7l5-9 5 9h-2l-3 7-3-7z"/>
+              </svg>
+            </div>
+            <h3 class="brand-body font-bold text-lg mb-4">Race Day Success</h3>
+            <p class="brand-body">Complete race day strategies, pacing guides, and troubleshooting for common race problems.</p>
+          </div>
+        </div>
+        
+        <div class="text-center mb-8">
+          <img 
+            src="https://cdn.shopify.com/s/files/1/0287/7279/4465/files/Book_Cover.png?v=1759001820" 
+            alt="How to Run an Ultra - Free Guide Preview" 
+            style="max-width: 300px; width: 100%; height: auto; border-radius: var(--radius); box-shadow: var(--shadow-xl); margin: 0 auto; transition: var(--transition-smooth);"
+            onmouseover="this.style.transform='scale(1.05)'"
+            onmouseout="this.style.transform='scale(1)'"
+          >
+        </div>
+        
+        <div class="text-center">
+          <button class="cta-button animate-pulse-glow download-btn">
+            DOWNLOAD YOUR FREE GUIDE NOW
+          </button>
+          <p class="brand-subtitle mt-4">
+            Join 15,000+ other successful ultra finishers
           </p>
         </div>
       </div>
+    </section>
+
+    <!-- Author Credibility Section - Matching React AuthorCredibility component -->
+    <section class="section pattern-bg">
+      <div class="container">
+        <div class="text-center mb-8">
+          <h2 class="brand-title mb-4">Meet Your Ultra Running Coaches</h2>
+          <p class="brand-subtitle">
+            Learn from champions who've completed over 200 ultras between them
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="text-center">
+            <img 
+              src="https://cdn.shopify.com/s/files/1/0287/7279/4465/files/Dan_far.jpg?v=1759002115"
+              alt="Dan Summers - Ultra Running Coach" 
+              style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem; border: 6px solid hsl(var(--accent)); box-shadow: var(--shadow-lg);"
+            >
+            <h3 class="brand-body font-bold text-xl mb-2" style="color: hsl(var(--primary));">Dan Summers</h3>
+            <p class="brand-body font-semibold mb-2" style="color: hsl(var(--primary));">UESCA Certified Ultra Coach</p>
+            <p class="brand-body font-bold mb-4" style="color: hsl(var(--accent)); text-transform: uppercase; letter-spacing: 0.05em;">Grand Slam Finisher</p>
+            <p class="brand-body">Dan has completed over 100 ultra marathons including the prestigious Grand Slam of Ultrarunning. His systematic approach to training has helped hundreds of runners achieve their ultra goals, with a 94% finish rate among his coached athletes.</p>
+          </div>
+          
+          <div class="text-center">
+            <img 
+              src="https://cdn.shopify.com/s/files/1/0287/7279/4465/files/Ronnie_black.jpg?v=1759002123"
+              alt="Ronnie Staton - Ultra Running Nutritionist" 
+              style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin: 0 auto 1.5rem; border: 6px solid hsl(var(--accent)); box-shadow: var(--shadow-lg);"
+            >
+            <h3 class="brand-body font-bold text-xl mb-2" style="color: hsl(var(--primary));">Ronnie Staton</h3>
+            <p class="brand-body font-semibold mb-2" style="color: hsl(var(--primary));">Sports Nutritionist & Ultra Runner</p>
+            <p class="brand-body font-bold mb-4" style="color: hsl(var(--accent)); text-transform: uppercase; letter-spacing: 0.05em;">100-Mile World Champion</p>
+            <p class="brand-body">Ronnie combines elite-level racing experience with deep nutritional expertise. As a former 100-mile world champion, he understands the critical role of fueling in ultra success and has developed the nutrition protocols used by top ultra athletes worldwide.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section - Placeholder for JavaScript carousel -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center mb-8">
+          <h2 class="brand-title mb-4">What Our Readers Say</h2>
+          <p class="brand-subtitle">
+            Real results from real runners
+          </p>
+        </div>
+        
+        <div id="testimonialsCarousel">
+          <!-- Testimonials will be populated by JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Risk Reversal Section - Basic structure -->
+    <section class="section" style="background: var(--gradient-primary);">
+      <div class="container">
+        <div class="text-center mb-8">
+          <h2 class="brand-title mb-4" style="color: white;">Why Risk Starting Unprepared?</h2>
+          <p class="brand-subtitle" style="color: rgba(255, 255, 255, 0.9);">
+            87% of first-time ultra runners don't finish. The difference? Preparation.
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="text-center">
+            <h3 class="brand-body font-bold text-xl mb-6" style="color: white;">
+              ❌ Without Our System
+            </h3>
+            <div class="space-y-4">
+              <p class="brand-body" style="color: rgba(255, 255, 255, 0.9);">• High injury risk from poor progression</p>
+              <p class="brand-body" style="color: rgba(255, 255, 255, 0.9);">• Nutritional disasters costing races</p>
+              <p class="brand-body" style="color: rgba(255, 255, 255, 0.9);">• Mental breakdowns at mile 20+</p>
+              <p class="brand-body" style="color: rgba(255, 255, 255, 0.9);">• Expensive gear mistakes</p>
+            </div>
+          </div>
+          
+          <div class="text-center">
+            <h3 class="brand-body font-bold text-xl mb-6" style="color: white;">
+              ✅ With Our Proven System
+            </h3>
+            <div class="space-y-4">
+              <p class="brand-body" style="color: rgba(255, 255, 255, 0.9);">• Structured, injury-preventing progression</p>
+              <p class="brand-body" style="color: rgba(255, 255, 255, 0.9);">• Race-tested nutrition protocols</p>
+              <p class="brand-body" style="color: rgba(255, 255, 255, 0.9);">• Mental resilience strategies</p>
+              <p class="brand-body" style="color: rgba(255, 255, 255, 0.9);">• Curated gear recommendations</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="text-center mt-8">
+          <button class="cta-button" style="background: hsl(var(--accent)); color: hsl(var(--primary));">
+            GET YOUR SYSTEM NOW - FREE
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="section pattern-bg">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="brand-title mb-6">Ready to Conquer Your First Ultra?</h2>
+          <p class="brand-subtitle mb-8">
+            Don't leave your ultra success to chance. Get the system that's helped 15,000+ runners cross the finish line.
+          </p>
+          
+          <div class="conversion-form" style="max-width: 600px; margin: 0 auto; background: hsl(var(--card)); backdrop-filter: none;">
+            <h3 class="mb-4">Get Your FREE Ultra Running Guide</h3>
+            
+            <form id="finalFormSubmit" class="grid gap-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="form-group">
+                  <input 
+                    type="text" 
+                    class="form-input" 
+                    placeholder="First name" 
+                    id="finalFirstName" 
+                    required
+                  >
+                </div>
+                
+                <div class="form-group">
+                  <input 
+                    type="email" 
+                    class="form-input" 
+                    placeholder="Email address" 
+                    id="finalEmail" 
+                    required
+                  >
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label class="form-label">What best describes your running experience?</label>
+                <div class="radio-group">
+                  <div class="radio-item">
+                    <input type="radio" name="finalRunnerLevel" value="beginner" id="finalBeginner" class="radio-input" checked>
+                    <label for="finalBeginner" class="radio-label">Complete Beginner</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" name="finalRunnerLevel" value="some_experience" id="finalSomeExperience" class="radio-input">
+                    <label for="finalSomeExperience" class="radio-label">Some Experience</label>
+                  </div>
+                  <div class="radio-item">
+                    <input type="radio" name="finalRunnerLevel" value="experienced" id="finalExperienced" class="radio-input">
+                    <label for="finalExperienced" class="radio-label">Experienced Runner</label>
+                  </div>
+                </div>
+              </div>
+              
+              <button type="submit" class="cta-button" id="finalSubmitBtn">
+                SEND ME THE FREE GUIDE
+              </button>
+            </form>
+            
+            <p class="brand-body mt-4 text-center" style="font-size: 0.8rem; color: hsl(var(--muted-foreground));">
+              We respect your privacy. Unsubscribe at any time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="section" style="background: hsl(var(--muted)); border-top: 1px solid hsl(var(--border));">
+    <div class="container">
+      <div class="text-center">
+        <p class="brand-body" style="color: hsl(var(--muted-foreground));">
+          © 2024 Harrier Trail Running. All rights reserved.
+        </p>
+        <div class="mt-4">
+          <a href="/pages/privacy-policy" class="brand-body" style="color: hsl(var(--primary)); text-decoration: none; margin: 0 1rem;">Privacy Policy</a>
+          <a href="/pages/terms-of-service" class="brand-body" style="color: hsl(var(--primary)); text-decoration: none; margin: 0 1rem;">Terms of Service</a>
+          <a href="/contact" class="brand-body" style="color: hsl(var(--primary)); text-decoration: none; margin: 0 1rem;">Contact</a>
+        </div>
+      </div>
     </div>
-  </section>
+  </footer>
 
   <!-- JavaScript -->
   {{ 'ultra-guide.js' | asset_url | script_tag }}
