@@ -104,11 +104,6 @@ export function FinalCTA({ onEmailSubmit }: FinalCTAProps) {
               >
                 {isLoading ? "sending..." : "send my free guide now"}
               </Button>
-              
-              <p className="text-xs text-harrier-dark-green/70 text-center mt-3 leading-relaxed">
-                By clicking "Send My Free Guide Now", you consent to receiving our free guide and occasional ultra running tips via email. You can unsubscribe anytime. We respect your privacy - see our{" "}
-                <a href="#" className="text-harrier-yellow hover:underline">privacy policy</a>.
-              </p>
             </form>
           </div>
           
