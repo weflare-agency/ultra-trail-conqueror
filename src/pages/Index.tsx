@@ -20,23 +20,35 @@ const Index = () => {
     try {
       console.log("Submitting to Klaviyo:", { email, firstName, runnerLevel, timestamp: new Date() });
       
-      // Call our Klaviyo edge function
-      const response = await fetch(`https://lcbmgiixzyznbqzfhprr.supabase.co/functions/v1/klaviyo-subscribe`, {
+      // Validate input
+      if (!email || !firstName) {
+        throw new Error('Email and full name are required');
+      }
+
+      // Email validation
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        throw new Error('Invalid email format');
+      }
+      
+      // Call Klaviyo's public API directly
+      const response = await fetch('https://a.klaviyo.com/client/subscriptions/?company_id=YOUR_KLAVIYO_COMPANY_ID', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
-        body: JSON.stringify({
-          email: email.trim(),
-          firstName: firstName.trim(),
-          runnerLevel: runnerLevel || 'not_specified'
+        body: new URLSearchParams({
+          'g': 'YOUR_KLAVIYO_LIST_ID', // Your Klaviyo list ID
+          'email': email.toLowerCase().trim(),
+          'first_name': firstName.trim(),
+          'runner_level': runnerLevel || 'not_specified',
+          'subscription_source': 'ultra_guide_landing_page',
+          'subscribed_at': new Date().toISOString()
         }),
       });
 
-      const result = await response.json();
-
       if (!response.ok) {
-        throw new Error(result.error || 'Failed to subscribe to newsletter');
+        throw new Error('Failed to subscribe to newsletter');
       }
       
       // Show success message
