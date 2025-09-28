@@ -117,12 +117,12 @@ export function ExitIntentPopup({ onEmailSubmit, hasSubmitted }: ExitIntentPopup
           
           <div>
             <Label htmlFor="popupFirstName" className="text-harrier-dark-green font-medium">
-              First Name
+              Full Name
             </Label>
             <Input
               id="popupFirstName"
               type="text"
-              placeholder="Enter your first name"
+              placeholder="Enter your full name"
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               className="mt-1"

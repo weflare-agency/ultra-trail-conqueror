@@ -79,7 +79,7 @@ export const StickyMobileCTA = ({ onEmailSubmit, hasSubmitted }: StickyMobileCTA
             <form onSubmit={handleSubmit} className="space-y-2">
               <input
                 type="text"
-                placeholder="First name"
+                placeholder="Full name"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 className="w-full px-3 py-2 text-sm border border-harrier-light-green/50 rounded-md focus:outline-none focus:ring-2 focus:ring-harrier-medium-green"

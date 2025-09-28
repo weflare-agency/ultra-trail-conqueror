@@ -76,7 +76,7 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
               <div>
                 <Input
                   type="text"
-                  placeholder="Your First Name"
+                  placeholder="Your Full Name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                   className="h-14 text-xl font-medium border-2 border-harrier-light-green/30 focus:border-harrier-medium-green rounded-xl"

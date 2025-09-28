@@ -50,7 +50,7 @@ serve(async (req) => {
 
     // Validate input
     if (!body.email || !body.firstName) {
-      return new Response(JSON.stringify({ error: 'Email and first name are required' }), {
+      return new Response(JSON.stringify({ error: 'Email and full name are required' }), {
         status: 400,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' },
       });

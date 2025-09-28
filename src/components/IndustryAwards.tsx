@@ -61,7 +61,7 @@ export function IndustryAwards() {
             DOWNLOAD YOUR COMPLETE ULTRA RUNNING GUIDE AND START YOUR JOURNEY TODAY
           </p>
           <div className="flex flex-wrap justify-center items-center gap-4 text-sm md:text-base">
-            <div className="yellow-highlight">YOUR FIRST NAME</div>
+            <div className="yellow-highlight">YOUR FULL NAME</div>
             <span className="text-harrier-dark-green font-bold">+</span>
             <div className="yellow-highlight">YOUR EMAIL</div>
             <span className="text-harrier-dark-green font-bold">=</span>

@@ -52,12 +52,12 @@ export function FinalCTA({ onEmailSubmit }: FinalCTAProps) {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="text-left">
                 <Label htmlFor="finalFirstName" className="text-harrier-dark-green font-medium">
-                  First Name
+                  Full Name
                 </Label>
                 <Input
                   id="finalFirstName"
                   type="text"
-                  placeholder="Enter your first name"
+                  placeholder="Enter your full name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
                   className="mt-1 text-base h-12 border-harrier-light-green focus:ring-harrier-medium-green"
