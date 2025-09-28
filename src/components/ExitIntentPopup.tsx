@@ -72,8 +72,6 @@ export function ExitIntentPopup({ onEmailSubmit, hasSubmitted }: ExitIntentPopup
         return 'Start your ultra journey safely with expert guidance';
       case 'regular':
         return 'Take your running to the next level with proven strategies';
-      case 'experienced':
-        return 'Master ultra-distance challenges with advanced techniques';
       case 'ultra-veteran':
         return 'Discover advanced optimization strategies for peak performance';
       default:
@@ -111,8 +109,7 @@ export function ExitIntentPopup({ onEmailSubmit, hasSubmitted }: ExitIntentPopup
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="beginner">Beginner - New to running</SelectItem>
-                <SelectItem value="regular">Regular - 5K to 10K comfortable</SelectItem>
-                <SelectItem value="experienced">Experienced - Half/full marathons</SelectItem>
+                <SelectItem value="regular">Regular - Completed marathons</SelectItem>
                 <SelectItem value="ultra-veteran">Ultra Veteran - Completed ultras</SelectItem>
               </SelectContent>
             </Select>
