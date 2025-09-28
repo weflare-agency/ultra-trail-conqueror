@@ -34,7 +34,7 @@ const Index = () => {
       // Use Klaviyo's simple form submission (replace with your actual list ID)
       // This approach works without API keys and is meant for frontend use
       const formData = new FormData();
-      formData.append('g', 'YOUR_LIST_ID'); // Replace with your actual Klaviyo list ID
+      formData.append('g', 'WXvgMY'); // Replace with your actual Klaviyo list ID
       formData.append('email', email.toLowerCase().trim());
       formData.append('first_name', firstName.trim());
       if (runnerLevel) {
