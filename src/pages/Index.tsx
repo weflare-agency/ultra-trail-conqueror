@@ -18,13 +18,26 @@ const Index = () => {
 
   const handleEmailSubmit = async (email: string, firstName: string, runnerLevel?: string) => {
     try {
-      // Here you would integrate with Supabase to store the lead
-      // For now, we'll simulate the submission
+      console.log("Submitting to Klaviyo:", { email, firstName, runnerLevel, timestamp: new Date() });
       
-      console.log("Submitting:", { email, firstName, runnerLevel, timestamp: new Date() });
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Call our Klaviyo edge function
+      const response = await fetch(`https://lcbmgiixzyznbqzfhprr.supabase.co/functions/v1/klaviyo-subscribe`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email.trim(),
+          firstName: firstName.trim(),
+          runnerLevel: runnerLevel || 'not_specified'
+        }),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || 'Failed to subscribe to newsletter');
+      }
       
       // Show success message
       toast({
@@ -38,9 +51,10 @@ const Index = () => {
       // window.location.href = "/thank-you";
       
     } catch (error) {
+      console.error('Klaviyo subscription error:', error);
       toast({
         title: "Something went wrong",
-        description: "Please try again or contact support if the problem persists.",
+        description: error instanceof Error ? error.message : "Please try again or contact support if the problem persists.",
         variant: "destructive",
       });
     }

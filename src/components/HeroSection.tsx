@@ -6,7 +6,7 @@ import { Shield, Star, Zap } from "lucide-react";
 import heroImage from "@/assets/hero-trail-runners.jpg";
 
 interface HeroSectionProps {
-  onEmailSubmit: (email: string, firstName: string) => void;
+  onEmailSubmit: (email: string, firstName: string, runnerLevel?: string) => void;
 }
 
 export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
@@ -21,7 +21,7 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
     
     setIsLoading(true);
     try {
-      await onEmailSubmit(email, firstName);
+      await onEmailSubmit(email, firstName, runnerLevel);
     } finally {
       setIsLoading(false);
     }

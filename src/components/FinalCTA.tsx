@@ -6,21 +6,21 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Users, Clock, Shield } from "lucide-react";
 
 interface FinalCTAProps {
-  onEmailSubmit: (email: string, firstName: string, experienceLevel?: string) => void;
+  onEmailSubmit: (email: string, firstName: string, runnerLevel?: string) => void;
 }
 
 export function FinalCTA({ onEmailSubmit }: FinalCTAProps) {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
-  const [experienceLevel, setExperienceLevel] = useState<string | undefined>(undefined);
+  const [runnerLevel, setRunnerLevel] = useState<string | undefined>(undefined);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email || !firstName || !experienceLevel) return;
+    if (!email || !firstName || !runnerLevel) return;
     
     setIsLoading(true);
-    await onEmailSubmit(email, firstName, experienceLevel);
+    await onEmailSubmit(email, firstName, runnerLevel);
     setIsLoading(false);
   };
 
@@ -84,7 +84,7 @@ export function FinalCTA({ onEmailSubmit }: FinalCTAProps) {
                 <Label className="text-harrier-dark-green font-medium">
                   Running Experience Level
                 </Label>
-                <Select value={experienceLevel} onValueChange={setExperienceLevel} required>
+                <Select value={runnerLevel} onValueChange={setRunnerLevel} required>
                   <SelectTrigger className="mt-1 h-12 border-harrier-light-green focus:ring-harrier-medium-green">
                     <SelectValue placeholder="Select your experience level" />
                   </SelectTrigger>

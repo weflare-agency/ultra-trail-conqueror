@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { X, ArrowUp } from "lucide-react";
 
 interface StickyMobileCTAProps {
-  onEmailSubmit: (email: string, firstName: string) => void;
+  onEmailSubmit: (email: string, firstName: string, runnerLevel?: string) => void;
   hasSubmitted: boolean;
 }
 
@@ -30,7 +30,7 @@ export const StickyMobileCTA = ({ onEmailSubmit, hasSubmitted }: StickyMobileCTA
     if (!email.trim() || !firstName.trim()) return;
 
     setIsLoading(true);
-    await onEmailSubmit(email, firstName);
+    await onEmailSubmit(email, firstName, 'not_specified');
     setIsLoading(false);
     setShowForm(false);
   };
