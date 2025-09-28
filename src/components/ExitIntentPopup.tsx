@@ -156,7 +156,7 @@ export function ExitIntentPopup({ onEmailSubmit, hasSubmitted }: ExitIntentPopup
           
           <p className="text-xs text-harrier-dark-green/70 text-center mt-3 leading-relaxed">
             By clicking "Get My Free Guide", you consent to receiving our free guide and occasional ultra running tips via email. You can unsubscribe anytime. We respect your privacy - see our{" "}
-            <a href="#" className="text-harrier-medium-green hover:underline">privacy policy</a>.
+            <a href="https://harrierrunfree.co.uk/pages/privacy-notice" target="_blank" rel="noopener noreferrer" className="text-harrier-medium-green hover:underline">privacy policy</a>.
           </p>
         </form>
       </div>

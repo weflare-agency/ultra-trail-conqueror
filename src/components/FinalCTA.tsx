@@ -127,7 +127,7 @@ export function FinalCTA({ onEmailSubmit }: FinalCTAProps) {
           <p className="text-sm text-white/70 mt-8 max-w-2xl mx-auto">
             We respect your privacy. Your email will only be used to send you the guide and occasional ultra running tips. 
             You can unsubscribe at any time. See our{" "}
-            <a href="#" className="text-harrier-yellow hover:underline">privacy policy</a>.
+            <a href="https://harrierrunfree.co.uk/pages/privacy-notice" target="_blank" rel="noopener noreferrer" className="text-harrier-yellow hover:underline">privacy policy</a>.
           </p>
         </div>
       </div>

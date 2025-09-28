@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Youtube, Twitter } from "lucide-react";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import harrierLogo from "@/assets/harrier-logo.png";
 
 export function Footer() {
@@ -30,22 +30,22 @@ export function Footer() {
             <h4 className="brand-subtitle text-harrier-yellow mb-4">QUICK LINKS</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
+                <a href="https://harrierrunfree.co.uk/" target="_blank" rel="noopener noreferrer" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
                   main website
                 </a>
               </li>
               <li>
-                <a href="#" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
+                <a href="https://harrierrunfree.co.uk/collections/trail-collection" target="_blank" rel="noopener noreferrer" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
                   shop trail gear
                 </a>
               </li>
               <li>
-                <a href="#" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
+                <a href="https://harrierrunfree.co.uk/pages/how-to-run-an-ultra" target="_blank" rel="noopener noreferrer" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
                   training plans
                 </a>
               </li>
               <li>
-                <a href="#" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
+                <a href="https://harrierrunfree.co.uk/blogs/news" target="_blank" rel="noopener noreferrer" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
                   race calendar
                 </a>
               </li>
@@ -57,22 +57,22 @@ export function Footer() {
             <h4 className="brand-subtitle text-harrier-yellow mb-4">LEGAL</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
+                <a href="https://harrierrunfree.co.uk/pages/privacy-notice" target="_blank" rel="noopener noreferrer" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
                   privacy policy
                 </a>
               </li>
               <li>
-                <a href="#" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
+                <a href="https://harrierrunfree.co.uk/pages/website-terms-of-use" target="_blank" rel="noopener noreferrer" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
                   terms of service
                 </a>
               </li>
               <li>
-                <a href="#" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
+                <a href="https://harrierrunfree.co.uk/pages/cookies-policy" target="_blank" rel="noopener noreferrer" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
                   cookie policy
                 </a>
               </li>
               <li>
-                <a href="#" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
+                <a href="https://harrierrunfree.co.uk/pages/privacy-notice" target="_blank" rel="noopener noreferrer" className="brand-body text-white/80 hover:text-harrier-yellow transition-colors">
                   gdpr compliance
                 </a>
               </li>
@@ -115,7 +115,7 @@ export function Footer() {
                 className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-harrier-yellow hover:text-harrier-dark-green transition-all duration-300"
                 aria-label="Connect with us on LinkedIn"
               >
-                <Youtube className="w-5 h-5" />
+                <Linkedin className="w-5 h-5" />
               </a>
             </div>
           </div>
