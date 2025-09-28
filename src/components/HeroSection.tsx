@@ -130,6 +130,11 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
               >
                 {isLoading ? "SENDING YOUR GUIDE..." : "GET MY FREE GUIDE NOW"}
               </Button>
+              
+              <p className="text-xs text-harrier-dark-green/70 text-center mt-3 leading-relaxed">
+                By clicking "Get My Free Guide Now", you consent to receiving our free guide and occasional ultra running tips via email. You can unsubscribe anytime. We respect your privacy - see our{" "}
+                <a href="#" className="text-harrier-medium-green hover:underline">privacy policy</a>.
+              </p>
             </form>
             
             {/* Trust Indicators */}

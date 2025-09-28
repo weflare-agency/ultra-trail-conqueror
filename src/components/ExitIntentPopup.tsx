@@ -156,11 +156,12 @@ export function ExitIntentPopup({ onEmailSubmit, hasSubmitted }: ExitIntentPopup
           >
             {isLoading ? "Sending..." : "Get My Free Guide"}
           </Button>
+          
+          <p className="text-xs text-harrier-dark-green/70 text-center mt-3 leading-relaxed">
+            By clicking "Get My Free Guide", you consent to receiving our free guide and occasional ultra running tips via email. You can unsubscribe anytime. We respect your privacy - see our{" "}
+            <a href="#" className="text-harrier-medium-green hover:underline">privacy policy</a>.
+          </p>
         </form>
-        
-        <p className="text-xs text-harrier-dark-gray text-center mt-4">
-          No spam, unsubscribe anytime
-        </p>
       </div>
     </div>
   );
