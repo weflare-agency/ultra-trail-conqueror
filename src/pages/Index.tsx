@@ -16,12 +16,12 @@ import { StickyMobileCTA } from "@/components/StickyMobileCTA";
 const Index = () => {
   const [hasSubmitted, setHasSubmitted] = useState(false);
 
-  const handleEmailSubmit = async (email: string, firstName: string) => {
+  const handleEmailSubmit = async (email: string, firstName: string, runnerLevel?: string) => {
     try {
       // Here you would integrate with Supabase to store the lead
       // For now, we'll simulate the submission
       
-      console.log("Submitting:", { email, firstName, timestamp: new Date() });
+      console.log("Submitting:", { email, firstName, runnerLevel, timestamp: new Date() });
       
       // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
@@ -90,7 +90,7 @@ const Index = () => {
       <Footer />
       
       <StickyMobileCTA onEmailSubmit={handleEmailSubmit} hasSubmitted={hasSubmitted} />
-      {!hasSubmitted && <ExitIntentPopup onEmailSubmit={handleEmailSubmit} />}
+      {!hasSubmitted && <ExitIntentPopup onEmailSubmit={handleEmailSubmit} hasSubmitted={hasSubmitted} />}
     </main>
   );
 };
