@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Shield, Star, Zap } from "lucide-react";
-import heroImage from "@/assets/hero-cotswold-runners.jpg";
+import heroImage from "@/assets/hero-poles-runners.jpg";
 
 interface HeroSectionProps {
   onEmailSubmit: (email: string, firstName: string, runnerLevel?: string) => void;
