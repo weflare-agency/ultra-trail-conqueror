@@ -3,18 +3,18 @@ const ronnieStatonImage = "/lovable-uploads/ronnie-staton-new.jpg";
 
 const authors = [
   {
-    name: "Dan Summers",
-    credentials: "Mountain Leader & Ultra Runner",
-    achievement: "100-mile finisher (Lakeland 100 sub-24hrs)",
-    image: danSummersImage,
-    description: "With years of mountain leadership experience and multiple ultra completions, Dan brings practical expertise to every page of this guide."
-  },
-  {
     name: "Ronnie Staton",
     credentials: "Ultra Coach & Adventure Runner",
     achievement: "Completed 190-mile England crossing",
     image: ronnieStatonImage,
     description: "As an experienced ultra coach and extreme distance specialist, Ronnie shares the strategies that have helped hundreds of runners achieve their goals."
+  },
+  {
+    name: "Dan Summers",
+    credentials: "Mountain Leader & Ultra Runner",
+    achievement: "100-mile finisher (Lakeland 100 sub-24hrs)",
+    image: danSummersImage,
+    description: "With years of mountain leadership experience and multiple ultra completions, Dan brings practical expertise to every page of this guide."
   }
 ];
 

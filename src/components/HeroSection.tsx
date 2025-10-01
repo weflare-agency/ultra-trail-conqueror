@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Shield, Star, Zap } from "lucide-react";
-import heroImage from "@/assets/hero-trail-runners.jpg";
+import heroImage from "@/assets/hero-cotswold-runners.jpg";
 
 interface HeroSectionProps {
   onEmailSubmit: (email: string, firstName: string, runnerLevel?: string) => void;
@@ -49,9 +49,13 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
             FAILURE
           </h1>
           
-          <p className="font-saira font-bold text-2xl md:text-3xl lg:text-4xl text-white mb-8 leading-tight tracking-wide drop-shadow-lg">
-            73% OF FIRST-TIME ULTRA RUNNERS DON'T FINISH<br />
-            HERE'S HOW TO BE IN THE 27% WHO DO
+          <p className="font-saira font-bold text-xl md:text-2xl lg:text-3xl text-white mb-8 leading-tight tracking-wide drop-shadow-lg">
+            WITH SOME UK ULTRA EVENTS REPORTING DNF RATES OF UP TO 40%*,<br />
+            IT'S CRUCIAL TO BE PHYSICALLY, MENTALLY AND PRACTICALLY PREPARED<br />
+            FOR THE EVENT. ALSO TO CHOOSE THE ULTRA THAT'S RIGHT FOR YOU!
+          </p>
+          <p className="font-comfortaa font-semibold text-lg text-white/90 drop-shadow-lg">
+            *UTS100 2025 DNF rate
           </p>
         </div>
 
