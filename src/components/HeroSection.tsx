@@ -49,13 +49,16 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
             FAILURE
           </h1>
           
-          <p className="font-saira font-bold text-xl md:text-2xl lg:text-3xl text-white mb-8 leading-tight tracking-wide drop-shadow-lg">
-            WITH SOME UK ULTRA EVENTS REPORTING DNF RATES OF UP TO 40%*,<br />
-            IT'S CRUCIAL TO BE PHYSICALLY, MENTALLY AND PRACTICALLY PREPARED<br />
-            FOR THE EVENT. ALSO TO CHOOSE THE ULTRA THAT'S RIGHT FOR YOU!
+          <p className="font-saira font-bold text-2xl md:text-3xl lg:text-4xl text-white mb-4 leading-tight tracking-wide drop-shadow-lg">
+            UK ULTRA EVENTS ARE REPORTING DNF RATES UP TO 40%*
           </p>
-          <p className="font-comfortaa font-semibold text-lg text-white/90 drop-shadow-lg">
-            *UTS100 2025 DNF rate
+          
+          <p className="font-comfortaa text-lg md:text-xl text-white/95 mb-2 leading-relaxed drop-shadow-lg">
+            Don't be a statistic. Get the physical, mental, and practical preparation you need to finish strong.
+          </p>
+          
+          <p className="font-comfortaa text-sm text-white/80 italic drop-shadow-lg">
+            *Based on UTS100 2025
           </p>
         </div>
 
