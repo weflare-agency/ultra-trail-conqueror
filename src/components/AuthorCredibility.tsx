@@ -1,5 +1,5 @@
-const danSummersImage = "/lovable-uploads/dan-summers-new.jpg";
-const ronnieStatonImage = "/lovable-uploads/ronnie-staton-new.jpg";
+const danSummersImage = "/lovable-uploads/ronnie-staton-new.jpg";
+const ronnieStatonImage = "/lovable-uploads/dan-summers-new.jpg";
 
 const authors = [
   {
