@@ -1,41 +1,31 @@
 import { MapPin, Calendar, Backpack, Target, Brain, Star } from "lucide-react";
-
-const features = [
-  {
-    icon: MapPin,
-    title: "Choosing Your Ultra",
-    description: "Goal setting and motivation - find the perfect ultra for your experience level."
-  },
-  {
-    icon: Calendar,
-    title: "Essential Checklists",
-    description: "Kit, fuelling, and race day prep - everything you need to succeed."
-  },
-  {
-    icon: Backpack,
-    title: "Expert Gear Guidance", 
-    description: "What to carry (and what not to) - pro tips for ultra running equipment."
-  },
-  {
-    icon: Target,
-    title: "Mental Strategies",
-    description: "Decision making and pushing through the tough miles - psychological techniques that work."
-  },
-  {
-    icon: Brain,
-    title: "Proven Training Methods",
-    description: "Build endurance and prevent injury with tried-and-tested training approaches."
-  },
-  {
-    icon: Star,
-    title: "Pro Insights",
-    description: "From ultra runners who've been there, done it, and gone back for more."
-  }
-];
-
+const features = [{
+  icon: MapPin,
+  title: "Choosing Your Ultra",
+  description: "Goal setting and motivation - find the perfect ultra for your experience level."
+}, {
+  icon: Calendar,
+  title: "Essential Checklists",
+  description: "Kit, fuelling, and race day prep - everything you need to succeed."
+}, {
+  icon: Backpack,
+  title: "Expert Gear Guidance",
+  description: "What to carry (and what not to) - pro tips for ultra running equipment."
+}, {
+  icon: Target,
+  title: "Mental Strategies",
+  description: "Decision making and pushing through the tough miles - psychological techniques that work."
+}, {
+  icon: Brain,
+  title: "Proven Training Methods",
+  description: "Build endurance and prevent injury with tried-and-tested training approaches."
+}, {
+  icon: Star,
+  title: "Pro Insights",
+  description: "From ultra runners who've been there, done it, and gone back for more."
+}];
 export function WhatsInside() {
-  return (
-    <section className="py-24 bg-harrier-medium-green pattern-bg">
+  return <section className="py-24 bg-harrier-medium-green pattern-bg">
       <div className="container mx-auto px-4">
         <div className="text-center mb-20 animate-fade-in">
           <h2 className="font-saira font-black text-5xl md:text-6xl lg:text-7xl text-white mb-8 tracking-wider leading-tight">
@@ -52,12 +42,9 @@ export function WhatsInside() {
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
-          {features.map((feature, index) => (
-            <div 
-              key={index} 
-              className="bg-white rounded-2xl p-10 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 animate-slide-up border-2 border-harrier-yellow/20"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
+          {features.map((feature, index) => <div key={index} className="bg-white rounded-2xl p-10 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 animate-slide-up border-2 border-harrier-yellow/20" style={{
+          animationDelay: `${index * 0.1}s`
+        }}>
               <div className="bg-harrier-yellow w-20 h-20 rounded-full flex items-center justify-center mb-8 mx-auto shadow-xl">
                 <feature.icon className="w-10 h-10 text-harrier-dark-green" />
               </div>
@@ -69,30 +56,26 @@ export function WhatsInside() {
               <p className="font-comfortaa font-medium text-lg md:text-xl text-harrier-dark-green/85 text-center leading-relaxed">
                 {feature.description}
               </p>
-            </div>
-          ))}
+            </div>)}
         </div>
         
         {/* Call to Action */}
         <div className="text-center mt-20">
-          <button 
-            onClick={() => {
-              const heroForm = document.getElementById('hero-form');
-              if (heroForm) {
-                heroForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }
-            }}
-            className="inline-block bg-harrier-yellow px-8 py-4 rounded-xl shadow-lg mb-6 hover:bg-harrier-yellow/90 transition-colors cursor-pointer"
-          >
+          <button onClick={() => {
+          const heroForm = document.getElementById('hero-form');
+          if (heroForm) {
+            heroForm.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        }} className="inline-block bg-harrier-yellow px-8 py-4 rounded-xl shadow-lg mb-6 hover:bg-harrier-yellow/90 transition-colors cursor-pointer">
             <span className="font-saira font-black text-2xl md:text-3xl text-harrier-dark-green tracking-wide">
               DOWNLOAD YOUR FREE GUIDE NOW
             </span>
           </button>
-          <p className="font-comfortaa font-semibold text-xl md:text-2xl text-white/95 max-w-2xl mx-auto">
-            JOIN 4,000+ SUCCESSFUL ULTRA BOOK READERS TODAY
-          </p>
+          <p className="font-comfortaa font-semibold text-xl md:text-2xl text-white/95 max-w-2xl mx-auto">JOIN THE 4,000+ ULTRA BOOK READERS TODAY</p>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 }
