@@ -41,10 +41,14 @@ export function WhatsInside() {
           <h2 className="font-saira font-black text-5xl md:text-6xl lg:text-7xl text-white mb-8 tracking-wider leading-tight">
             WHAT'S INSIDE YOUR<br />FREE GUIDE
           </h2>
-          <p className="font-comfortaa font-semibold text-xl md:text-2xl lg:text-3xl text-white/95 max-w-4xl mx-auto leading-relaxed">
-            96 PAGES OF COMPREHENSIVE ULTRA RUNNING KNOWLEDGE<br />
-            <span className="text-harrier-yellow">FROM BEGINNER BASICS TO ADVANCED STRATEGIES</span>
-          </p>
+          <div className="font-comfortaa font-semibold text-xl md:text-2xl lg:text-3xl max-w-4xl mx-auto">
+            <p className="text-white/95 leading-relaxed mb-6">
+              96 PAGES OF COMPREHENSIVE ULTRA RUNNING KNOWLEDGE
+            </p>
+            <p className="text-harrier-yellow leading-relaxed">
+              FROM BEGINNER BASICS TO ADVANCED STRATEGIES
+            </p>
+          </div>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
