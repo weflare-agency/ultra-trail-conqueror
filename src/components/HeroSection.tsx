@@ -53,7 +53,7 @@ export function HeroSection({ onEmailSubmit }: HeroSectionProps) {
             UK ULTRA EVENTS ARE REPORTING DNF RATES UP TO 40%*
           </p>
           
-          <p className="font-comfortaa text-lg md:text-xl text-white/95 mb-2 leading-relaxed drop-shadow-lg">
+          <p className="font-comfortaa text-lg md:text-xl text-harrier-yellow mb-2 leading-relaxed drop-shadow-lg">
             Don't be a statistic. Get the physical, mental, and practical preparation you need to finish strong.
           </p>
           
