@@ -43,7 +43,7 @@ export function WhatsInside() {
           </h2>
           <p className="font-comfortaa font-semibold text-xl md:text-2xl lg:text-3xl text-white/95 max-w-4xl mx-auto leading-relaxed">
             96 PAGES OF COMPREHENSIVE ULTRA RUNNING KNOWLEDGE<br />
-            FROM BEGINNER BASICS TO ADVANCED STRATEGIES
+            <span className="text-harrier-yellow">FROM BEGINNER BASICS TO ADVANCED STRATEGIES</span>
           </p>
         </div>
         
