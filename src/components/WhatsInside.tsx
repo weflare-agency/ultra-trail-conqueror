@@ -89,7 +89,7 @@ export function WhatsInside() {
             </span>
           </button>
           <p className="font-comfortaa font-semibold text-xl md:text-2xl text-white/95 max-w-2xl mx-auto">
-            JOIN 15,000+ SUCCESSFUL ULTRA FINISHERS TODAY
+            JOIN 4,000+ SUCCESSFUL ULTRA BOOK READERS TODAY
           </p>
         </div>
       </div>
